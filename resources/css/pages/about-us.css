@@ -1,0 +1,420 @@
+div#_about_us__content {
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1440px;
+    margin-top: var(--header-desktop-height);
+    min-height: calc(100vh - var(--header-desktop-height));
+}
+
+div.separate-line {
+    height: 5px;
+    width: 100%;
+    background-color: var(--color-black);
+    box-shadow: 0 4px 20px var(--color-black);
+}
+
+div.decorate-line {
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-black);
+    position: absolute;
+}
+
+section.title-section {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 5%;
+}
+
+div.title-section__content {
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 15%;
+}
+
+h1.title-section__content-title {
+    width: 100%;
+    font-size: clamp(50px, 15vw, 190px);
+    font-weight: 750;
+    color: var(--lunar-green);
+    line-height: 0.9;
+    text-align: center;
+}
+
+h2._title__body_center-subtitle {
+    display: block;
+    width: 70%;
+    font-size: clamp(10px, 3vw, 40px);
+    font-weight: 750;
+    color: var(--zhytomyr);
+}
+
+div.decorate-line._right {
+    position: absolute;
+    width: 15%;
+    right: 0;
+    bottom: 10%;
+}
+
+div.decorate-line._left {
+    position: absolute;
+    width: 15%;
+    left: 0;
+    top: 10%
+}
+
+div.title-section__photo {
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    width: 35%;
+    padding-top: 45%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/*ФІЛОСОФІЯ*/
+section.philosophy-section {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    position: relative;
+}
+
+div.philosophy-section__top,
+div.philosophy-section__center,
+div.philosophy-section__bottom {
+    justify-content: start;
+    width: 100%;
+}
+
+div.philosophy-section__center {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 30%;
+}
+
+h2._philosophy__top_text {
+    display: flex;
+    width: 80%;
+    font-size: clamp(35px, 8vw, 120px);
+    font-weight: 800;
+    color: var(--lunar-green);
+    align-self: end;
+    padding: 3% 0;
+}
+
+div.philosophy-section__top div.decorate-line {
+    width: 20%;
+    right: 0;
+    top: 5%
+}
+
+p.philosophy-section__bottom-text {
+    font-size: clamp(13px, 4vw, 40px);;
+    font-weight: 600;
+    color: var(--zhytomyr);
+    padding: 5.5% 0;
+}
+
+div.philosophy-section__bottom div.decorate-line {
+    width: 20%;
+    left: 0;
+    bottom: 5%;
+}
+
+/* RULES */
+section.rules-section {
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    position: relative;
+    padding: 5%;
+}
+
+div.rules-section__img {
+    width: 100%;
+    align-self: center;
+    padding-top: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div.rules-section__text {
+    width: 100%;
+    padding-left: 4%;
+}
+
+h2.rules-section__text-title {
+    width: 100%;
+    font-size: clamp(30px, 8vw, 130px);
+    font-weight: 700;
+    color: var(--lunar-green);
+    padding-bottom: 10%;
+}
+
+ul.rules-section__text-list {
+    align-items: end;
+    font-size: clamp(13px, 2.5vw, 30px);
+    font-weight: 500;
+    color: var(--zhytomyr);
+    line-height: 2;
+    padding: 16% 0 0 5%;
+}
+
+ul.rules-section__text-list li {
+    list-style: initial;
+}
+
+div.rules-section__text div.decorate-line {
+    width: 30%;
+    right: 0;
+    top: 30%;
+}
+
+/*WHY*/
+section.why-section {
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    position: relative;
+    padding: 5%;
+}
+
+div.why-section__right {
+    width: 100%;
+    align-self: center;
+    padding-top: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div.why-section__right div.decorate-line {
+    right: 0;
+    top: 5%;
+    width: 20%;
+}
+
+div.why-section__left {
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+    font-size: clamp(12px, 2.5vw, 30px);
+    font-weight: 500;
+    color: var(--zhytomyr);
+    padding: 0 4%;
+}
+
+h2.why-section__left-title {
+    font-size: clamp(30px, 8vw, 130px);
+    font-weight: 700;
+    color: var(--lunar-green);
+    padding-bottom: 15%;
+}
+
+p.why-section__left-subtitle {
+    display: block;
+    font-size: clamp(10px, 3vw, 40px);
+    font-weight: 750;
+    color: var(--zhytomyr);
+    padding-bottom: 5%;
+}
+
+ul.why-section__left-list li {
+    list-style: initial;
+    line-height: 2;
+}
+
+div.why-section__left div.decorate-line {
+    width: 20%;
+    left: 0;
+    top: 30%;
+}
+
+/**/
+section.how-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 3% 5% 5% 5%;
+    position: relative;
+    gap: 20px;
+}
+
+section.how-section div.decorate-line {
+    top: 5%;
+    left: 0;
+    width: 20%;
+}
+
+div.how-section__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding-bottom: 3%;
+    gap: 10px;
+}
+
+div.how-section__top-item {
+    width: 95%;
+    text-align: center;
+    justify-content: center;
+}
+
+h2.how-section__top-item-title {
+    font-size: clamp(30px, 8vw, 130px);
+    font-weight: 700;
+    color: var(--lunar-green);
+}
+
+span.how-section__top-item-subtitle {
+    font-size: clamp(10px, 3vw, 35px);
+    font-weight: 750;
+    color: var(--berdychiv);
+    padding-bottom: 5%;
+}
+
+p.how-section__top-item-text {
+    font-size: clamp(8px, 2vw, 25px);
+    font-weight: 500;
+    color: var(--zhytomyr);
+}
+
+div.how-section__bottom {
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 20px;
+}
+
+div.how-section__bottom div.decorate-line {
+    left: unset;
+    top: unset;
+    bottom: 40%;
+    right: 0;
+    width: 10%;
+}
+
+div.how-section__bottom_left_img,
+div.how-section__bottom_right_img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 20%;
+}
+
+div.how-section__bottom_left_img {
+    width: 40%;
+}
+
+div.how-section__bottom_right_img {
+    width: 60%;
+}
+
+/**/
+section.expertise-section {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 5%;
+    position: relative;
+}
+
+div.expertise-section__left {
+    padding-right: 4%;
+}
+
+h2.expertise-section__left-title {
+    font-size: clamp(30px, 8vw, 130px);
+    font-weight: 700;
+    color: var(--lunar-green);
+    padding-bottom: 10%;
+}
+
+div.expertise-section__left div.decorate-line {
+    top: 27%;
+    width: 20%;
+    left: 0;
+}
+
+div.expertise-section__left-grid {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+div.expertise-section__left-grid_item {
+    width: 90%;
+    padding-bottom: 15%;
+}
+
+span.expertise-section__left-grid-subtitle {
+    font-size: clamp(10px, 2vw, 30px);
+    font-weight: 750;
+    color: var(--berdychiv);
+    padding-bottom: 5%;
+}
+
+p.expertise-section__left-grid-text {
+    font-size: clamp(8px, 2vw, 20px);
+    font-weight: 500;
+    color: var(--zhytomyr);
+}
+
+div.expertise-section__right {
+    width: 100%;
+    padding-bottom: 30%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-self: start;
+}
+
+div.expertise-section__right div.decorate-line {
+    bottom: 15%;
+    right: 0;
+    width: 15%;
+}
+
+@media (max-width: 768px) {
+    #_about_us__content > section.rules-section > div.rules-section__img {
+        display: none;
+    }
+
+    #_about_us__content > section.rules-section > div.rules-section__text > ul {
+        padding: 0 0 0 5%;
+    }
+
+    #_about_us__content > section.how-section.fx-col > div.how-section__top {
+       grid-template-columns: repeat(2, 1fr);
+    }
+
+    #_about_us__content > section.expertise-section.fx-row > div.expertise-section__right {
+        display: none;
+    }
+}
+
+@media  (max-width: 425px) {
+    #_about_us__content > section.why-section > div.why-section__right {
+        display: none;
+    }
+
+    #_about_us__content > section.why-section > div.why-section__left {
+        align-items: center;
+    }
+}
+
+
+
+
