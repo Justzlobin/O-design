@@ -14,21 +14,34 @@ use Filament\Tables\Table;
 class BannerResource extends Resource
 {
     protected static ?string $model = Banner::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationLabel = 'Головний банер';
-
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\SpatieMediaLibraryFileUpload::make('image')
-                    ->required(),
-                Forms\Components\TextInput::make('title')
-                    ->required(),
-                Forms\Components\Toggle::make('is_active')
-                    ->default(true)
+                Forms\Components\Grid::make()->schema([
+                    Forms\Components\Section::make()->schema([
+
+                        Forms\Components\TextInput::make('title')
+                            ->label('Назва')
+                            ->required(),
+                        Forms\Components\Toggle::make('is_active')
+                            ->label('Активний')
+                            ->default(true)
+                    ])
+                        ->columns(1)
+                        ->columnSpan(1),
+                    Forms\Components\Section::make()->schema([
+                        Forms\Components\SpatieMediaLibraryFileUpload::make('image')
+                            ->label('Зображення')
+                            ->hint('(тільки одне)')
+                            ->required()
+                    ])
+                        ->columns(1)
+                        ->columnSpan(1)
+                ])
             ]);
     }
 
@@ -37,8 +50,10 @@ class BannerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Назва')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_active')
+                    ->label('Активний')
                     ->boolean()
             ])
             ->filters([

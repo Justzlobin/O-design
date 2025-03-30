@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Page;
 use App\Enums\ProjectType;
 use App\Models\Project;
+use App\Models\SeoPage;
 use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
@@ -20,6 +22,8 @@ class ProjectsController extends Controller
                 ->get();
         }
 
-        return view('pages.projects', compact('projects', 'type'));
+        $seo = SeoPage::where('page_slug', Page::PROJECTS)->first();
+
+        return view('pages.projects', compact('projects', 'type', 'seo'));
     }
 }

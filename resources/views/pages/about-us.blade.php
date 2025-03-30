@@ -1,6 +1,15 @@
 @php use Illuminate\Support\Facades\Storage; @endphp
 @extends('app')
 
+@section('seo')
+    <title>{{$seo->meta_title}}</title>
+    <meta name="description" content="{{$seo->meta_description}}">
+    <meta name="keywords" content="{{$seo->meta_keywords}}">
+    <meta property="og:title" content="{{$seo->meta_title}}">
+    <meta property="og:description" content="{{$seo->meta_description}}">
+    <meta property="og:image">
+@endsection
+
 @section('content')
 
     <div id="_about_us__content" class="fx-col">

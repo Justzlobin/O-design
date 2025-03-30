@@ -1,5 +1,13 @@
 @extends('app')
 
+@section('seo')
+    <title>{{$generalSettings->site_name}}</title>
+    <meta name="description" content="{{$seo->meta_description}}">
+    <meta name="keywords" content="{{$seo->meta_keywords}}">
+    <meta property="og:title" content="{{$generalSettings->site_name}}">
+    <meta property="og:description" content="{{$seo->meta_description}}">
+    <meta property="og:image" content="{{$banners[0]->getFirstMediaUrl()}}">
+@endsection
 
 @section('content')
     <section class="main__banner fx-col">

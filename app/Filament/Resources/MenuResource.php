@@ -6,15 +6,12 @@ use App\Filament\Resources\MenuResource\Pages;
 use App\Filament\Resources\MenuResource\RelationManagers;
 use App\Models\Menu;
 use Filament\Forms;
-use Filament\Forms\Components\ColorPicker;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Database\Eloquent\Model;
 
 class MenuResource extends Resource
 {
@@ -27,29 +24,52 @@ class MenuResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required(),
-                Forms\Components\TextInput::make('link'),
-                Forms\Components\Toggle::make('is_active')
-                    ->default(true),
-                Forms\Components\TextInput::make('position')
-                    ->required()
-                    ->default(0)
-                    ->integer(),
-                Select::make('background_type')
-                    ->options([
-                        'image' => 'Image',
-                        'gradient' => 'Gradient',
-                    ])
-                    ->default('gradient')
-                    ->native(false)
-                    ->reactive()
-                    ->required(),
+                Forms\Components\Grid::make()->schema([
 
-                Forms\Components\SpatieMediaLibraryFileUpload::make('image')
-                    ->label('Background Image')
-                    ->visible(fn ($get) => $get('background_type') === 'image')
-                    ->required(),
+                    Forms\Components\Section::make()->schema([
+                        Forms\Components\TextInput::make('title')
+                            ->label('Назва')
+                            ->required(),
+
+                        Forms\Components\TextInput::make('link')
+                            ->label('Посилання')
+                            ->readOnly(),
+
+                        Forms\Components\TextInput::make('position')
+                            ->label('Позиція')
+                            ->required()
+                            ->default(1)
+                            ->minValue(1)
+                            ->maxValue(4)
+                            ->integer(),
+
+                        Select::make('background_type')
+                            ->label('Тип фону')
+                            ->options([
+                                'image' => 'Image',
+                                'gradient' => 'Gradient',])
+                            ->default('gradient')
+                            ->native(false)
+                            ->reactive()
+                            ->required(),
+
+                        Forms\Components\Toggle::make('is_active')
+                            ->label('Активний')
+                            ->default(true),
+                    ])
+                        ->columns(1)
+                        ->columnSpan(1),
+
+                    Forms\Components\Section::make()->schema([
+                        Forms\Components\SpatieMediaLibraryFileUpload::make('image')
+                            ->label('Зображення на фоні')
+                            ->hint('(лише одне)')
+                            ->visible(fn($get) => $get('background_type') === 'image')
+                            ->required(),
+                    ])
+                        ->columns(1)
+                        ->columnSpan(1)
+                ])
             ]);
     }
 
@@ -57,12 +77,17 @@ class MenuResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('background_type'),
+                Tables\Columns\TextColumn::make('title')
+                    ->label('Назва меню'),
+                Tables\Columns\TextColumn::make('background_type')
+                    ->label('Тип фону'),
                 Tables\Columns\TextColumn::make('position')
+                    ->label('Позиція')
                     ->searchable()
-                    ->sortable()
-
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->label('Активний')
+                    ->boolean()
             ])
             ->defaultSort('position')
             ->filters([
@@ -85,11 +110,26 @@ class MenuResource extends Resource
         ];
     }
 
+    public static function canDelete(Model $record): bool
+    {
+        return false;
+    }
+
+    public static function canDeleteAny(): bool
+    {
+        return false;
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListMenus::route('/'),
-            'create' => Pages\CreateMenu::route('/create'),
+//            'create' => Pages\CreateMenu::route('/create'),
             'edit' => Pages\EditMenu::route('/{record}/edit'),
         ];
     }

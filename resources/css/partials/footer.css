@@ -1,4 +1,4 @@
-div#footer {
+footer#footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,7 +6,7 @@ div#footer {
     height: 100%;
     min-height: var(--footer-desktop-height);
     background: var(--color-black);
-    padding: 20px 0 ;
+    padding: 20px;
     box-shadow: 0 4px 20px var(--color-black);
     z-index: 1040;
     position: relative;
@@ -23,6 +23,20 @@ div.footer__content-info {
     min-height: 400px;
     width: 25%;
     border-right: 0.5px solid var(--snow-ash);
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-wrap: break-word;
+    padding: 1%;
+}
+
+.footer__info--logo {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.footer__info--contacts {
+    gap: 20px;
+    text-align: center;
 }
 
 div.footer__content-map {
@@ -43,10 +57,6 @@ li._footer__menu_item {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 500;
-}
-
-li._footer__menu_item a {
-    color: var(--snow-ash) !important;
 }
 
 div.footer__content-contact_us._show {

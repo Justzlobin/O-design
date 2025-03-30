@@ -26,8 +26,8 @@
     --color-black: #0a0808;
     --color-red: #7a1b0c;
 
-    --header-slogan-height: 40px;
-    --header-navigation-height: 80px;
+    --header-slogan-height: 30px;
+    --header-navigation-height: 50px;
     --header-desktop-height: calc(var(--header-slogan-height) + var(--header-navigation-height));
 
     --footer-desktop-height: 500px;
@@ -55,9 +55,22 @@
     justify-content: center;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .anim {
     transition: all .5s ease-in-out;
 }
+
+.txt-col-black {
+    color: var(--color-black);
+}
+
+.txt-col-white {
+    color: var(--snow-ash);
+}
+
 h1, h2, h3 {
     all: unset;
 }
@@ -94,6 +107,31 @@ h1, h2, h3 {
     border-top-color: transparent;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+
+#call {
+    position: fixed;
+    z-index: 9999;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--snow-ash);
+    animation: blink-shadow 2s infinite alternate;
+    box-shadow: 0 0 25px var(--color-black)
+}
+
+@keyframes blink-shadow {
+    0% {
+        box-shadow: 0 0 25px var(--snow-ash);
+    }
+    50% {
+        box-shadow: 0 0 25px var(--color-black);
+    }
+    100% {
+        box-shadow: 0 0 25px var(--snow-ash);
+    }
 }
 
 @keyframes spin {

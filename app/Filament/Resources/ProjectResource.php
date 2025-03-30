@@ -30,19 +30,19 @@ class ProjectResource extends Resource
         return $form
             ->schema(components: [
                 Forms\Components\Grid::make()->schema([
+
                     Section::make()
                         ->schema(components: [
+
                             TextInput::make('title')
                                 ->label('Назва')
                                 ->required()
-                                ->maxLength(255)
+                                ->maxLength(60)
                                 ->reactive()
                                 ->debounce(700)
                                 ->afterStateUpdated(function ($state, callable $set) {
                                     $set('slug', Str::slug($state));
-                                })
-                            ,
-
+                                }),
                             Forms\Components\TextInput::make('slug')
                                 ->readOnly()
                                 ->disabled(fn ($record) => $record !== null)
@@ -53,18 +53,15 @@ class ProjectResource extends Resource
                                     $record
                                         ? Rule::unique('projects', 'slug')->ignore($record->id)
                                         : 'unique:projects,slug'
-                                ])
-//                                ->unique('projects', 'slug')
-                            ,
-
-
+                                ]),
                             Forms\Components\RichEditor::make('description')
+                                ->label('Опис')
                                 ->required(),
-
                             Forms\Components\Select::make('type')
+                                ->label('Тип')
                                 ->options([
-                                    'privat' => 'Privat',
-                                    'commercial' => 'Commercial'
+                                    'privat' => 'Приватний',
+                                    'commercial' => 'Комерційний'
                                 ])
                                 ->native(false)
                                 ->required()
@@ -81,7 +78,13 @@ class ProjectResource extends Resource
                         ])
                         ->columns(1)
                         ->columnSpan(1),
-                    SEO::make()
+                    Section::make()
+                        ->schema([
+                            SEO::make()
+
+                        ])
+                        ->columns(1)
+                        ->columnSpan(1)
                 ])
             ]);
     }
@@ -90,14 +93,6 @@ class ProjectResource extends Resource
     {
         return $table
             ->columns([
-//                Tables\Columns\TextColumn::make('created_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
-//                Tables\Columns\TextColumn::make('updated_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('type'),

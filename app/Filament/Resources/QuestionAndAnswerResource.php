@@ -5,6 +5,8 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\QuestionAndAnswerResource\Pages;
 use App\Filament\Resources\QuestionAndAnswerResource\RelationManagers;
 use App\Models\QuestionAndAnswer;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
@@ -23,10 +25,28 @@ class QuestionAndAnswerResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('question')
-                    ->required(),
-                TextInput::make('answer')
-                    ->required(),
+                Grid::make()
+                    ->schema([
+                        Section::make()
+                            ->schema([
+                                TextInput::make('question')
+                                    ->label('Питання')
+                                    ->hint(fn($state) => mb_strlen($state) . '/255')
+                                    ->maxLength(255)
+                                    ->reactive()
+                                    ->required(),
+                            ]),
+                        Section::make()
+                            ->schema([
+                                TextInput::make('answer')
+                                    ->label('Відповідь')
+                                    ->hint(fn($state) => mb_strlen($state) . '/1000')
+                                    ->maxLength(1000)
+                                    ->reactive()
+                                    ->required(),
+                            ]),
+
+                    ]),
                 Toggle::make('is_active')
             ]);
     }
@@ -35,9 +55,13 @@ class QuestionAndAnswerResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('question'),
-                Tables\Columns\TextColumn::make('answer'),
+                Tables\Columns\TextColumn::make('id')
+                    ->label('Номер'),
+                Tables\Columns\TextColumn::make('question')
+                    ->label('Питання'),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->label('Активний')
+                    ->boolean()
             ])
             ->filters([
                 Tables\Filters\BaseFilter::make('id')

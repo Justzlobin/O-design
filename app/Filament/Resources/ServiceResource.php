@@ -10,9 +10,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use RalphJSmit\Filament\SEO\SEO;
 
 class ServiceResource extends Resource
 {
@@ -25,17 +22,39 @@ class ServiceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('desc')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Toggle::make('is_active')
-                    ->required(),
-                Forms\Components\CheckboxList::make('plan_id')
-                    ->relationship('plans', 'title')
-                    ->label('Plans'),
+
+                Forms\Components\Grid::make()
+                    ->schema([
+
+                        Forms\Components\Section::make()
+                            ->schema([
+                                Forms\Components\TextInput::make('title')
+                                    ->label('Назва')
+                                    ->hint(fn($state) => mb_strlen($state) . '/60')
+                                    ->required()
+                                    ->maxLength(60),
+                                Forms\Components\Textarea::make('desc')
+                                    ->label('Опис')
+                                    ->hint(fn($state) => mb_strlen($state) . '/255')
+                                    ->required()
+                                    ->maxLength(255),
+                                Forms\Components\Toggle::make('is_active')
+                                    ->label('Активний')
+                                    ->required(),
+                            ])
+                            ->columns(1)
+                            ->columnSpan(1),
+
+                        Forms\Components\Section::make()
+                            ->schema([
+                                Forms\Components\CheckboxList::make('plan_id')
+                                    ->label('Тарифи')
+                                    ->relationship('plans', 'title')
+                                    ->label('Plans'),
+                            ])
+                            ->columns(1)
+                            ->columnSpan(1)
+                    ]),
             ]);
     }
 
@@ -44,18 +63,13 @@ class ServiceResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Назва')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_active')
+                    ->label('Активний')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('plans.title')
-//                Tables\Columns\TextColumn::make('created_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
-//                Tables\Columns\TextColumn::make('updated_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->label('Тарифи')
             ])
             ->filters([
                 //

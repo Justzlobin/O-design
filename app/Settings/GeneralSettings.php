@@ -10,7 +10,9 @@ class GeneralSettings extends Settings
     public bool $site_active;
     public string $menu_gradient;
     public string $tel;
-    public string $slogan = '';
+    public string $slogan;
+    public string $email;
+
 
     public static function group(): string
     {

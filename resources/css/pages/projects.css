@@ -1,7 +1,7 @@
 div.projects__content {
     width: 100%;
     max-width: 1440px;
-    min-height: calc(100svh  - var(--footer-desktop-height) + 100px);
+    min-height: calc(100svh  - var(--header-desktop-height) + 100px);
     background: var(--beton);
     padding-top: var(--header-desktop-height);
 }

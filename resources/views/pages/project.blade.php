@@ -1,5 +1,10 @@
 @extends('app')
 
+@section('seo')
+    {!! seo()->for($project) !!}
+    <meta property="og:image" content="{{ $project->getFirstMediaUrl('project-images', 'gallery_small') }}">
+{{--    <meta name="keywords" content="">--}}
+@endsection
 
 @section('content')
     <div class="project__content">

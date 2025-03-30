@@ -8,7 +8,6 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Table;
 
 class PlanResource extends Resource
@@ -22,20 +21,49 @@ class PlanResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('desc')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Toggle::make('is_active')
-                    ->required(),
-                Forms\Components\CheckboxList::make('service_id')
-                    ->relationship('services', 'title')
-                    ->label('Services'),
-                Forms\Components\TextInput::make('price')
-                    ->numeric()
-                    ->inputMode('decimal')
+                Forms\Components\Grid::make()
+                    ->schema([
+
+                        Forms\Components\Section::make()
+                            ->schema([
+
+                                Forms\Components\TextInput::make('title')
+                                    ->hint(fn ($state) => mb_strlen($state) . '/60')
+                                    ->reactive()
+                                    ->label('Назва')
+                                    ->required()
+                                    ->maxLength(60),
+                                Forms\Components\Textarea::make('desc')
+                                    ->reactive()
+                                    ->hint(fn ($state) => mb_strlen($state) . '/255')
+                                    ->label('Опис')
+                                    ->maxLength(255)
+                                    ->required()
+                                    ->columnSpanFull(),
+                                Forms\Components\TextInput::make('price')
+                                    ->hint('$/h')
+                                    ->label('Ціна')
+                                    ->numeric()
+                                    ->inputMode('decimal'),
+                                Forms\Components\Toggle::make('is_active')
+                                    ->label('Активний')
+                                    ->required(),
+
+                            ])
+                            ->columns(1)
+                            ->columnSpan(1),
+
+                        Forms\Components\Section::make()
+                            ->schema([
+
+                                Forms\Components\CheckboxList::make('service_id')
+                                    ->relationship('services', 'title')
+                                    ->label('Services')
+                            ])
+                            ->columns(1)
+                            ->columnSpan(1)
+
+                    ])
             ]);
     }
 
@@ -44,21 +72,17 @@ class PlanResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Назва')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
+                    ->label('Ціна')
                     ->label('Price'),
                 Tables\Columns\IconColumn::make('is_active')
+                    ->label('Активний')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('services.title')
+                    ->label('Послуги')
                     ->label('Services')
-//                Tables\Columns\TextColumn::make('created_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
-//                Tables\Columns\TextColumn::make('updated_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

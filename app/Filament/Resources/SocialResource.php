@@ -10,8 +10,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class SocialResource extends Resource
 {
@@ -24,21 +22,33 @@ class SocialResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('url')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('icon')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('position')
-                    ->integer()
-                    ->default(0)
-                    ->required(),
-                Forms\Components\Toggle::make('is_active')
-                    ->default(true)
-                    ->required(),
+                Forms\Components\Section::make()->schema([
+
+                    Forms\Components\TextInput::make('title')
+                        ->label('Назва')
+                        ->reactive()
+                        ->hint(fn($state) => mb_strlen($state) . '/60')
+                        ->maxLength(60),
+                    Forms\Components\TextInput::make('url')
+                        ->label('Писилання')
+                        ->url()
+                        ->required(),
+                    Forms\Components\TextInput::make('icon')
+                        ->label('Іконка')
+                        ->required(),
+                    Forms\Components\TextInput::make('position')
+                        ->label('Позиція')
+                        ->integer()
+                        ->default(1)
+                        ->minValue(1)
+                        ->maxValue(5)
+                        ->required(),
+                    Forms\Components\Toggle::make('is_active')
+                        ->label('Активний')
+                        ->default(true)
+                        ->required(),
+                ])
+
             ]);
     }
 
@@ -47,8 +57,10 @@ class SocialResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Назва')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_active')
+                    ->label('Активний')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
