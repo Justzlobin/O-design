@@ -8,6 +8,7 @@ class QuestionAndAnswer extends Model
 {
     protected $fillable = [
         'question',
-        'answer'
+        'answer',
+        'is_active'
     ];
 }

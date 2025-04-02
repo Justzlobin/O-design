@@ -38,6 +38,8 @@
     --min-content-height: calc(100svh  - var(--footer-desktop-height));
 
     --fancybox-zIndex: 2000;
+
+    --home-item-graient: linear-gradient(13deg, rgba(152,166,154,1) 0%, rgba(47,64,50,1) 100%)
 }
 
 .fx-row {
@@ -111,7 +113,7 @@ h1, h2, h3 {
 
 #call {
     position: fixed;
-    z-index: 9999;
+    z-index: 1500;
     bottom: 30px;
     right: 30px;
     width: 60px;

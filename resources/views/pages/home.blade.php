@@ -42,7 +42,7 @@
             @foreach($menus as $menu)
                 @if ($menu->background_type === 'gradient')
                     <a href="{{$menu->link}}">
-                        <div class="main__content-item" style="background: {{$generalSettings->menu_gradient}}">
+                        <div class="main__content-item" style="background: var(--home-item-graient)">
                             <span class="main__content-item_title">{{$menu->title}}</span>
                         </div>
                     </a>
