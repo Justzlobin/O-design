@@ -1,5 +1,5 @@
 <header id="header" class="fx-col">
-    <div class="header__slogan fx-row">{{$generalSettings->slogan}}</div>
+    <div class="header__slogan fx-row txt-col-white f-400 f-s-1">{{$generalSettings->slogan}}</div>
 
     <div class="header__content fx-row">
         <div class="header__content-logo_burger fx-row">
@@ -9,10 +9,10 @@
                 <span class="bar"></span>
             </div>
             <a href="/">
-                <div class="header__content-logo">{{$generalSettings->site_name}}</div>
+                <div class="header__content-logo f-s-2 f-500 txt-col-black">{{$generalSettings->site_name}}</div>
             </a>
         </div>
-        <div class="header__socials fx-row">
+        <div class="header__socials fx-row f-s-2">
             @foreach($socials as $social)
                 <a class="header__socials-item" href="{{$social->url}}" title="{{$social->title}}" target="_blank">
                     <i class="{{$social->icon}}"></i>
@@ -24,13 +24,13 @@
     <div id="_header__menu_overlay">
         <div id="_header__menu_content">
             <ul class="header__menu fx-col flex-center">
-                <li class="_header__menu_item">
+                <li class="_header__menu_item txt-col-black f-s-125 f-500">
                     <a href="{{route('home')}}" title="home">
                         home
                     </a>
                 </li>
                 @foreach($menus as $menu)
-                    <li class="_header__menu_item">
+                    <li class="_header__menu_item txt-col-black f-s-125 f-500">
                         <a href="{{$menu->link}}" title="{{$menu->title}}">
                             {{$menu->title}}
                         </a>

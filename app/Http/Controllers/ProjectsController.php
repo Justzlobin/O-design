@@ -12,7 +12,7 @@ class ProjectsController extends Controller
 {
     public function index(Request $request)
     {
-        $type = $request->query('type', false);
+        $type = $request->query('type');
 
         if ($type && ProjectType::isValid($type)) {
             $projects = Project::select(['title', 'description', 'id', 'slug'])->where('type', $type)->get();

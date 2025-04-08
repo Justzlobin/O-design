@@ -2,15 +2,15 @@
 
 namespace App\Filament\Pages;
 
-use App\Settings\GeneralSettings;
+use App\Settings\GeneralSettings as GeneralSettingsModel;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
 
-class ManageGeneral extends SettingsPage
+class GeneralSettings extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
-    protected static string $settings = GeneralSettings::class;
+    protected static string $settings = GeneralSettingsModel::class;
     protected static ?string $navigationLabel = 'Загальні налаштування';
 
     public function form(Form $form): Form

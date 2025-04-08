@@ -19,7 +19,7 @@ use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\UserResource\Pages;
-use STS\FilamentImpersonate\Tables\Actions\Impersonate;
+//use STS\FilamentImpersonate\Tables\Actions\Impersonate;
 
 class UserResource extends Resource
 {
@@ -68,7 +68,7 @@ class UserResource extends Resource
                 ->label(trans('filament-users::user.resource.password'))
                 ->password()
                 ->maxLength(255)
-                ->dehydrateStateUsing(static function ($state, $record) use ($form) {
+                ->dehydrateStateUsing(static function ($state, $record) {
                     return !empty($state)
                         ? Hash::make($state)
                         : $record->password;
@@ -91,9 +91,9 @@ class UserResource extends Resource
 
     public static function table(Table $table): Table
     {
-        if(class_exists( STS\FilamentImpersonate\Tables\Actions\Impersonate::class) && config('filament-users.impersonate')){
-            $table->actions([Impersonate::make('impersonate')]);
-        }
+//        if(class_exists( STS\FilamentImpersonate\Tables\Actions\Impersonate::class) && config('filament-users.impersonate')){
+//            $table->actions([Impersonate::make('impersonate')]);
+//        }
         $table
             ->columns([
                 TextColumn::make('id')
