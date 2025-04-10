@@ -12,7 +12,7 @@
 
 @section('content')
 
-    <div id="_about_us__content" class="fx-col">
+    <div id="_about_us__content" class="fx-col txt-col-black">
         <section class="title-section fx-col">
             <div class="title-section__content fx-col">
                 <div class="decorate-line _left"></div>
@@ -38,7 +38,7 @@
             </div>
         </section>
 
-        <div class="separate-line"></div>
+{{--        <div class="separate-line"></div>--}}
 
         <section class="rules-section fx-row">
             <div class="rules-section__img" style="background-image: url({{Storage::url('rules_1.jpg')}})"></div>
@@ -54,7 +54,7 @@
             </div>
         </section>
 
-        <div class="separate-line"></div>
+{{--        <div class="separate-line"></div>--}}
 
         <section class="why-section fx-row">
             <div class="why-section__left fx-col">
@@ -74,7 +74,7 @@
             </div>
         </section>
 
-        <div class="separate-line"></div>
+{{--        <div class="separate-line"></div>--}}
 
         <section class="how-section fx-col">
             <div class="decorate-line"></div>
@@ -111,7 +111,7 @@
             </div>
         </section>
 
-        <div class="separate-line"></div>
+{{--        <div class="separate-line"></div>--}}
 
         <section class="expertise-section fx-row">
             <div class="expertise-section__left fx-col">

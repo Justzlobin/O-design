@@ -13,7 +13,8 @@
     max-width: 100vw;
     width: 100%;
     aspect-ratio: 1 / .56;
-    max-height: calc(100svh - var(--header-desktop-height));
+    /*max-height: calc(100svh - var(--header-desktop-height));*/
+    max-height: 65svh;
     position: relative;
 }
 
@@ -39,7 +40,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 1px;
     cursor: pointer;
     background: var(--snow-ash);
     border: 1px transparent;
@@ -66,12 +67,12 @@
 .main__content {
     width: 100%;
     max-width: 1440px;
-    background: var(--beton);
+    background: var(--snow-ash);
     height: auto;
     min-height: max-content;
     overflow: auto;
     scrollbar-width: none;
-    padding: 20px;
+    padding: 5px;
 }
 
 .main__content-grid {
@@ -92,7 +93,6 @@
 .main__content-item {
     width: 100%;
     height: 100%;
-    background: var(--mantis);
     cursor: pointer;
     position: relative;
     padding-top: 56.25%;
@@ -134,7 +134,7 @@ div.main__content-item:hover span {
 div._main__content_image {
     height: 100%;
     width: 100%;
-    background: var(--beton);
+    background: var(--snow-ash);
 }
 
 span.main__content-item_title {
@@ -143,7 +143,7 @@ span.main__content-item_title {
     left: 20px;
     font-size: 22px;
     font-weight: 600;
-    color: var(--beton);
+    color: var(--snow-ash);
     text-transform: uppercase;
     font-style: normal;
     width: calc(100% - 40px);

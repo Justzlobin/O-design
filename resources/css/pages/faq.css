@@ -7,7 +7,7 @@ div#faq__content {
     max-width: 1440px;
     height: max-content;
     min-height: calc(70svh - var(--header-desktop-height));
-    background: var(--beton);
+    background: var(--snow-ash);
     margin-top: var(--header-desktop-height);
     padding: 50px 0;
 }
@@ -22,7 +22,7 @@ div.faq__content-grid {
 div.faq__content-item {
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid var(--lunar-green);
+    border: 2px solid var(--color-black);
     border-radius: 7px;
     padding: 10px;
     background-color: var(--snow-ash);
@@ -32,7 +32,7 @@ div.faq__content-item_question {
     align-content: center;
     height: auto;
     min-height: 70px;
-    color: var(--lunar-green);
+    color: var(--color-black);
     font-size: 22px;
     font-weight: 600;
     cursor: pointer;

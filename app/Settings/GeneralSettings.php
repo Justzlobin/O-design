@@ -12,6 +12,9 @@ class GeneralSettings extends Settings
     public string $tel = '';
     public string $slogan = '';
     public string $email = '';
+    public string $color_1 = '#fff';
+    public string $color_2 = '#000';
+    public string $color_2_transparent = '#000';
 
     public static function group(): string
     {

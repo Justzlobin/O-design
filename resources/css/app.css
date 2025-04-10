@@ -11,24 +11,10 @@
 @import "pages/about-us.css";
 
 :root {
-    --lunar-green: #2F4032;
-    --lunar-green-transparent: rgba(47, 64, 50, 0.9);
-    --mantis: #98A69A;
-    --zhytomyr: #697368;
-    --berdychiv: #555931;
-    --dym-green: #A3A65B;
-
-    --gostra-sumish: #8C543F;
-    --millbrook: #593831;
-
-    --snow-ash: #F1F2E9;
-    --beton: #F2F2F2;
-    --buckwheat-shadow: #D6D9C5;
-    --color-black: #0a0808;
     --color-red: #7a1b0c;
 
-    --header-slogan-height: 30px;
-    --header-navigation-height: 50px;
+    --header-slogan-height: 40px;
+    --header-navigation-height: 80px;
     --header-desktop-height: calc(var(--header-slogan-height) + var(--header-navigation-height));
 
     --footer-desktop-height: 500px;
@@ -39,43 +25,35 @@
     --min-content-height: calc(100svh - var(--footer-desktop-height));
 
     --fancybox-zIndex: 2000;
-    --home-item-graient: linear-gradient(13deg, rgba(152, 166, 154, 1) 0%, rgba(47, 64, 50, 1) 100%);
-
-    --font-size-05: 0.5rem;
-    --font-size-075: 0.75rem;
-    --font-size-1: 1rem;
-    --font-size-125: 1.25rem;
-    --font-size-15: 1.5rem;
-    --font-size-175: 1.75rem;
-    --font-size-2: 2rem;
+    --home-item-graient: linear-gradient(13deg, rgba(1, 1, 1, 1) 0%, rgba(999, 999, 999, 1) 100%);
 }
 
-.f-s-05 {
-    font-size: var(--font-size-05);
+.f-s-14 {
+    font-size: 14px;
 }
 
-.f-s-075 {
-    font-size: var(--font-size-075);
+.f-s-16 {
+    font-size: 16px;
 }
 
-.f-s-1 {
-    font-size: var(--font-size-1);
+.f-s-18 {
+    font-size: 18px;
 }
 
-.f-s-125 {
-    font-size: var(--font-size-125);
+.f-s-20 {
+    font-size: 20px;
 }
 
-.f-s-15 {
-    font-size: var(--font-size-15);
+.f-s-24 {
+    font-size: 24px;
 }
 
-.f-s-175 {
-    font-size: var(--font-size-175);
+.f-s-32 {
+    font-size: 32px;
 }
 
-.f-s-2 {
-    font-size: var(--font-size-2);
+.f-300 {
+    font-weight: 300;
 }
 
 .f-400 {
@@ -123,6 +101,10 @@
 
 .txt-col-white {
     color: var(--snow-ash);
+}
+
+.border-rds {
+    border-radius: 2px;
 }
 
 h1, h2, h3 {
@@ -201,15 +183,6 @@ h1, h2, h3 {
     scrollbar-width: none;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    list-style: none;
 }
 
 a {

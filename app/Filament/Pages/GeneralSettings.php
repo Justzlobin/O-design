@@ -34,7 +34,22 @@ class GeneralSettings extends SettingsPage
                         ->dehydrateStateUsing(fn ($state) => str_replace('@', '<wbr>@', $state))
                         ->formatStateUsing(fn ($state) => str_replace('<wbr>@', '@', $state))
                         ->email()
-                        ->required()
+                        ->required(),
+                    Forms\Components\ColorPicker::make('color_1')
+                        ->label('Колір 1')
+                        ->hint('Початково - білий')
+                        ->default('#fff')
+                        ->required(),
+                    Forms\Components\ColorPicker::make('color_2')
+                        ->label('Колір 2')
+                        ->hint('Початково - Чорний')
+                        ->default('#000')
+                        ->required(),
+                    Forms\Components\ColorPicker::make('color_2_transparent')
+                        ->label('Колір 2 - прозорий')
+                        ->default('#000')
+                        ->rgba()
+                        ->required(),
                 ])
             ]);
     }

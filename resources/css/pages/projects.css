@@ -2,7 +2,7 @@ div.projects__content {
     width: 100%;
     max-width: 1440px;
     min-height: calc(100svh  - var(--header-desktop-height) + 100px);
-    background: var(--beton);
+    background: var(--snow-ash);
     padding-top: var(--header-desktop-height);
 }
 
@@ -38,7 +38,7 @@ div.projects__content {
 .projects__choose-btn h2 {
     font-size: 30px;
     font-weight: 600;
-    color: var(--beton);
+    color: var(--snow-ash);
     left: 20px;
     bottom: 20px;
     position: absolute;
@@ -58,7 +58,6 @@ div.projects__grid-item {
     cursor: pointer;
     z-index: 600;
     position: relative;
-    background: var(--mantis);
     padding-top: 56.25%;
 
     background-size: 100% 100%;

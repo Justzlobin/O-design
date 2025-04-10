@@ -139,10 +139,10 @@ $('input#_file')
         }
     })
 
-$('input._contact_us_input')
-    .on('click', function () {
-        this.closest('div._contact_us_input_wrap').style.borderColor = 'var(--lunar-green)';
-    })
+// $('input._contact_us_input')
+//     .on('click', function () {
+//         this.closest('div._contact_us_input_wrap').style.borderColor = 'var(--lunar-green)';
+//     })
 
 $('button#_main__banner_contact_us_btn')
     .on('click', function (e) {

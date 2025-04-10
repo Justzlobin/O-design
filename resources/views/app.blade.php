@@ -31,6 +31,14 @@
     @vite('resources/css/app.css')
 </head>
 
+<style>
+    :root {
+        --snow-ash: {{ $generalSettings->color_1 }};
+        --color-black: {{ $generalSettings->color_2 }};
+        --color-2-transparent: {{ $generalSettings->color_2_transparent }};
+    }
+</style>
+
 <body>
 @include('partials.header')
 

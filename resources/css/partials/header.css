@@ -80,11 +80,11 @@ div.mobile__menu span.bar {
 }
 
 div.mobile__menu span.bar:nth-of-type(2) {
-    top: calc(50% - 9px);
+    top: calc(50% - 8px);
 }
 
 div.mobile__menu span.bar:nth-of-type(3) {
-    top: calc(50% + 9px);
+    top: calc(50% + 8px);
 }
 
 div.header__content-logo {
@@ -117,7 +117,7 @@ a.header__socials-item:hover, a#_tel:hover {
 
 div#_header__menu_overlay._show {
     height: calc(100svh - var(--header-desktop-height)) !important;
-    background-color: var(--lunar-green-transparent);
+    background-color: var(--color-2-transparent);
     overflow: auto !important;
 }
 
@@ -185,7 +185,7 @@ div#_contact_us_modal {
     height: 0;
     overflow: hidden;
     width: 100%;
-    background: var(--lunar-green-transparent);
+    background: var(--color-2-transparent);
     transition: all .5s ease-in-out;
     opacity: 0;
     padding: 0 2%;

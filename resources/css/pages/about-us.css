@@ -39,7 +39,6 @@ h1.title-section__content-title {
     width: 100%;
     font-size: clamp(50px, 15vw, 190px);
     font-weight: 750;
-    color: var(--lunar-green);
     line-height: 0.9;
     text-align: center;
 }
@@ -49,7 +48,6 @@ h2._title__body_center-subtitle {
     width: 70%;
     font-size: clamp(10px, 3vw, 40px);
     font-weight: 750;
-    color: var(--zhytomyr);
 }
 
 div.decorate-line._right {
@@ -104,7 +102,6 @@ h2._philosophy__top_text {
     width: 80%;
     font-size: clamp(35px, 8vw, 120px);
     font-weight: 800;
-    color: var(--lunar-green);
     align-self: end;
     padding: 3% 0;
 }
@@ -118,7 +115,6 @@ div.philosophy-section__top div.decorate-line {
 p.philosophy-section__bottom-text {
     font-size: clamp(13px, 4vw, 40px);;
     font-weight: 600;
-    color: var(--zhytomyr);
     padding: 5.5% 0;
 }
 
@@ -155,7 +151,6 @@ h2.rules-section__text-title {
     width: 100%;
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    color: var(--lunar-green);
     padding-bottom: 10%;
 }
 
@@ -163,7 +158,6 @@ ul.rules-section__text-list {
     align-items: end;
     font-size: clamp(13px, 2.5vw, 30px);
     font-weight: 500;
-    color: var(--zhytomyr);
     line-height: 2;
     padding: 16% 0 0 5%;
 }
@@ -208,14 +202,12 @@ div.why-section__left {
     align-items: start;
     font-size: clamp(12px, 2.5vw, 30px);
     font-weight: 500;
-    color: var(--zhytomyr);
     padding: 0 4%;
 }
 
 h2.why-section__left-title {
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    color: var(--lunar-green);
     padding-bottom: 15%;
 }
 
@@ -223,7 +215,6 @@ p.why-section__left-subtitle {
     display: block;
     font-size: clamp(10px, 3vw, 40px);
     font-weight: 750;
-    color: var(--zhytomyr);
     padding-bottom: 5%;
 }
 
@@ -273,20 +264,17 @@ div.how-section__top-item {
 h2.how-section__top-item-title {
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    color: var(--lunar-green);
 }
 
 span.how-section__top-item-subtitle {
     font-size: clamp(10px, 3vw, 35px);
     font-weight: 750;
-    color: var(--berdychiv);
     padding-bottom: 5%;
 }
 
 p.how-section__top-item-text {
     font-size: clamp(8px, 2vw, 25px);
     font-weight: 500;
-    color: var(--zhytomyr);
 }
 
 div.how-section__bottom {
@@ -336,7 +324,6 @@ div.expertise-section__left {
 h2.expertise-section__left-title {
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    color: var(--lunar-green);
     padding-bottom: 10%;
 }
 
@@ -362,14 +349,12 @@ div.expertise-section__left-grid_item {
 span.expertise-section__left-grid-subtitle {
     font-size: clamp(10px, 2vw, 30px);
     font-weight: 750;
-    color: var(--berdychiv);
     padding-bottom: 5%;
 }
 
 p.expertise-section__left-grid-text {
     font-size: clamp(8px, 2vw, 20px);
     font-weight: 500;
-    color: var(--zhytomyr);
 }
 
 div.expertise-section__right {
