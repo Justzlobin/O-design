@@ -9,7 +9,7 @@
                 <span class="bar"></span>
             </div>
             <a href="/">
-                <div class="header__content-logo f-s-32 f-400 txt-col-black">{{$generalSettings->site_name}}</div>
+                <div class="header__content-logo f-s-30 f-400 txt-col-black">{{$generalSettings->site_name}}</div>
             </a>
         </div>
         <div class="header__socials fx-row f-s-32">

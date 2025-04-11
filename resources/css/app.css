@@ -48,6 +48,9 @@
     font-size: 24px;
 }
 
+.f-s-30 {
+    font-size: 30px;
+}
 .f-s-32 {
     font-size: 32px;
 }
@@ -200,4 +203,12 @@ input, textarea, button {
     border: none;
     padding: 0;
     resize: none;
+}
+
+body._no_scroll {
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }

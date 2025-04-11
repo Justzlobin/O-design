@@ -71,6 +71,7 @@ $('.mobile__menu')
         $('.header__menu').toggleClass('mobile_show');
         $('.menu__item--content').removeClass('active')
         $('.header__mobile--decorate_line').toggleClass('show')
+        document.querySelector('body').classList.toggle('_no_scroll')
     });
 
 $('div.faq__content-item_question')
@@ -153,12 +154,15 @@ $('button#_main__banner_contact_us_btn')
             contactUsModal.appendChild(contactUsFormDiv.cloneNode(true))
             contactUsModal.classList.add('_show')
         }
+
+        document.querySelector('body').classList.add('_no_scroll')
     })
 
 $('div#_contact_us_modal')
     .on('click', function (e) {
         if (e.target.id === this.id) {
             document.getElementById('_contact_us_modal').classList.remove('_show')
+            document.querySelector('body').classList.remove('_no_scroll')
 
             setTimeout(() => {
                 document.getElementById('_contact_us_modal').replaceChildren()
