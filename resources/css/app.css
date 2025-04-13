@@ -191,7 +191,7 @@ h1, h2, h3 {
 a {
     text-decoration: none;
     background: transparent none;
-    color: var(--color-black);
+    color: unset;
 }
 
 input, textarea, button {
@@ -207,8 +207,4 @@ input, textarea, button {
 
 body._no_scroll {
     overflow: hidden;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
 }

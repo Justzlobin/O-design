@@ -9,13 +9,13 @@
                 <span class="bar"></span>
             </div>
             <a href="/">
-                <div class="header__content-logo f-s-30 f-400 txt-col-black">{{$generalSettings->site_name}}</div>
+                <div class="header__content-logo f-s-30 f-400 txt-col-white">{{$generalSettings->site_name}}</div>
             </a>
         </div>
-        <div class="header__socials fx-row f-s-32">
+        <div class="header__socials fx-row txt-col-white f-s-32">
             @foreach($socials as $social)
                 <a class="header__socials-item" href="{{$social->url}}" title="{{$social->title}}" target="_blank">
-                    <i class="{{$social->icon}}"></i>
+                    <i class="txt-col-white {{$social->icon}}"></i>
                 </a>
             @endforeach
         </div>
@@ -24,13 +24,13 @@
     <div id="_header__menu_overlay">
         <div id="_header__menu_content">
             <ul class="header__menu fx-col flex-center">
-                <li class="_header__menu_item txt-col-black f-s-20 f-500">
+                <li class="_header__menu_item txt-col-white f-s-20 f-500">
                     <a href="{{route('home')}}" title="home">
                         home
                     </a>
                 </li>
                 @foreach($menus as $menu)
-                    <li class="_header__menu_item txt-col-black f-s-20 f-500">
+                    <li class="_header__menu_item txt-col-white f-s-20 f-500">
                         <a href="{{$menu->link}}" title="{{$menu->title}}">
                             {{$menu->title}}
                         </a>

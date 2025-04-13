@@ -50,6 +50,8 @@ div.footer__content-map {
 ul.footer__content-map_list {
     width: 100%;
     text-align: center;
+    padding: 0;
+    margin: 0
 }
 
 li._footer__menu_item {

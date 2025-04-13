@@ -170,6 +170,15 @@ $('div#_contact_us_modal')
         }
     })
 
+$('div#_header__menu_content')
+    .on('click', function (e) {
+        if (e.target.id === this.id) {
+            document.getElementById('_header__menu_overlay').classList.remove('_show');
+            document.querySelector('body').classList.remove('_no_scroll');
+            document.querySelector('.mobile__menu').classList.remove('active')
+        }
+    })
+
 // document.addEventListener("DOMContentLoaded", function () {
 //     document.addEventListener("click", function (e) {
 //         if (e.target.tagName === "A" && e.target.href) {

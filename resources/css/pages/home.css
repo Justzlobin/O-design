@@ -1,7 +1,8 @@
 .main__banner {
     display: flex;
     flex-direction: column;
-    margin-top: var(--header-desktop-height);
+    /*margin-top: var(--header-desktop-height);*/
+    margin-top: var(--header-slogan-height);
     width: 100%;
     min-width: 100%;
     background: var(--snow-ash);
@@ -42,10 +43,11 @@
     height: 100%;
     border-radius: 1px;
     cursor: pointer;
-    background: var(--snow-ash);
-    border: 1px transparent;
+    background: rgba(0, 0, 0, 30%);
+    /*border: 1px transparent;*/
     text-transform: uppercase;
     padding: 0 2%;
+    border: 1px solid var(--snow-ash);
 }
 
 #_main__banner_projects_btn {
@@ -141,8 +143,6 @@ span.main__content-item_title {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    font-size: 22px;
-    font-weight: 600;
     color: var(--snow-ash);
     text-transform: uppercase;
     font-style: normal;
@@ -178,6 +178,6 @@ span.main__content-item_title {
     }
 
     span.main__content-item_title {
-        font-size: 16px;
+        font-size: 20px;
     }
 }

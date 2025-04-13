@@ -37,7 +37,7 @@
                     <a href="{{route('project', $project)}}">
                         <div class="projects__grid-item fx-col flex-center"
                              style="background-image: url({{$project->getFirstMediaUrl('project-images', 'gallery_big')}})">
-                            <div class="projects__grid-item_title">{{$project->title}}</div>
+                            <span class="projects__grid-item_title">{{$project->title}}</span>
                         </div>
                     </a>
                 @endforeach

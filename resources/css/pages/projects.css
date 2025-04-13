@@ -72,7 +72,7 @@ div.projects__grid-item:hover {
     background-size: 110% 110%;
 }
 
-div.projects__grid-item:hover div.projects__grid-item_title {
+.projects__grid-item:hover .projects__grid-item_title {
     padding-left: 40px;
 }
 
@@ -90,7 +90,7 @@ div.projects__grid-item:hover::before {
     opacity: 1;
 }
 
-div.projects__grid-item_title {
+.projects__grid-item_title {
     position: absolute;
     bottom: 20px;
     left: 20px;

@@ -1,10 +1,10 @@
 header#header {
     width: 100%;
     height: var(--header-desktop-height);
-    background: var(--snow-ash);
+    background: rgba(0, 0, 0, .5);
     position: fixed;
     top: 0;
-    box-shadow: 0 4px 20px var(--color-black);
+    box-shadow: 0 4px 20px var(--snow-ash);
     z-index: 1050;
     justify-content: center;
     align-items: center;
@@ -75,7 +75,7 @@ div.mobile__menu span.bar {
     left: 50%;
     border-radius: 4px;
     transform: translate(-50%, -50%);
-    background-color: var(--color-black);
+    background-color: var(--snow-ash);
     transition: all 0.3s ease-in-out;
 }
 
@@ -107,7 +107,7 @@ a.header__socials-item, a#_tel {
     align-items: center;
     cursor: pointer;
     border: unset;
-    color: var(--color-black);
+    /*color: var(--color-black);*/
 }
 
 a.header__socials-item:hover, a#_tel:hover {
@@ -117,7 +117,7 @@ a.header__socials-item:hover, a#_tel:hover {
 
 div#_header__menu_overlay._show {
     height: calc(100svh - var(--header-desktop-height)) !important;
-    background-color: var(--color-2-transparent);
+    /*background-color: rgba(0,0,0,.3);*/
     overflow: auto !important;
 }
 
@@ -145,15 +145,17 @@ div#_header__menu_content {
 }
 
 ul.header__menu {
-    background-color: var(--snow-ash);
+    background-color: rgba(0,0,0,.5);
     overflow: hidden;
     height: 0;
     width: 100%;
-    max-height: 400px;
     max-width: 400px;
-    box-shadow: 0 4px 20px var(--color-black);
+    max-height: 400px;
+    box-shadow: 0 4px 20px var(--snow-ash);
     transition: all .4s ease;
     opacity: 0;
+    padding: 0;
+    margin: 0;
 }
 
 li._header__menu_item {
@@ -205,22 +207,22 @@ div#_contact_us_modal._show {
 
 @media (max-width: 1050px) {
     div.header__slogan {
-        font-size: var(--font-size-075);
+        font-size: 13px;
     }
 
     div.header__content-logo {
-        font-size: var(--font-size-15);
+        font-size: 24px;
     }
 
     div.header__socials {
-        font-size: var(--font-size-15);
+        font-size: 24px;
         gap: unset;
     }
 
     :root {
-        --header-slogan-height: 25px;
-        --header-navigation-height: 40px;
-        --header-desktop-height: calc(var(--header-slogan-height) + var(--header-navigation-height));
+        --header-slogan-height: 25px !important;
+        --header-navigation-height: 40px !important;
+        --header-desktop-height: calc(var(--header-slogan-height) + var(--header-navigation-height)) !important;
     }
 }
 
@@ -236,6 +238,6 @@ div#_contact_us_modal._show {
     }
 
     li._header__menu_item {
-        font-size: var(--font-size-1);
+        font-size: 16px;
     }
 }
