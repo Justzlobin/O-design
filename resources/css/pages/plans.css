@@ -3,27 +3,56 @@ div.plans__content {
     max-width: 1440px;
     height: auto;
     min-height: calc(100svh - var(--header-desktop-height));
-    background: var(--snow-ash);
     margin-top: var(--header-desktop-height);
 }
 
 div.plans__content-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 1fr;
     width: 100%;
-    padding: 20px 40px;
+    padding: 20px;
     gap: 30px;
 }
 
-div.plans__content-item {
-    padding: 6%;
-    border: 2px solid var(--color-black);
-    border-radius: 15px;
+.plans__item--wrap {
     height: 100%;
+    border-radius: 17px;
+}
+
+.plans__item--wrap._promotional {
+    box-shadow: 0 4px 20px var(--snow-ash);
+    background: rgba(0,0,0, .4);
+}
+
+.plans__item--title {
+    height: 70px;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.plans__item--wrap._promotional  .plans__item--title {
+    background-color: var(--snow-ash);
+    border-radius: 17px 17px 0 0 ;
+}
+
+.plans__item--wrap._promotional  .plans__content-item {
+    border-radius:  0 0 17px 17px;
+}
+
+div.plans__content-item {
+    padding: 20px 0 ;
+    height: calc(100% - 70px);
+    color: var(--snow-ash);
+    background: rgba(0,0,0, .4);
+    border-radius: 17px;
+    gap: 10px;
 }
 
 div.plan__header {
     width: 100%;
+    gap: 20px;
+    padding: 0 25px;
 }
 
 div.plan__header-title {
@@ -31,7 +60,6 @@ div.plan__header-title {
     min-height: 50px;
     width: 100%;
     text-align: center;
-    color: var(--color-black);
     font-weight: 600;
     font-size: 30px;
 }
@@ -40,7 +68,6 @@ div.plan__header-desc {
     height: auto;
     width: 100%;
     text-align: left;
-    color: var(--color-black);
     font-weight: 500;
     font-size: 16px;
     min-height: 70px;
@@ -52,16 +79,22 @@ div.plan__list_services {
     height: 100%;
     justify-content: flex-start;
     align-items: flex-start;
-    row-gap: 10px;
+
 }
 
 div.plan__service {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    color: var(--color-black);
     font-size: 16px;
     font-weight: 500;
+    height: 40px;
+    padding: 0 25px;
+
+}
+
+.plan__service:nth-child(2n) {
+    background: rgba(240, 240, 240, .03);
 }
 
 div.plan__price {
@@ -71,7 +104,28 @@ div.plan__price {
     text-align: center;
     font-size: 20px;
     font-weight: 600;
-    color: var(--color-black);
+}
+
+.plan__btn {
+    width: 60%;
+    text-align: center;
+    border-radius: 10px;
+    background: var(--snow-ash);
+    height: 90px;
+    font-weight: 700;
+    font-size: 18px;
+    align-self: center;
+}
+
+@media (max-width: 1150px) {
+    div.plans__content-list {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    div.plans__content-list {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
 }
 
 

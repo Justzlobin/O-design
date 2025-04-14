@@ -7,7 +7,7 @@ footer#footer {
     min-height: var(--footer-desktop-height);
     background: var(--color-black);
     padding: 20px;
-    box-shadow: 0 4px 20px var(--color-black);
+    box-shadow: 0 -4px 20px var(--snow-ash);
     z-index: 1040;
     position: relative;
 }
@@ -51,7 +51,7 @@ ul.footer__content-map_list {
     width: 100%;
     text-align: center;
     padding: 0;
-    margin: 0
+    margin: 0;
 }
 
 li._footer__menu_item {

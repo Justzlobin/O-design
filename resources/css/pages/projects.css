@@ -2,30 +2,40 @@ div.projects__content {
     width: 100%;
     max-width: 1440px;
     min-height: calc(100svh  - var(--header-desktop-height) + 100px);
-    background: var(--snow-ash);
     padding-top: var(--header-desktop-height);
+    align-items: center;
+    justify-content: start;
 }
 
 .projects__choose {
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding: 5% 0;
+    margin-top: 50px;
+    background: transparent;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: .8;
 }
 
-.projects__choose-btn {
+.projects__choose--btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45%;
-    padding-top: 30%;
-    box-shadow: 0 4px 20px var(--color-black);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
+    width: 300px;
+    height: 60px;
     transition: all .4s ease-in-out;
     position: relative;
+    border-radius: 5px;
+    margin: -1px;
+    font-size: 20px;
+}
+
+.projects__choose--btn._selected {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid var(--snow-ash);
 }
 
 .projects__choose-btn:hover {
@@ -50,11 +60,11 @@ div.projects__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto-fit, 1fr);
-    gap: 10px;
+    gap: 5px;
     padding: 25px;
 }
 
-div.projects__grid-item {
+.projects__grid-item {
     cursor: pointer;
     z-index: 600;
     position: relative;
@@ -67,7 +77,7 @@ div.projects__grid-item {
     transition: background-size .5s ease-in-out;
 }
 
-div.projects__grid-item:hover {
+.projects__grid-item:hover {
     cursor: pointer;
     background-size: 110% 110%;
 }
@@ -76,7 +86,7 @@ div.projects__grid-item:hover {
     padding-left: 40px;
 }
 
-div.projects__grid-item::before {
+.projects__grid-item::before {
     content: '';
     display: block;
     position: absolute;
@@ -86,7 +96,7 @@ div.projects__grid-item::before {
     transition: all .5s ease-in-out;
 }
 
-div.projects__grid-item:hover::before {
+.projects__grid-item:hover::before {
     opacity: 1;
 }
 
@@ -107,13 +117,6 @@ div.projects__grid-item:hover::before {
     div.projects__grid {
         grid-template-columns: repeat(1, 1fr);
     }
-
-    div.projects__choose {
-        flex-direction: column;
-        height: calc(100svh - var(--header-desktop-height));
-        width: 100%;
-    }
-
     a.projects__choose-btn {
         width: 90%;
         height: 45%;

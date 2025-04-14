@@ -9,14 +9,16 @@ div#_about_us__content {
 div.separate-line {
     height: 5px;
     width: 100%;
-    background-color: var(--color-black);
-    box-shadow: 0 4px 20px var(--color-black);
+    background-color: var(--snow-ash);
+    box-shadow: 0 4px 20px var(--snow-ash);
 }
 
 div.decorate-line {
     height: 2px;
+    min-height: 2px;
     width: 100%;
-    background-color: var(--color-black);
+    background-color: var(--snow-ash);
+    box-shadow: 0 4px 20px var(--snow-ash);
     position: absolute;
 }
 
@@ -126,32 +128,33 @@ div.philosophy-section__bottom div.decorate-line {
 
 /* RULES */
 section.rules-section {
-    justify-content: start;
+    justify-content: space-between;
     align-items: start;
     width: 100%;
     position: relative;
-    padding: 5%;
+    padding: 20px 5%;
 }
 
 div.rules-section__img {
-    width: 100%;
+    width: 40%;
+    aspect-ratio: 1/ 1;
     align-self: center;
-    padding-top: 50%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 div.rules-section__text {
-    width: 100%;
-    padding-left: 4%;
+    /*width: 100%;*/
 }
 
 h2.rules-section__text-title {
     width: 100%;
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    padding-bottom: 10%;
+    /*padding-bottom: 10%;*/
+    padding-left: 30px;
+
 }
 
 ul.rules-section__text-list {
@@ -159,7 +162,9 @@ ul.rules-section__text-list {
     font-size: clamp(13px, 2.5vw, 30px);
     font-weight: 500;
     line-height: 2;
-    padding: 16% 0 0 5%;
+    /*padding: 16% 0 0 5%;*/
+    padding-left: 30px;
+
 }
 
 ul.rules-section__text-list li {
@@ -178,7 +183,7 @@ section.why-section {
     align-items: start;
     width: 100%;
     position: relative;
-    padding: 5%;
+    padding: 20px 5%;
 }
 
 div.why-section__right {
@@ -190,11 +195,11 @@ div.why-section__right {
     background-repeat: no-repeat;
 }
 
-div.why-section__right div.decorate-line {
-    right: 0;
-    top: 5%;
-    width: 20%;
-}
+/*div.why-section__right div.decorate-line {*/
+/*    right: 0;*/
+/*    top: 5%;*/
+/*    width: 20%;*/
+/*}*/
 
 div.why-section__left {
     width: 100%;
@@ -202,20 +207,20 @@ div.why-section__left {
     align-items: start;
     font-size: clamp(12px, 2.5vw, 30px);
     font-weight: 500;
-    padding: 0 4%;
+    /*padding: 0 4%;*/
 }
 
 h2.why-section__left-title {
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    padding-bottom: 15%;
+    padding-bottom: 20px;
 }
 
 p.why-section__left-subtitle {
     display: block;
     font-size: clamp(10px, 3vw, 40px);
     font-weight: 750;
-    padding-bottom: 5%;
+    padding-bottom: 20px;
 }
 
 ul.why-section__left-list li {
@@ -241,11 +246,6 @@ section.how-section {
     gap: 20px;
 }
 
-section.how-section div.decorate-line {
-    top: 5%;
-    left: 0;
-    width: 20%;
-}
 
 div.how-section__top {
     display: grid;
@@ -388,6 +388,10 @@ div.expertise-section__right div.decorate-line {
     #_about_us__content > section.expertise-section.fx-row > div.expertise-section__right {
         display: none;
     }
+
+    h2.rules-section__text-title {
+        padding: unset;
+    }
 }
 
 @media  (max-width: 425px) {
@@ -395,9 +399,9 @@ div.expertise-section__right div.decorate-line {
         display: none;
     }
 
-    #_about_us__content > section.why-section > div.why-section__left {
-        align-items: center;
-    }
+    /*#_about_us__content > section.why-section > div.why-section__left {*/
+    /*    align-items: center;*/
+    /*}*/
 }
 
 

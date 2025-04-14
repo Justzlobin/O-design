@@ -12,18 +12,18 @@ class ProjectsController extends Controller
 {
     public function index(Request $request)
     {
-        $type = $request->query('type');
+//        $type = $request->query('type');
+//
+//        if ($type && ProjectType::isValid($type)) {
+//            $projects = Project::select(['title', 'description', 'id', 'slug'])->where('type', $type)->get();
+//        } else {
+//            $projects = Project::select(['title', 'description', 'id', 'slug'])->where('type', ProjectType::Commercial)->get();
+//            $type = ProjectType::Commercial;
+//        }
 
-        if ($type && ProjectType::isValid($type)) {
-            $projects = Project::select(['title', 'description', 'id', 'slug'])->where('type', $type)->get();
-        } else {
-            $projects = Project::select(['id', 'type'])->where('type', ProjectType::Privat)->limit(1)
-                ->union(Project::select(['id', 'type'])->where('type', ProjectType::Commercial)->limit(1))
-                ->get();
-        }
-
+        $projects = Project::select(['title', 'description', 'id', 'slug', 'type'])->get();
         $seo = SeoPage::where('page_slug', Page::PROJECTS)->first();
 
-        return view('pages.projects', compact('projects', 'type', 'seo'));
+        return view('pages.projects', compact('projects', 'seo'));
     }
 }

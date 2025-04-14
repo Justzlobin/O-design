@@ -140,11 +140,6 @@ $('input#_file')
         }
     })
 
-// $('input._contact_us_input')
-//     .on('click', function () {
-//         this.closest('div._contact_us_input_wrap').style.borderColor = 'var(--lunar-green)';
-//     })
-
 $('button#_main__banner_contact_us_btn')
     .on('click', function (e) {
         e.preventDefault()
@@ -179,13 +174,35 @@ $('div#_header__menu_content')
         }
     })
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     document.addEventListener("click", function (e) {
-//         if (e.target.tagName === "A" && e.target.href) {
-//             loader.classList.add('_show');
-//         }
-//     });
-//     window.onload = function () {
-//         loader.classList.remove('_show');
-//     };
-// });
+
+$('#all, #commercial, #privat')
+    .on('click', function () {
+        let allProjects = document.querySelectorAll('.projects__grid-item');
+        let privatProjects = document.querySelectorAll('.projects__grid-item.privat');
+        let commercialProjects = document.querySelectorAll('.projects__grid-item.commercial');
+
+        document.querySelectorAll('.projects__choose--btn').forEach(function (el) {
+            el.classList.remove('_selected')
+        })
+        this.classList.add('_selected')
+
+        if (this.id === 'all') {
+            allProjects.forEach(function (el) {
+                el.style.display = 'flex';
+            })
+        } else if (this.id === 'privat') {
+            privatProjects.forEach(function (el) {
+                el.style.display = 'flex';
+            })
+            commercialProjects.forEach(function (el) {
+                el.style.display = 'none';
+            })
+        } else if (this.id === 'commercial') {
+            privatProjects.forEach(function (el) {
+                el.style.display = 'none';
+            })
+            commercialProjects.forEach(function (el) {
+                el.style.display = 'flex';
+            })
+        }
+    });

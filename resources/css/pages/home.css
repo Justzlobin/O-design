@@ -5,7 +5,7 @@
     margin-top: var(--header-slogan-height);
     width: 100%;
     min-width: 100%;
-    background: var(--snow-ash);
+    /*background: var(--snow-ash);*/
     overflow: hidden;
     z-index: 1000;
 }
@@ -69,12 +69,12 @@
 .main__content {
     width: 100%;
     max-width: 1440px;
-    background: var(--snow-ash);
+    /*background: var(--snow-ash);*/
     height: auto;
     min-height: max-content;
     overflow: auto;
     scrollbar-width: none;
-    padding: 5px;
+    padding: 20px 5px;
 }
 
 .main__content-grid {

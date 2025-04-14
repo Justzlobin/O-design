@@ -173,7 +173,7 @@ div#_main_container {
     align-items: center;
     width: 100%;
     height: 100%;
-    background: var(--snow-ash);
+    background: #333333;
 }
 
 div#_contact_us_modal {
