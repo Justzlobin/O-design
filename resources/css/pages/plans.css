@@ -21,8 +21,8 @@ div.plans__content-list {
 }
 
 .plans__item--wrap._promotional {
-    box-shadow: 0 4px 20px var(--snow-ash);
-    background: rgba(0,0,0, .4);
+    box-shadow: 0 4px 20px var(--color-5);
+    background: var(--color-5);
 }
 
 .plans__item--title {
@@ -32,8 +32,9 @@ div.plans__content-list {
 }
 
 .plans__item--wrap._promotional  .plans__item--title {
-    background-color: var(--snow-ash);
+    background-color: var(--color-1);
     border-radius: 17px 17px 0 0 ;
+    color: var(--color-5);
 }
 
 .plans__item--wrap._promotional  .plans__content-item {
@@ -43,8 +44,8 @@ div.plans__content-list {
 div.plans__content-item {
     padding: 20px 0 ;
     height: calc(100% - 70px);
-    color: var(--snow-ash);
-    background: rgba(0,0,0, .4);
+    color: var(--color-1);
+    background: var(--color-3);
     border-radius: 17px;
     gap: 10px;
 }
@@ -94,7 +95,7 @@ div.plan__service {
 }
 
 .plan__service:nth-child(2n) {
-    background: rgba(240, 240, 240, .03);
+    background: rgba(240, 240, 240, .09);
 }
 
 div.plan__price {
@@ -110,11 +111,12 @@ div.plan__price {
     width: 60%;
     text-align: center;
     border-radius: 10px;
-    background: var(--snow-ash);
+    background: var(--color-1);
     height: 90px;
     font-weight: 700;
     font-size: 18px;
     align-self: center;
+    color: var(--color-5);
 }
 
 @media (max-width: 1150px) {

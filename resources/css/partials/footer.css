@@ -5,11 +5,12 @@ footer#footer {
     width: 100%;
     height: 100%;
     min-height: var(--footer-desktop-height);
-    background: var(--color-black);
+    background: var(--color-1);
     padding: 20px;
-    box-shadow: 0 -4px 20px var(--snow-ash);
+    box-shadow: 0 -4px 20px var(--color-5);
     z-index: 1040;
     position: relative;
+    color: var(--color-5);
 }
 
 div.footer__content {
@@ -22,7 +23,7 @@ div.footer__content-info {
     height: 100%;
     min-height: 400px;
     width: 33%;
-    border-right: 0.5px solid var(--snow-ash);
+    border-right: 0.5px solid var(--color-5);
     justify-content: space-evenly;
     align-items: center;
     overflow-wrap: break-word;
@@ -44,7 +45,7 @@ div.footer__content-map {
     min-height: 400px;
     width: 33%;
     min-width: 250px;
-    border-right: 0.5px solid var(--snow-ash);
+    border-right: 0.5px solid var(--color-5);
 }
 
 ul.footer__content-map_list {
@@ -66,14 +67,13 @@ div.footer__content-contact_us._show {
     align-items: center;
     top: 0;
     left: 0;
-    background-color: var(--color-2-transparent);
+    background-color: var(--color-transparent-2);
     z-index: 1400;
     width: 100%;
 }
 
 div.footer__content-contact_us._show  div#_contact_us {
     border-radius: 5px;
-    box-shadow: 0 4px 20px var(--color-black);
 }
 
 div.footer__content-contact_us {
@@ -93,7 +93,7 @@ div.footer__content-contact_us {
 
     div.footer__content-contact_us {
         width: 100%;
-        border-bottom: 0.5px solid var(--snow-ash);
+        border-bottom: 0.5px solid var(--color-5);
         padding-bottom: 2%;
     }
 
@@ -105,6 +105,6 @@ div.footer__content-contact_us {
     div.footer__content-map {
         width: 100%;
         border-right: unset;
-        border-bottom: 0.5px solid var(--snow-ash);
+        border-bottom: 0.5px solid var(--color-5);
     }
 }

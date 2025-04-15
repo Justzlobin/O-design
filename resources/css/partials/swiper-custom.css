@@ -55,12 +55,12 @@ div#_project_thumb_swiper .swiper-slide-thumb-active {
 }
 
 .swiper-pagination-progressbar-fill {
-    background: var(--snow-ash) !important;
+    background: var(--color-1) !important;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--snow-ash) !important;
+    color: var(--color-1) !important;
 }
 
 .swiper-button-next::after,

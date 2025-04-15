@@ -28,8 +28,8 @@
             </swiper-container>
 
             <div class="main__banner-buttons fx-row">
-                <a id="_main__banner_projects_btn" class="f-500 f-s-20 txt-col-white" href="{{route('projects')}}">Проєкти</a>
-                <button id="_main__banner_contact_us_btn" class="f-500 f-s-20 txt-col-white">Контакти</button>
+                <a id="_main__banner_projects_btn" class="f-500 f-s-20" href="{{route('projects')}}">Проєкти</a>
+                <button id="_main__banner_contact_us_btn" class="f-500 f-s-20">Контакти</button>
             </div>
         </div>
         <div class="main__banner-underline"></div>

@@ -13,7 +13,7 @@ div#_contact_us {
 }
 
 div._contact_us__title {
-    color: var(--snow-ash);
+    color: var(--color-5);
     font-size: 25px;
     font-weight: 500;
     text-transform: uppercase;
@@ -29,10 +29,11 @@ form#_contact_us_form {
 
 ._contact_us_input_wrap {
     width: 100%;
-    border-bottom: 2px solid var(--snow-ash);
     height: 30px;
     display: flex;
     align-items: center;
+    border-bottom: 2px solid var(--color-5);
+
 }
 
 ._contact_us_input_wrap._invalid {
@@ -46,6 +47,7 @@ form#_contact_us_form {
 ._contact_us_input {
     width: 100%;
     transition: background-color 5000s;
+    color: var(--color-5);
 }
 
 div._contact_us_upload_file {
@@ -55,9 +57,9 @@ div._contact_us_upload_file {
 }
 
 button#_file_upload_btn, button#_file_upload_clean_btn, button#_form_btn_submit {
-    border: 2px solid var(--snow-ash);
+    border: 2px solid var(--color-5);
     cursor: pointer;
-    color: var(--snow-ash);
+    color: var(--color-5);
     /*background-color: var(--snow-ash);*/
 }
 

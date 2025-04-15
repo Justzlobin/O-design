@@ -1,13 +1,14 @@
 header#header {
     width: 100%;
     height: var(--header-desktop-height);
-    background: rgba(0, 0, 0, .5);
+    background: var(--color-1);
     position: fixed;
     top: 0;
-    box-shadow: 0 4px 20px var(--snow-ash);
+    box-shadow: 0 4px 20px var(--color-5);
     z-index: 1050;
     justify-content: center;
     align-items: center;
+    color: var(--color-5);
 }
 
 div.header__slogan {
@@ -15,7 +16,8 @@ div.header__slogan {
     align-items: center;
     width: 100%;
     height: var(--header-slogan-height);
-    background: var(--color-black);
+    background: var(--color-black) !important;
+    color: var(--color-white) !important;
 }
 
 div.header__content {
@@ -75,8 +77,8 @@ div.mobile__menu span.bar {
     left: 50%;
     border-radius: 4px;
     transform: translate(-50%, -50%);
-    background-color: var(--snow-ash);
     transition: all 0.3s ease-in-out;
+    background: var(--color-5);
 }
 
 div.mobile__menu span.bar:nth-of-type(2) {
@@ -145,13 +147,12 @@ div#_header__menu_content {
 }
 
 ul.header__menu {
-    background-color: rgba(0,0,0,.5);
+    background-color: var(--color-1);
     overflow: hidden;
     height: 0;
     width: 100%;
     max-width: 400px;
     max-height: 400px;
-    box-shadow: 0 4px 20px var(--snow-ash);
     transition: all .4s ease;
     opacity: 0;
     padding: 0;
@@ -173,7 +174,7 @@ div#_main_container {
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #333333;
+    background: var(--color-2);
 }
 
 div#_contact_us_modal {
@@ -187,16 +188,72 @@ div#_contact_us_modal {
     height: 0;
     overflow: hidden;
     width: 100%;
-    background: var(--color-2-transparent);
+    background: var(--color-1);
     transition: all .5s ease-in-out;
     opacity: 0;
     padding: 0 2%;
+    color: var(--color-5) ;
 }
 
 div#_contact_us_modal._show {
     height: 100vh;
     opacity: 1;
     padding-top: var(--header-desktop-height);
+}
+
+/* Контейнер для перемикача */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Стилі для перемикача */
+.theme-switch {
+    position: relative;
+    width: 70px;
+    height: 34px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-5);
+    border-radius: 34px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: var(--color-1);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+input:checked + .slider {
+    background: var(--color-5)
+}
+
+input:checked + .slider:before {
+    transform: translateX(36px);
+}
+
+.slider, .slider:before, .slider:after {
+    transition: all 0.4s ease;
 }
 
 @media (max-width: 1450px) {

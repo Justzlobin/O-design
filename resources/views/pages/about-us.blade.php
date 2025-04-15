@@ -12,7 +12,7 @@
 
 @section('content')
 
-    <div id="_about_us__content" class="fx-col txt-col-white">
+    <div id="_about_us__content" class="fx-col">
         <section class="title-section fx-col">
             <div class="title-section__content fx-col">
                 <div class="decorate-line _left"></div>

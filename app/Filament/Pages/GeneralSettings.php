@@ -31,25 +31,82 @@ class GeneralSettings extends SettingsPage
                         ->required(),
                     Forms\Components\TextInput::make('email')
                         ->label('Пошта')
-                        ->dehydrateStateUsing(fn ($state) => str_replace('@', '<wbr>@', $state))
-                        ->formatStateUsing(fn ($state) => str_replace('<wbr>@', '@', $state))
+                        ->dehydrateStateUsing(fn($state) => str_replace('@', '<wbr>@', $state))
+                        ->formatStateUsing(fn($state) => str_replace('<wbr>@', '@', $state))
                         ->email()
                         ->required(),
-                    Forms\Components\ColorPicker::make('color_1')
-                        ->label('Колір 1')
-                        ->hint('Початково - білий')
-                        ->default('#fff')
-                        ->required(),
-                    Forms\Components\ColorPicker::make('color_2')
-                        ->label('Колір 2')
-                        ->hint('Початково - Чорний')
-                        ->default('#000')
-                        ->required(),
-                    Forms\Components\ColorPicker::make('color_2_transparent')
-                        ->label('Колір 2 - прозорий')
-                        ->default('#000')
-                        ->rgba()
-                        ->required(),
+
+                    Forms\Components\Grid::make()->schema([
+                        Forms\Components\Section::make()->schema([
+                            Forms\Components\ColorPicker::make('color_1')
+                                ->label('Основний колір 1')
+                                ->hint('Білий')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('color_2')
+                                ->label('Основний колір 2')
+                                ->hint('Сірий')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('color_3')
+                                ->label('Основний колір 3')
+                                ->hint('Чорний')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('color_text_1')
+                                ->label('Текст колір 1')
+                                ->hint('Світлий')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('color_text_2')
+                                ->label('Текст колір 2')
+                                ->hint('Темний')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('color_transparent_1')
+                                ->label('Колір 1 - прозорий')
+                                ->default('0, 0, 0, .5')
+                                ->rgba()
+                                ->required(),
+                            Forms\Components\ColorPicker::make('color_transparent_2')
+                                ->label('Колір 2 - прозорий')
+                                ->rgba()
+                                ->required(),
+                        ])
+                            ->columns(1)
+                            ->columnSpan(1)
+                            ->description('Світла сторона')
+                        ,
+                        Forms\Components\Section::make()->schema([
+                            Forms\Components\ColorPicker::make('dark_color_1')
+                                ->label('Колір 1')
+                                ->hint('Початково - білий')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('dark_color_2')
+                                ->label('Колір 2')
+                                ->hint('Початково - Чорний')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('dark_color_3')
+                                ->label('Колір 2')
+                                ->hint('Початково - Чорний')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('dark_color_text_1')
+                                ->label('Колір 2')
+                                ->hint('Початково - Чорний')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('dark_color_text_2')
+                                ->label('Колір 2')
+                                ->hint('Початково - Чорний')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('dark_color_transparent_1')
+                                ->label('Колір 2 - прозорий')
+                                ->rgba()
+                                ->required(),
+                            Forms\Components\ColorPicker::make('dark_color_transparent_2')
+                                ->label('Колір 2 - прозорий')
+                                ->rgba()
+                                ->required(),
+                        ])
+                            ->columns(1)
+                            ->columnSpan(1)
+                            ->description('Темна сторона')
+
+                    ])
                 ])
             ]);
     }

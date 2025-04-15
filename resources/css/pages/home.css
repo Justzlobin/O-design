@@ -43,11 +43,13 @@
     height: 100%;
     border-radius: 1px;
     cursor: pointer;
-    background: rgba(0, 0, 0, 30%);
+    background: var(--color-1);
     /*border: 1px transparent;*/
     text-transform: uppercase;
     padding: 0 2%;
-    border: 1px solid var(--snow-ash);
+    border: 1px solid var(--color-5);
+    color: var(--color-5);
+    opacity: .8;
 }
 
 #_main__banner_projects_btn {
@@ -136,14 +138,14 @@ div.main__content-item:hover span {
 div._main__content_image {
     height: 100%;
     width: 100%;
-    background: var(--snow-ash);
+    background: var(--color-1);
 }
 
 span.main__content-item_title {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    color: var(--snow-ash);
+    color: var(--color-white);
     text-transform: uppercase;
     font-style: normal;
     width: calc(100% - 40px);
@@ -174,7 +176,7 @@ span.main__content-item_title {
 
     button#_main__banner_contact_us_btn,
     a#_main__banner_projects_btn {
-        font-size: var(--font-size-075);
+        font-size: 14px;
     }
 
     span.main__content-item_title {

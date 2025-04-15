@@ -12,6 +12,8 @@
 
 :root {
     --color-red: #7a1b0c;
+    --color-black: #000000;
+    --color-white: #ffffff;
 
     --header-slogan-height: 40px;
     --header-navigation-height: 80px;
@@ -103,7 +105,7 @@
 }
 
 .txt-col-white {
-    color: var(--snow-ash);
+    color: var(--color-1);
 }
 
 .border-rds {
@@ -118,7 +120,7 @@ h1, h2, h3 {
 #loading-screen {
     position: fixed;
     width: 100%;
-    background: var(--snow-ash);
+    background: var(--color-black);
     top: 0;
     left: 0;
     display: flex;
@@ -141,7 +143,7 @@ h1, h2, h3 {
 .spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid var(--color-black);
+    border: 5px solid var(--color-white);
     border-top-color: transparent;
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -155,20 +157,23 @@ h1, h2, h3 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: var(--snow-ash);
+    background: var(--color-1);
     animation: blink-shadow 2s infinite alternate;
-    box-shadow: 0 0 25px var(--color-black)
+}
+
+#call i {
+    color: var(--color-5);
 }
 
 @keyframes blink-shadow {
     0% {
-        box-shadow: 0 0 25px var(--snow-ash);
+        box-shadow: 0 0 25px var(--color-1);
     }
     50% {
-        box-shadow: 0 0 25px var(--color-black);
+        box-shadow: 0 0 25px var(--color-5);
     }
     100% {
-        box-shadow: 0 0 25px var(--snow-ash);
+        box-shadow: 0 0 25px var(--color-1);
     }
 }
 
@@ -198,7 +203,6 @@ input, textarea, button {
     user-select: none;
     outline: none;
     background-color: transparent;
-    color: var(--color-black);
     appearance: none;
     border: none;
     padding: 0;
@@ -208,3 +212,4 @@ input, textarea, button {
 body._no_scroll {
     overflow: hidden;
 }
+
