@@ -66,7 +66,7 @@ $(document)
 
 $('.mobile__menu')
     .on('click', function () {
-        $('.submenu_wrap').removeClass('menu_show')
+        // $('.submenu_wrap').removeClass('menu_show')
         $(this).toggleClass('active');
         $('.header__menu').toggleClass('mobile_show');
         $('.menu__item--content').removeClass('active')
@@ -226,3 +226,16 @@ toggleSwitch.addEventListener('change', function(e) {
         localStorage.setItem('theme', 'light');
     }
 });
+
+document.querySelectorAll('.plan__btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        let contactUsModal = document.getElementById('_contact_us_modal');
+
+        if (contactUsModal.children.length === 0) {
+            contactUsModal.appendChild(contactUsFormDiv.cloneNode(true))
+            contactUsModal.classList.add('_show')
+        }
+
+        document.querySelector('body').classList.add('_no_scroll')
+    })
+})

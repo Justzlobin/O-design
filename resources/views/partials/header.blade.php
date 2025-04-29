@@ -29,6 +29,7 @@
 
     <div id="_header__menu_overlay">
         <div id="_header__menu_content">
+            <div class="header__menu--modal fx-col flex-center">
             <ul class="header__menu fx-col flex-center">
                 <li class="_header__menu_item f-s-20 f-500">
                     <a href="{{route('home')}}" title="home">
@@ -43,6 +44,20 @@
                     </li>
                 @endforeach
             </ul>
+            <div class="header__socials _mobile fx-row f-s-32">
+                @foreach($socials as $social)
+                    <a class="header__socials-item" href="{{$social->url}}" title="{{$social->title}}" target="_blank">
+                        <i class="{{$social->icon}}"></i>
+                    </a>
+                @endforeach
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 </header>

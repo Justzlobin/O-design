@@ -1,4 +1,4 @@
-div#_contact_us {
+#_contact_us {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -94,4 +94,10 @@ button#_form_btn_submit {
 
 button#_file_upload_clean_btn:hover, button#_file_upload_btn:hover, button#_form_btn_submit:hover {
     transition: all .2s ease-in-out;
+}
+
+@media  (max-width: 700px) {
+    #_contact_us {
+        padding: 0;
+    }
 }

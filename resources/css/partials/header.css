@@ -18,6 +18,7 @@ div.header__slogan {
     height: var(--header-slogan-height);
     background: var(--color-black) !important;
     color: var(--color-white) !important;
+    display: none !important;
 }
 
 div.header__content {
@@ -94,11 +95,14 @@ div.header__content-logo {
     text-transform: uppercase;
 }
 
+.header__socials._mobile {
+    display: none;
+}
+
 div.header__socials {
     gap: 7px;
     align-items: center;
     width: auto;
-    height: 100%;
 }
 
 a.header__socials-item, a#_tel {
@@ -112,24 +116,24 @@ a.header__socials-item, a#_tel {
     /*color: var(--color-black);*/
 }
 
-a.header__socials-item:hover, a#_tel:hover {
+.header__socials-item:hover, a#_tel:hover {
     transform: scale(1.08);
     transition: transform .3s ease-in-out;
 }
 
-div#_header__menu_overlay._show {
+#_header__menu_overlay._show {
     height: calc(100svh - var(--header-desktop-height)) !important;
     /*background-color: rgba(0,0,0,.3);*/
     overflow: auto !important;
 }
 
-div#_header__menu_overlay._show ul.header__menu {
-    height: 500px !important;
+#_header__menu_overlay._show .header__menu--modal {
+    height: 320px !important;
     overflow: auto !important;
     opacity: 1 !important;
 }
 
-div#_header__menu_overlay {
+#_header__menu_overlay {
     display: flex;
     justify-content: center;
     height: 0;
@@ -141,25 +145,30 @@ div#_header__menu_overlay {
     transition: all 0.5s;
 }
 
-div#_header__menu_content {
+#_header__menu_content {
     width: 100%;
     max-width: var(--max-content-width);
 }
 
-ul.header__menu {
+.header__menu--modal {
     background-color: var(--color-1);
     overflow: hidden;
     height: 0;
     width: 100%;
     max-width: 400px;
-    max-height: 400px;
+    max-height: 320px;
     transition: all .4s ease;
     opacity: 0;
-    padding: 0;
-    margin: 0;
+    gap: 20px;
 }
 
-li._header__menu_item {
+
+.header__menu {
+    margin: 0;
+    padding: 0;
+}
+
+._header__menu_item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,7 +176,7 @@ li._header__menu_item {
     text-transform: uppercase;
 }
 
-div#_main_container {
+#_main_container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -177,7 +186,7 @@ div#_main_container {
     background: var(--color-2);
 }
 
-div#_contact_us_modal {
+#_contact_us_modal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,14 +210,12 @@ div#_contact_us_modal._show {
     padding-top: var(--header-desktop-height);
 }
 
-/* Контейнер для перемикача */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Стилі для перемикача */
 .theme-switch {
     position: relative;
     width: 70px;
@@ -263,22 +270,37 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 1050px) {
-    div.header__slogan {
-        font-size: 13px;
-    }
+    /*.theme-switch {*/
+    /*    width: 50px;*/
+    /*    height: 25px;*/
+    /*}*/
 
-    div.header__content-logo {
-        font-size: 24px;
-    }
+    /*input:checked + .slider:before {*/
+    /*    transform: translateX(18px);*/
+    /*}*/
 
-    div.header__socials {
-        font-size: 24px;
-        gap: unset;
-    }
+    /*.slider:before {*/
+    /*    width: 21px;*/
+    /*    height: 21px;*/
+    /*    bottom: 2px;*/
+    /*}*/
+
+    /*div.header__slogan {*/
+    /*    font-size: 13px;*/
+    /*}*/
+
+    /*div.header__content-logo {*/
+    /*    font-size: 24px;*/
+    /*}*/
+
+    /*div.header__socials {*/
+    /*    font-size: 24px;*/
+    /*    gap: unset;*/
+    /*}*/
 
     :root {
-        --header-slogan-height: 25px !important;
-        --header-navigation-height: 40px !important;
+        /*--header-slogan-height: 25px !important;*/
+        --header-navigation-height: 50px !important;
         --header-desktop-height: calc(var(--header-slogan-height) + var(--header-navigation-height)) !important;
     }
 }
@@ -289,9 +311,34 @@ input:checked + .slider:before {
     }
 }
 
+@media (max-width: 600px) {
+    .header__socials._mobile {
+        display: flex;
+    }
+
+    .header__socials:not(._mobile) {
+        display: none;
+    }
+
+    div.header__content-logo_burger {
+        width: 100%;
+        justify-content: center;
+        position: relative;
+    }
+
+    div.mobile__menu {
+        position: absolute;
+        left: 0;
+    }
+
+    div.header__menu--modal {
+        max-width: 600px;
+    }
+}
+
 @media (max-width: 425px) {
     div.header__content-logo {
-        display: none;
+        font-size: 27px;
     }
 
     li._header__menu_item {

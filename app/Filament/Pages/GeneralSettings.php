@@ -50,6 +50,14 @@ class GeneralSettings extends SettingsPage
                                 ->label('Основний колір 3')
                                 ->hint('Чорний')
                                 ->required(),
+                            Forms\Components\ColorPicker::make('color_4')
+                                ->label('Основний колір 4')
+                                ->hint('Чорний')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('color_5')
+                                ->label('Основний колір 5')
+                                ->hint('Чорний')
+                                ->required(),
                             Forms\Components\ColorPicker::make('color_text_1')
                                 ->label('Текст колір 1')
                                 ->hint('Світлий')
@@ -82,12 +90,16 @@ class GeneralSettings extends SettingsPage
                                 ->hint('Початково - Чорний')
                                 ->required(),
                             Forms\Components\ColorPicker::make('dark_color_3')
-                                ->label('Колір 2')
-                                ->hint('Початково - Чорний')
+                                ->label('Колір 3')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('dark_color_4')
+                                ->label('Колір 4')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('dark_color_5')
+                                ->label('Колір 5')
                                 ->required(),
                             Forms\Components\ColorPicker::make('dark_color_text_1')
                                 ->label('Колір 2')
-                                ->hint('Початково - Чорний')
                                 ->required(),
                             Forms\Components\ColorPicker::make('dark_color_text_2')
                                 ->label('Колір 2')

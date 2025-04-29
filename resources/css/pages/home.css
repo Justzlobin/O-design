@@ -1,8 +1,8 @@
 .main__banner {
     display: flex;
     flex-direction: column;
-    /*margin-top: var(--header-desktop-height);*/
-    margin-top: var(--header-slogan-height);
+    margin-top: var(--header-desktop-height);
+    /*margin-top: var(--header-slogan-height);*/
     width: 100%;
     min-width: 100%;
     /*background: var(--snow-ash);*/
@@ -35,26 +35,31 @@
     padding: 0 2%;
 }
 
-#_main__banner_contact_us_btn,
-#_main__banner_projects_btn {
+#_main__banner_projects_btn,
+#_main__banner_contact_us_btn {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    border-radius: 1px;
+    border-radius: 4px;
     cursor: pointer;
     background: var(--color-1);
     /*border: 1px transparent;*/
     text-transform: uppercase;
-    padding: 0 2%;
     border: 1px solid var(--color-5);
     color: var(--color-5);
-    opacity: .8;
+    opacity: 0;
+    transition: opacity .8s ease-in-out;
+}
+
+.main__banner-content:hover #_main__banner_contact_us_btn {
+    opacity: 1;
 }
 
 #_main__banner_projects_btn {
     width: 100%;
     max-width: 400px;
+    display: none !important;
 }
 
 #_main__banner_contact_us_btn {
@@ -76,7 +81,7 @@
     min-height: max-content;
     overflow: auto;
     scrollbar-width: none;
-    padding: 20px 5px;
+    padding: 5px 5px 20px 5px;
 }
 
 .main__content-grid {
@@ -107,7 +112,7 @@
     transition: background-size .5s ease-in-out;
 }
 
-div.main__content-item::before {
+.main__content-item::before {
     content: '';
     display: block;
     position: absolute;
@@ -117,31 +122,31 @@ div.main__content-item::before {
     transition: all .5s;
 }
 
-div.main__content-item:hover::before {
+.main__content-item:hover::before {
     opacity: .4;
 }
 
-div.main__content-item a span,
-div.main__content-item span {
+.main__content-item a span,
+.main__content-item span {
     transition: padding-left 0.5s ease;
 }
 
-div.main__content-item:hover {
+.main__content-item:hover {
     background-size: 110% 110%;
 }
 
-div.main__content-item:hover a span,
-div.main__content-item:hover span {
+.main__content-item:hover a span,
+.main__content-item:hover span {
     padding-left: 20px;
 }
 
-div._main__content_image {
+._main__content_image {
     height: 100%;
     width: 100%;
     background: var(--color-1);
 }
 
-span.main__content-item_title {
+.main__content-item_title {
     position: absolute;
     bottom: 20px;
     left: 20px;

@@ -15,7 +15,7 @@
     --color-black: #000000;
     --color-white: #ffffff;
 
-    --header-slogan-height: 40px;
+    --header-slogan-height: 0px;
     --header-navigation-height: 80px;
     --header-desktop-height: calc(var(--header-slogan-height) + var(--header-navigation-height));
 
