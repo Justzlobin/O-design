@@ -12,13 +12,13 @@
             <ul class="footer__content-map_list">
                 <li class="_footer__menu_item fx-row flex-center">
                     <a href="{{route('home')}}" title="home">
-                        home
+                        @lang('home.menu.home')
                     </a>
                 </li>
                 @foreach($menus as $menu)
                     <li class="_footer__menu_item fx-row flex-center">
                         <a href="{{$menu->link}}" title="{{$menu->title}}">
-                            {{$menu->title}}
+                            @lang('home.menu.' . $menu->title)
                         </a>
                     </li>
                 @endforeach

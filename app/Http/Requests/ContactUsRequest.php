@@ -22,37 +22,27 @@ class ContactUsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'nullable|string|max:255',
-            'phone' => 'required|regex:/^\+?[0-9]{10,15}$/',
+            'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:17|regex:/^\+380\(\d{2}\)\d{3}-\d{2}-\d{2}$/',
             'e-mail' => 'nullable|email|max:255',
             'comment' => 'nullable|string|max:1000',
-            'file' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:10240',
         ];
     }
 
     public function messages()
     {
         return [
-            'first_name.required' => 'First name is required.',
-            'first_name.string' => 'First name must be a valid string.',
-            'first_name.max' => 'First name can\'t exceed 255 characters.',
+            'name.required' => __('contact-us.validation.name_required'),
+            'name.string' => __('contact-us.validation.name_string'),
+            'name.max' => __('contact-us.validation.name_max'),
 
-            'last_name.required' => 'Last name is required.',
-            'last_name.string' => 'Last name must be a valid string.',
-            'last_name.max' => 'Last name can\'t exceed 255 characters.',
+            'phone.required' => __('contact-us.validation.phone_required'),
+            'phone.regex' => __('contact-us.validation.phone_format'),
 
-            'phone.required' => 'Phone number is required.',
-            'phone.regex' => 'Phone number is invalid. Please provide a valid phone number.',
+            'e-mail.email' => __('contact-us.validation.email_format'),
+            'e-mail.max' => __('contact-us.validation.email_max'),
 
-            'e-mail.required' => 'Email is required.',
-            'e-mail.email' => 'Please provide a valid email address.',
-            'e-mail.max' => 'Email can\'t exceed 255 characters.',
-
-            'comment.max' => 'Comment can\'t exceed 1000 characters.',
-
-            'file.mimes' => 'Allowed file types are jpg, jpeg, png, and pdf.',
-            'file.max' => 'File size can\'t exceed 10MB.',
+            'comment.max' => __('contact-us.validation.comment_max'),
         ];
     }
 }

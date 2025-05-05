@@ -32,7 +32,7 @@
                 <button id="_main__banner_contact_us_btn" class="f-500 f-s-20">Контакти</button>
             </div>
         </div>
-        <div class="main__banner-underline"></div>
+{{--        <div class="main__banner-underline"></div>--}}
     </section>
 
     <section class="main__content fx-col flex-center">
@@ -41,14 +41,14 @@
                 @if ($menu->background_type === 'gradient')
                     <a href="{{$menu->link}}">
                         <div class="main__content-item border-rds" style="background: var(--home-item-graient)">
-                            <span class="main__content-item_title f-s-30 f-600">{{$menu->title}}</span>
+                            <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
                         </div>
                     </a>
                 @elseif ($menu->background_type === 'image')
                     <a href="{{$menu->link}}">
                         <div class="main__content-item border-rds"
                              style="background-image: url({{$menu->getFirstMediaUrl()}});">
-                            <span class="main__content-item_title f-s-30 f-600">{{$menu->title}}</span>
+                            <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
                         </div>
                     </a>
                 @endif

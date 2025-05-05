@@ -28,6 +28,7 @@
     align-items: center;
     overflow-wrap: break-word;
     padding: 0 10px;
+    gap: 20px;
 }
 
 .footer__info--logo {

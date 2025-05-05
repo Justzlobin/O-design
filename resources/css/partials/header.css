@@ -214,6 +214,7 @@ div#_contact_us_modal._show {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-left: 25px;
 }
 
 .theme-switch {

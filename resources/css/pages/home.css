@@ -8,6 +8,7 @@
     /*background: var(--snow-ash);*/
     overflow: hidden;
     z-index: 1000;
+    box-shadow: 0 4px 20px var(--color-5);
 }
 
 .main__banner-content {
@@ -81,7 +82,7 @@
     min-height: max-content;
     overflow: auto;
     scrollbar-width: none;
-    padding: 5px 5px 20px 5px;
+    padding: 35px 0;
 }
 
 .main__content-grid {
@@ -97,6 +98,7 @@
 
 .main__content-grid a {
     width: 100%;
+    border-radius: 5px;
 }
 
 .main__content-item {

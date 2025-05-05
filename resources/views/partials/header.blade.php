@@ -33,13 +33,14 @@
             <ul class="header__menu fx-col flex-center">
                 <li class="_header__menu_item f-s-20 f-500">
                     <a href="{{route('home')}}" title="home">
-                        home
+                        @lang('home.menu.home')
                     </a>
                 </li>
                 @foreach($menus as $menu)
                     <li class="_header__menu_item f-s-20 f-500">
                         <a href="{{$menu->link}}" title="{{$menu->title}}">
-                            {{$menu->title}}
+{{--                            {{$menu->title}}--}}
+                            @lang('home.menu.' . $menu->title)
                         </a>
                     </li>
                 @endforeach

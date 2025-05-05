@@ -13,8 +13,8 @@ return [
     */
 
     'available_locales' => [
-        ['code' => 'ua', 'name' => 'Ukraine', 'flag' => 'ua'],
-        // ['code' => 'nl', 'name' => 'Nederlands', 'flag' => 'nl'] ,
+        ['code' => 'uk', 'name' => 'Ukraine', 'flag' => 'uk'],
+         ['code' => 'en', 'name' => 'English', 'flag' => 'gb'] ,
     ],
 
     /*

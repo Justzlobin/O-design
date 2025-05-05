@@ -1,45 +1,50 @@
 <div id="_contact_us" class="">
-    <div class="_contact_us__title ">don't be shy say hi</div>
+    <div class="_contact_us__title ">@lang('contact-us.form.title')</div>
     <form class="border-rds" id="_contact_us_form"
           action="{{ route('contact') }}"
           method="POST" enctype="multipart/form-data">
         @csrf
 
-        <div class="_contact_us_input_wrap @error('first_name') _invalid @enderror">
-            <input class="_contact_us_input " type="text" name="first_name" id="_first_name"
-                   value="{{old('first_name')}}" placeholder="First Name">
+        <div class="_contact_us_input_wrap @error('name') _invalid @enderror">
+            @error('name')
+                <div class="_contact_us_error">{{ $message }}</div>
+            @enderror
+            <input class="_contact_us_input" type="text" name="name"
+                   value="{{ old('name') }}"
+                   placeholder="@error('name') {{ $message }} @else @lang('contact-us.form.name_placeholder') @enderror"
+                   pattern=".*\S.*"
+                   required>
         </div>
-        <div class="_contact_us_input_wrap @error('last_name') _invalid @enderror">
-            <input class="_contact_us_input " type="text" name="last_name" id="_last_name"
-                   value="{{old('last_name')}}" placeholder="Last Name">
-        </div>
+
         <div class="_contact_us_input_wrap @error('phone') _invalid @enderror">
+            @error('phone')
+                <div class="_contact_us_error">{{ $message }}</div>
+            @enderror
             <input class="_contact_us_input " type="tel"
-                   data-phonemask-iso="ua"
-                   data-phonemask-code="+380"
-                   data-phonemask-mask="+380(99) 999-99-99"
-                   maxlength="14"
-                   data-phonemask-without-code="(99) 999-99-99"
-                   name="phone" id="_form_tel" autocomplete="tel" value="{{old('phone')}}"
-                   placeholder="Tel: 0969998877">
+                   name="phone" id="_form_tel" autocomplete="tel" value="{{ old('phone') }}"
+                   placeholder="@error('phone') {{ $message }} @else @lang('contact-us.form.phone_placeholder') @enderror" required>
         </div>
+
         <div class="_contact_us_input_wrap  @error('e-mail') _invalid @enderror">
+            @error('e-mail')
+                <div class="_contact_us_error">{{ $message }}</div>
+            @enderror
             <input class="_contact_us_input " data-phonemask-iso="ua" type="text" name="e-mail"
-                   id="_form_mail" value="{{old('e-mail')}}" placeholder="E-mail">
+                   id="_form_mail" value="{{ old('e-mail') }}"
+                   placeholder="@error('e-mail') {{ $message }} @else @lang('contact-us.form.email_placeholder') @enderror">
         </div>
+
+
         <div class="_contact_us_input_wrap comment @error('comment') _invalid @enderror">
-            <textarea class="_contact_us_input " type="text" name="comment" id="_form_comment"
-                      placeholder="Comment"></textarea>
+            @error('comment')
+                <div class="_contact_us_error">{{ $message }}</div>
+            @enderror
+            <textarea class="_contact_us_input " type="text" name="comment"
+                      placeholder="@error('comment') {{ $message }} @else @lang('contact-us.form.comment_placeholder') @enderror"></textarea>
         </div>
 
-        <div class="_contact_us_upload_file">
-            <input type="file" name="file" id="_file" placeholder="File" hidden>
-            <button id="_file_upload_btn" class="@error('file') _invalid @enderror">Add file</button>
-            <button id="_file_upload_clean_btn"><i class="fa fa-thin fa-xmark 2xl"></i></button>
-        </div>
-
-        <button id="_form_btn_submit" type="submit">
-            <i class="fa fa-arrow-right"></i>
+        <button id="_form_btn_submit" type="submit" class="fx-row flex-center">
+            <span class="f-s-20 f-500">@lang('contact-us.form.btn')</span>
         </button>
     </form>
 </div>
