@@ -9,14 +9,17 @@
     overflow: hidden;
     z-index: 1000;
     box-shadow: 0 4px 20px var(--color-5);
+    height: calc(100vh - var(--header-desktop-height));
 }
 
 .main__banner-content {
     max-width: 100vw;
     width: 100%;
-    aspect-ratio: 1 / .56;
+    height: 100%;
+    /*aspect-ratio: 1 / .56;*/
     /*max-height: calc(100svh - var(--header-desktop-height));*/
-    max-height: 65svh;
+    /*max-height: 65svh;*/
+
     position: relative;
 }
 
@@ -47,7 +50,7 @@
     background: var(--color-1);
     /*border: 1px transparent;*/
     text-transform: uppercase;
-    border: 1px solid var(--color-5);
+    /*border: 1px solid var(--color-5);*/
     color: var(--color-5);
     opacity: 0;
     transition: opacity .8s ease-in-out;

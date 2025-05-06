@@ -271,34 +271,6 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 1050px) {
-    /*.theme-switch {*/
-    /*    width: 50px;*/
-    /*    height: 25px;*/
-    /*}*/
-
-    /*input:checked + .slider:before {*/
-    /*    transform: translateX(18px);*/
-    /*}*/
-
-    /*.slider:before {*/
-    /*    width: 21px;*/
-    /*    height: 21px;*/
-    /*    bottom: 2px;*/
-    /*}*/
-
-    /*div.header__slogan {*/
-    /*    font-size: 13px;*/
-    /*}*/
-
-    /*div.header__content-logo {*/
-    /*    font-size: 24px;*/
-    /*}*/
-
-    /*div.header__socials {*/
-    /*    font-size: 24px;*/
-    /*    gap: unset;*/
-    /*}*/
-
     :root {
         /*--header-slogan-height: 25px !important;*/
         --header-navigation-height: 50px !important;

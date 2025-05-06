@@ -46,7 +46,8 @@ form#_contact_us_form {
 ._contact_us_input {
     width: 100%;
     transition: background-color 5000s;
-    color: var(--color-5);
+    color: var(--color-5) !important;
+    -webkit-text-fill-color:  var(--color-5) !important;
 }
 
 div._contact_us_upload_file {

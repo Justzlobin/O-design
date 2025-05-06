@@ -18,6 +18,7 @@
                               free-mode
                               speed="4000"
                               autoplay='{"delay": 300, "disableOnInteraction": false, "pauseOnMouseEnter": true}'
+                              centered-slides="true"
             >
                 @foreach($banners as $banner)
                     <swiper-slide>

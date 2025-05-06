@@ -1,17 +1,17 @@
-div.plans__content {
+.plans__content {
     width: 100%;
     max-width: 1440px;
     height: auto;
     min-height: calc(100svh - var(--header-desktop-height));
     margin-top: var(--header-desktop-height);
+    padding: 35px 0;
 }
 
-div.plans__content-list {
+.plans__content-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: 1fr;
     width: 100%;
-    padding: 20px;
     gap: 30px;
 }
 
@@ -21,8 +21,11 @@ div.plans__content-list {
 }
 
 .plans__item--wrap._promotional {
+    cursor: pointer;
+}
+
+.plans__item--wrap._promotional:hover {
     box-shadow: 0 4px 20px var(--color-5);
-    background: var(--color-5);
 }
 
 .plans__item--title {
@@ -41,14 +44,20 @@ div.plans__content-list {
     border-radius:  0 0 17px 17px;
 }
 
-div.plans__content-item {
+.plans__content-item {
     padding: 20px 0 ;
     height: calc(100% - 70px);
     color: var(--color-1);
     background: var(--color-3);
     border-radius: 17px;
     gap: 10px;
+    cursor: pointer;
 }
+
+.plans__item--wrap:not(._promotional) .plans__content-item:hover {
+    box-shadow: 0 4px 20px var(--color-5);
+}
+
 
 div.plan__header {
     width: 100%;

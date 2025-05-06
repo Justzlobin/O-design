@@ -29,7 +29,7 @@ class ContactUsRequest extends FormRequest
         ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
             'name.required' => __('contact-us.validation.name_required'),
@@ -38,6 +38,7 @@ class ContactUsRequest extends FormRequest
 
             'phone.required' => __('contact-us.validation.phone_required'),
             'phone.regex' => __('contact-us.validation.phone_format'),
+            'phone.max' => __('contact-us.validation.phone_max'),
 
             'e-mail.email' => __('contact-us.validation.email_format'),
             'e-mail.max' => __('contact-us.validation.email_max'),

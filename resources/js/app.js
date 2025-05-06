@@ -135,11 +135,60 @@ function addEventListeners() {
         }
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const notification = document.getElementById('notification');
+        const loader = document.getElementById('loading-screen');
+
+        if (notification) {
+            // Check if loader exists and wait for it to be hidden
+            if (loader) {
+                // Create a MutationObserver to watch for changes to the loader's classList
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.attributeName === 'class' && !loader.classList.contains('_show')) {
+                            // Loader has been hidden, show the notification
+                            notification.style.display = 'block';
+
+                            // Make notification fade out after 5 seconds
+                            setTimeout(function() {
+                                notification.classList.add('fade-out');
+                            }, 5000);
+
+                            // Remove notification from DOM after fade out animation completes
+                            setTimeout(function() {
+                                notification.remove();
+                            }, 5500);
+
+                            // Disconnect the observer since we don't need it anymore
+                            observer.disconnect();
+                        }
+                    });
+                });
+
+                // Start observing the loader element
+                observer.observe(loader, { attributes: true });
+            } else {
+                // If there's no loader, just show the notification directly
+                notification.style.display = 'block';
+
+                // Make notification fade out after 5 seconds
+                setTimeout(function() {
+                    notification.classList.add('fade-out');
+                }, 5000);
+
+                // Remove notification from DOM after fade out animation completes
+                setTimeout(function() {
+                    notification.remove();
+                }, 5500);
+            }
+        }
+    });
+
     // Мобільне меню
     if (DOM.mobileMenu) {
         DOM.mobileMenu.addEventListener('click', () => {
-            // DOM.mobileMenu.classList.toggle('active');
-            // DOM.headerMenu.classList.toggle('mobile_show');
+            DOM.mobileMenu.classList.toggle('active');
+            DOM.headerMenu.classList.toggle('mobile_show');
             // DOM.menuItemContent.forEach(item => item.classList.remove('active'));
             // DOM.decorateLine.classList.toggle('show');
             DOM.body.classList.toggle('_no_scroll');
@@ -190,35 +239,35 @@ function addEventListeners() {
     }
 
     // Обробка завантаження файлів
-    if (DOM.fileUploadBtn) {
-        DOM.fileUploadBtn.addEventListener('click', (e) => {
-            DOM.fileUploadBtn.classList.remove('_invalid');
-            e.preventDefault();
-            DOM.fileInput.click();
-        });
-    }
+    // if (DOM.fileUploadBtn) {
+    //     DOM.fileUploadBtn.addEventListener('click', (e) => {
+    //         DOM.fileUploadBtn.classList.remove('_invalid');
+    //         e.preventDefault();
+    //         DOM.fileInput.click();
+    //     });
+    // }
+    //
+    // if (DOM.fileUploadCleanBtn) {
+    //     DOM.fileUploadCleanBtn.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         if (DOM.fileInput) {
+    //             DOM.fileInput.value = '';
+    //             DOM.fileInput.dispatchEvent(new Event('change'));
+    //         }
+    //     });
+    // }
 
-    if (DOM.fileUploadCleanBtn) {
-        DOM.fileUploadCleanBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (DOM.fileInput) {
-                DOM.fileInput.value = '';
-                DOM.fileInput.dispatchEvent(new Event('change'));
-            }
-        });
-    }
-
-    if (DOM.fileInput) {
-        DOM.fileInput.addEventListener('change', () => {
-            if (DOM.fileInput && DOM.fileInput.files.length > 0) {
-                DOM.fileUploadCleanBtn.classList.add('_show');
-                DOM.fileUploadBtn.textContent = DOM.fileInput.files[0].name;
-            } else {
-                DOM.fileUploadCleanBtn.classList.remove('_show');
-                DOM.fileUploadBtn.textContent = 'Add file';
-            }
-        });
-    }
+    // if (DOM.fileInput) {
+    //     DOM.fileInput.addEventListener('change', () => {
+    //         if (DOM.fileInput && DOM.fileInput.files.length > 0) {
+    //             DOM.fileUploadCleanBtn.classList.add('_show');
+    //             DOM.fileUploadBtn.textContent = DOM.fileInput.files[0].name;
+    //         } else {
+    //             DOM.fileUploadCleanBtn.classList.remove('_show');
+    //             DOM.fileUploadBtn.textContent = 'Add file';
+    //         }
+    //     });
+    // }
 
     // Контактна форма
     if (DOM.contactUsBtn) {
@@ -355,3 +404,5 @@ Inputmask({
     showMaskOnFocus: true,
     clearIncomplete: true
 }).mask(input);
+
+

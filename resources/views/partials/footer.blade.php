@@ -2,7 +2,7 @@
 <footer id="footer">
     <div class="footer__content fx-row">
         <div class="footer__content-info fx-col flex-center">
-            <a class="footer__info--logo  fx-row">{{Str::upper($generalSettings->site_name)}}</a>
+            <a class="footer__info--logo fx-row" href="{{route('home')}}">{{Str::upper($generalSettings->site_name)}}</a>
             <div class="footer__info--contacts  fx-col">
                 <p>Tel: {!! $generalSettings->tel !!}</p>
                 <p>E-mail: {!! $generalSettings->email !!}</p>

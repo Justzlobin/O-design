@@ -16,7 +16,7 @@
     --color-white: #ffffff;
 
     --header-slogan-height: 0px;
-    --header-navigation-height: 80px;
+    --header-navigation-height: 60px;
     --header-desktop-height: calc(var(--header-slogan-height) + var(--header-navigation-height));
 
     --footer-desktop-height: 500px;
@@ -211,5 +211,35 @@ input, textarea, button {
 
 body._no_scroll {
     overflow: hidden;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1500;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: var(--color-5);
+    color: var(--color-1);
+    box-shadow: 0 4px 8px var(--color-5);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    max-width: 350px;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification i {
+    font-size: 1.2rem;
+}
+
+.notification.fade-out {
+    opacity: 0;
 }
 

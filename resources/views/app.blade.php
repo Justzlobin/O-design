@@ -79,6 +79,31 @@
     <div class="spinner"></div>
 </div>
 
+
+{{--TOOLTIP FORM REQUEST STATUS --}}
+@if (session('success'))
+<div id="notification" class="notification" style="display: none; background-color: var(--color-3);">
+    <div class="notification-content">
+        <i class="fa-solid fa-check-circle"></i>
+        <span>{{ session('success') }}</span>
+    </div>
+</div>
+@elseif (session('error'))
+<div id="notification" class="notification" style="display: none;">
+    <div class="notification-content">
+        <i class="fa-solid fa-exclamation-circle"></i>
+        <span>{{ session('error') }}</span>
+    </div>
+</div>
+@elseif ($errors->any())
+<div id="notification" class="notification" style="display: none;">
+    <div class="notification-content">
+        <i class="fa-solid fa-exclamation-circle"></i>
+        <span>{{ $errors->first() }}</span>
+    </div>
+</div>
+@endif
+
 <a href="Tel: {{$generalSettings->tel}}" id="call" class="fx-row flex-center cursor-pointer">
     <i class="fa-solid fa-phone fa-xl"></i>
 </a>

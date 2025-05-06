@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div class="project__content">
+    <div class="project__content fx-col">
         <section class="project__details fx-row">
             <div class="project__details-image fx-col flex-center">
                 <div class="swiper" id="_project_main_swiper">

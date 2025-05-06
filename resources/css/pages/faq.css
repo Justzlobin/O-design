@@ -15,7 +15,7 @@ div#faq__content {
 div.faq__content-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 95%;
+    width: 100%;
     row-gap: 20px;
 }
 

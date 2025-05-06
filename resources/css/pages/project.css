@@ -1,19 +1,20 @@
-div.project__content {
+.project__content {
     margin-top: var(--header-desktop-height);
     justify-content: space-evenly;
     align-items: center;
     height: auto;
     width: 100%;
     max-width: var(--max-content-width);
+    padding: 35px 0;
+    gap: 25px;
 }
 
-section.project__details {
+.project__details {
     justify-content: flex-start;
     align-items: center;
     max-width: 1440px;
     height: auto;
     width: 100%;
-    padding: 25px 1%;
 }
 
 .project__details-image {
@@ -50,12 +51,11 @@ div.project__details-text_desc  {
     overflow-y: scroll;
 }
 
-section.project__others {
-    height: 290px;
-    max-height: 290px;
+.project__others {
+    height: 250px;
+    max-height: 250px;
     width: 100%;
     gap: 10px;
-    padding: 25px 1%;
 }
 
 div.project__others-title {

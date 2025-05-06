@@ -8,6 +8,7 @@ return [
 
         'phone_required' => 'Phone number is required.',
         'phone_format' => 'Please enter a valid Ukrainian phone number in the format +380(XX) XXX-XX-XX.',
+        'phone_max' => 'Maximum phone number length is 17 characters.',
 
         'email_format' => 'Please provide a valid email address.',
         'email_max' => 'Email can\'t exceed 255 characters.',
@@ -17,9 +18,10 @@ return [
     'form' => [
         'title' => 'Contact with me',
         'name_placeholder' => 'Name',
-        'phone_placeholder' => 'Tel: 0969998877',
+        'phone_placeholder' => 'Phone',
         'email_placeholder' => 'E-mail',
         'comment_placeholder' => 'Comment',
-        'btn' => 'Send'
+        'btn' => 'Send',
+        'success_message' => 'Your message has been sent successfully!'
     ],
 ];
