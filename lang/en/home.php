@@ -7,5 +7,6 @@ return [
         'about-us' => 'about us',
         'faq' => 'questions/answers',
         'plans' => 'plans',
-    ]
+    ],
+    'banner_btn' => 'I like that!'
 ];

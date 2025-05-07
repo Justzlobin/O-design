@@ -28,7 +28,7 @@
     align-content: center;
     gap: 2%;
     height: 100%;
-    max-height: 50px;
+    max-height: 60px;
     position: absolute;
     left: 50%;
     top: 75%;
@@ -47,13 +47,15 @@
     height: 100%;
     border-radius: 4px;
     cursor: pointer;
-    background: var(--color-1);
+    /*background: var(--color-1);*/
     /*border: 1px transparent;*/
     text-transform: uppercase;
     /*border: 1px solid var(--color-5);*/
-    color: var(--color-5);
+    /*color: var(--color-5);*/
     opacity: 0;
     transition: opacity .8s ease-in-out;
+    background: rgba(255, 255, 255, .8);
+    color: #333333;
 }
 
 .main__banner-content:hover #_main__banner_contact_us_btn {
@@ -68,7 +70,7 @@
 
 #_main__banner_contact_us_btn {
     width: 100%;
-    max-width: 200px;
+    max-width: 600px;
 }
 
 .main__banner-underline {

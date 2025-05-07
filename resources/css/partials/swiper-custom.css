@@ -6,10 +6,6 @@ swiper-container {
     height: 100%;
 }
 
-swiper-slide {
-    width: unset !important;
-}
-
 swiper-slide img {
     height: 100%;
     width: 100%;
@@ -66,4 +62,10 @@ div#_project_thumb_swiper .swiper-slide-thumb-active {
 .swiper-button-next::after,
 .swiper-button-prev::after {
     font-size: 30px !important;
+}
+
+@media (max-width: 1600px) {
+    swiper-slide {
+        width: unset !important;
+    }
 }

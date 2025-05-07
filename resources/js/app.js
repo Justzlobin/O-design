@@ -133,6 +133,8 @@ function addEventListeners() {
                 }
             });
         }
+
+        activateInputMast()
     });
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -274,6 +276,7 @@ function addEventListeners() {
         DOM.contactUsBtn.addEventListener('click', (e) => {
             e.preventDefault();
             showContactForm();
+            activateInputMast()
         });
     }
 
@@ -391,18 +394,19 @@ addEventListeners();
 // Експорт для можливого використання в інших модулях
 export { swiperInstances, generateHash };
 
-const input = document.getElementById('_form_tel')
+function activateInputMast() {
+    Inputmask({
+        mask: [
+            "+380(99)999-99-99",
+            // "0(99)999-99-99",
+            // "+38 099 999 99 99",
+            // "380999999999"
+        ],
+        showMaskOnHover: false,
+        showMaskOnFocus: true,
+        clearIncomplete: true
+    }).mask('._contact_us_input._tel');
+}
 
-Inputmask({
-    mask: [
-        "+380(99)999-99-99",
-        // "0(99)999-99-99",
-        // "+38 099 999 99 99",
-        // "380999999999"
-    ],
-    showMaskOnHover: false,
-    showMaskOnFocus: true,
-    clearIncomplete: true
-}).mask(input);
 
 

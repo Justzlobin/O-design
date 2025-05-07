@@ -6,4 +6,5 @@ return [
     'menu.about-us' => 'про нас',
     'menu.faq' => 'питання/відповіді',
     'menu.plans' => 'тарифи',
+    'banner_btn' => 'Мені подобається!'
 ];

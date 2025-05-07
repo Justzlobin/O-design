@@ -221,12 +221,15 @@ body._no_scroll {
     z-index: 1500;
     padding: 15px 20px;
     border-radius: 5px;
-    background-color: var(--color-5);
-    color: var(--color-1);
+    /*background-color: var(--color-5);*/
+    /*color: var(--color-1);*/
     box-shadow: 0 4px 8px var(--color-5);
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
     max-width: 350px;
+
+    background: rgba(255, 255, 255, .8);
+    color: #333333;
 }
 
 .notification-content {
@@ -241,5 +244,18 @@ body._no_scroll {
 
 .notification.fade-out {
     opacity: 0;
+}
+
+
+@media (max-width: 1440px) {
+    section.main__content,
+    section.projects__content,
+    section.project__content,
+    div.plans__content,
+    div#_about_us__content,
+    div#faq__content
+    {
+        padding: 35px 10px;
+    }
 }
 

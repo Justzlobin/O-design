@@ -266,7 +266,7 @@ input:checked + .slider:before {
 
 @media (max-width: 1450px) {
     #header > div.header__content.fx-row {
-        padding: 0 20px;
+        padding: 0 10px;
     }
 }
 
