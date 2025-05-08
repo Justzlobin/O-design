@@ -8,7 +8,7 @@
     /*background: var(--snow-ash);*/
     overflow: hidden;
     z-index: 1000;
-    box-shadow: 0 4px 20px var(--color-5);
+    box-shadow: 0 4px 30px -10px var(--color-text-1);
     height: calc(100vh - var(--header-desktop-height));
 }
 
@@ -73,11 +73,6 @@
     max-width: 600px;
 }
 
-.main__banner-underline {
-    height: 15px;
-    width: 100vw;
-    background-color: var(--color-black);
-}
 
 .main__content {
     width: 100%;

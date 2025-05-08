@@ -11,7 +11,6 @@
 @import "pages/about-us.css";
 
 :root {
-    --color-red: #7a1b0c;
     --color-black: #000000;
     --color-white: #ffffff;
 
@@ -27,7 +26,7 @@
     --min-content-height: calc(100svh - var(--footer-desktop-height));
 
     --fancybox-zIndex: 2000;
-    --home-item-graient: linear-gradient(13deg, rgba(1, 1, 1, 1) 0%, rgba(999, 999, 999, 1) 100%);
+    --home-item-graient: linear-gradient(13deg, rgba(1, 1, 1, 1) 0%, rgba(999, 999, 999, 1) 100%)
 }
 
 .f-s-14 {
@@ -100,14 +99,6 @@
     transition: all .5s ease-in-out;
 }
 
-.txt-col-black {
-    color: var(--color-black);
-}
-
-.txt-col-white {
-    color: var(--color-1);
-}
-
 .border-rds {
     border-radius: 2px;
 }
@@ -120,7 +111,7 @@ h1, h2, h3 {
 #loading-screen {
     position: fixed;
     width: 100%;
-    background: var(--color-black);
+    background: #000;
     top: 0;
     left: 0;
     display: flex;
@@ -143,7 +134,7 @@ h1, h2, h3 {
 .spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid var(--color-white);
+    border: 5px solid #fff;
     border-top-color: transparent;
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -162,7 +153,7 @@ h1, h2, h3 {
 }
 
 #call i {
-    color: var(--color-5);
+    color: var(--color-text-1);
 }
 
 @keyframes blink-shadow {
@@ -170,7 +161,7 @@ h1, h2, h3 {
         box-shadow: 0 0 25px var(--color-1);
     }
     50% {
-        box-shadow: 0 0 25px var(--color-5);
+        box-shadow: 0 0 25px var(--color-text-1);
     }
     100% {
         box-shadow: 0 0 25px var(--color-1);
@@ -221,15 +212,14 @@ body._no_scroll {
     z-index: 1500;
     padding: 15px 20px;
     border-radius: 5px;
-    /*background-color: var(--color-5);*/
-    /*color: var(--color-1);*/
-    box-shadow: 0 4px 8px var(--color-5);
+    background-color: var(--color-1);
+    color: var(--color-text-1);
+    box-shadow: 0 4px 8px var(--color-text-1);
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
     max-width: 350px;
-
-    background: rgba(255, 255, 255, .8);
-    color: #333333;
+    /*background: rgba(255, 255, 255, .8);*/
+    /*color: #333333;*/
 }
 
 .notification-content {
@@ -246,6 +236,15 @@ body._no_scroll {
     opacity: 0;
 }
 
+#_main_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--color-5);
+}
 
 @media (max-width: 1440px) {
     section.main__content,

@@ -39,41 +39,24 @@ class GeneralSettings extends SettingsPage
                     Forms\Components\Grid::make()->schema([
                         Forms\Components\Section::make()->schema([
                             Forms\Components\ColorPicker::make('color_1')
-                                ->label('Основний колір 1')
-                                ->hint('Білий')
+                                ->label('Колір 1')
+                                ->hint('Шапка, підвал, Проект (полоса), FAQ фон, Кнопка Call фон')
                                 ->required(),
                             Forms\Components\ColorPicker::make('color_2')
-                                ->label('Основний колір 2')
-                                ->hint('Сірий')
+                                ->label('Колір 2')
+                                ->hint('Тариф колір зебри')
                                 ->required(),
                             Forms\Components\ColorPicker::make('color_3')
-                                ->label('Основний колір 3')
-                                ->hint('Чорний')
-                                ->required(),
-                            Forms\Components\ColorPicker::make('color_4')
-                                ->label('Основний колір 4')
-                                ->hint('Чорний')
+                                ->label('Колір 3')
+                                ->hint('Тариф фон')
                                 ->required(),
                             Forms\Components\ColorPicker::make('color_5')
-                                ->label('Основний колір 5')
-                                ->hint('Чорний')
+                                ->label('Колір 5')
+                                ->hint('Фон сторінки, фон наведення на кнопки')
                                 ->required(),
                             Forms\Components\ColorPicker::make('color_text_1')
-                                ->label('Текст колір 1')
-                                ->hint('Світлий')
-                                ->required(),
-                            Forms\Components\ColorPicker::make('color_text_2')
-                                ->label('Текст колір 2')
-                                ->hint('Темний')
-                                ->required(),
-                            Forms\Components\ColorPicker::make('color_transparent_1')
-                                ->label('Колір 1 - прозорий')
-                                ->default('0, 0, 0, .5')
-                                ->rgba()
-                                ->required(),
-                            Forms\Components\ColorPicker::make('color_transparent_2')
-                                ->label('Колір 2 - прозорий')
-                                ->rgba()
+                                ->label('Колір 6')
+                                ->hint('Колір тексту, тіні та іконок')
                                 ->required(),
                         ])
                             ->columns(1)
@@ -83,41 +66,28 @@ class GeneralSettings extends SettingsPage
                         Forms\Components\Section::make()->schema([
                             Forms\Components\ColorPicker::make('dark_color_1')
                                 ->label('Колір 1')
-                                ->hint('Початково - білий')
+                                ->hint('Шапка, підвал, Проект (полоса), FAQ фон, Кнопка Call фон')
                                 ->required(),
                             Forms\Components\ColorPicker::make('dark_color_2')
                                 ->label('Колір 2')
-                                ->hint('Початково - Чорний')
+                                ->hint('Тариф колір зебри')
                                 ->required(),
                             Forms\Components\ColorPicker::make('dark_color_3')
                                 ->label('Колір 3')
-                                ->required(),
-                            Forms\Components\ColorPicker::make('dark_color_4')
-                                ->label('Колір 4')
+                                ->hint('Тариф фон')
                                 ->required(),
                             Forms\Components\ColorPicker::make('dark_color_5')
                                 ->label('Колір 5')
+                                ->hint('Фон сторінки, фон наведення на кнопки')
                                 ->required(),
                             Forms\Components\ColorPicker::make('dark_color_text_1')
-                                ->label('Колір 2')
-                                ->required(),
-                            Forms\Components\ColorPicker::make('dark_color_text_2')
-                                ->label('Колір 2')
-                                ->hint('Початково - Чорний')
-                                ->required(),
-                            Forms\Components\ColorPicker::make('dark_color_transparent_1')
-                                ->label('Колір 2 - прозорий')
-                                ->rgba()
-                                ->required(),
-                            Forms\Components\ColorPicker::make('dark_color_transparent_2')
-                                ->label('Колір 2 - прозорий')
-                                ->rgba()
+                                ->label('Колір 6')
+                                ->hint('Колір тексту, тіні та іконок')
                                 ->required(),
                         ])
                             ->columns(1)
                             ->columnSpan(1)
                             ->description('Темна сторона')
-
                     ])
                 ])
             ]);

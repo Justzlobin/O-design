@@ -22,11 +22,11 @@ div.faq__content-grid {
 div.faq__content-item {
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid var(--color-5);/**/
+    border: 2px solid var(--color-text-1);/**/
     border-radius: 7px;
     padding: 10px;
-    /*background-color: rgba(0, 0, 0, .5);*/
-    color: var(--color-5);
+    background-color: var(--color-1);
+    color: var(--color-text-1);
     position: relative;
 }
 

@@ -33,32 +33,19 @@
 
 <style>
     :root {
-        --snow-ash: {{ $generalSettings->color_1 }};
-        {{----color-black: {{ $generalSettings->color_2 }};--}}
-        --color-2-transparent: {{ $generalSettings->color_2_transparent }};
-
-
         --color-1: {{ $generalSettings->color_1 }};
         --color-2: {{ $generalSettings->color_2 }};
         --color-3: {{ $generalSettings->color_3 }};
-        --color-4: {{ $generalSettings->color_4 }};
         --color-5: {{ $generalSettings->color_5 }};
         --color-text-1: {{ $generalSettings->color_text_1 }};
-        --color-text-2: {{ $generalSettings->color_text_2 }};
-        --color-transparent-1: {{ $generalSettings->color_transparent_1 }};
-        --color-transparent-2: {{ $generalSettings->color_transparent_2 }};
     }
 
     [data-theme="dark"] {
         --color-1: {{ $generalSettings->dark_color_1 }};
         --color-2: {{ $generalSettings->dark_color_2 }};
         --color-3: {{ $generalSettings->dark_color_3 }};
-        --color-4: {{ $generalSettings->dark_color_4 }};
         --color-5: {{ $generalSettings->dark_color_5 }};
         --color-text-1: {{ $generalSettings->dark_color_text_1 }};
-        --color-text-2: {{ $generalSettings->dark_color_text_2 }};
-        --color-transparent-1: {{ $generalSettings->dark_color_transparent_1 }};
-        --color-transparent-2: {{ $generalSettings->dark_color_transparent_2 }};
     }
 
 </style>
@@ -75,6 +62,7 @@
 @include('partials.footer')
 
 <div id="_contact_us_modal"></div>
+
 <div id="loading-screen" class="_show">
     <div class="spinner"></div>
 </div>

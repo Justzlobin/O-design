@@ -4,23 +4,23 @@
     max-width: 1440px;
     margin-top: var(--header-desktop-height);
     min-height: calc(100vh - var(--header-desktop-height));
-    color: var(--color-5);
+    color: var(--color-text-1);
     padding: 35px 0;
 }
 
 div.separate-line {
     height: 5px;
     width: 100%;
-    background-color: var(--color-5);
-    box-shadow: 0 4px 20px var(--color-5);
+    background-color: var(--color-text-1);
+    box-shadow: 0 4px 20px var(--color-text-1);
 }
 
 div.decorate-line {
     height: 2px;
     min-height: 2px;
     width: 100%;
-    background-color: var(--color-5);
-    box-shadow: 0 4px 20px var(--color-5);
+    background-color: var(--color-text-1);
+    box-shadow: 0 4px 20px var(--color-text-1);
     position: absolute;
 }
 

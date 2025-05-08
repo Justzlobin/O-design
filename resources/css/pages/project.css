@@ -38,14 +38,14 @@ h1.project__details-text_title {
     font-size: 26px;
     font-weight: 600;
     line-height: 25px;
-    color: var(--color-5);
+    color: var(--color-text-1);
 }
 
 div.project__details-text_desc  {
     font-size: 16px;
     font-weight: 500;
     line-height: 25px;
-    color: var(--color-5);
+    color: var(--color-text-1);
     width: 80%;
     display: block;
     overflow-y: scroll;
@@ -63,11 +63,11 @@ div.project__others-title {
     height: 30px;
     min-height: 30px;
     background-color: var(--color-1);
-    box-shadow: 0 4px 20px var(--color-5);
+    box-shadow: 0 4px 20px var(--color-text-1);
 }
 
 div.project__others-title h2 {
-    color: var(--color-5);
+    color: var(--color-text-1);
     font-size: 18px;
     font-weight: 500;
 }
