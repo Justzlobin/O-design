@@ -5,6 +5,7 @@
     min-height: calc(100svh - var(--header-desktop-height));
     margin-top: var(--header-desktop-height);
     padding: 35px 0;
+    gap: 35px;
 }
 
 .plans__content-list {
@@ -36,12 +37,12 @@
 
 .plans__item--wrap._promotional  .plans__item--title {
     background-color: var(--color-1);
-    border-radius: 17px 17px 0 0 ;
+    border-radius: 4px 4px 0 0 ;
     color: var(--color-text-1);
 }
 
 .plans__item--wrap._promotional  .plans__content-item {
-    border-radius:  0 0 17px 17px;
+    border-radius:  0 0 4px 4px;
 }
 
 .plans__content-item {
@@ -49,7 +50,7 @@
     height: calc(100% - 70px);
     color: var(--color-text-1);
     background: var(--color-3);
-    border-radius: 17px;
+    border-radius: 4px;
     gap: 10px;
     cursor: pointer;
 }
@@ -97,7 +98,7 @@ div.plan__service {
     width: 100%;
     font-size: 16px;
     font-weight: 500;
-    height: 40px;
+    min-height: 40px;
     padding: 0 25px;
 }
 

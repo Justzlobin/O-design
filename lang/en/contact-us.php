@@ -21,7 +21,7 @@ return [
         'phone_placeholder' => 'Phone',
         'email_placeholder' => 'E-mail',
         'comment_placeholder' => 'Comment',
-        'btn' => 'Send',
+        'btn' => 'SEND',
         'success_message' => 'Your message has been sent successfully!'
     ],
 ];

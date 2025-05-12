@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
 
@@ -38,6 +38,7 @@
         --color-3: {{ $generalSettings->color_3 }};
         --color-5: {{ $generalSettings->color_5 }};
         --color-text-1: {{ $generalSettings->color_text_1 }};
+        {{----color-text-1: {{ $generalSettings->color_text_1 }};--}}
     }
 
     [data-theme="dark"] {
@@ -46,6 +47,7 @@
         --color-3: {{ $generalSettings->dark_color_3 }};
         --color-5: {{ $generalSettings->dark_color_5 }};
         --color-text-1: {{ $generalSettings->dark_color_text_1 }};
+        {{----color-text-1: {{ $generalSettings->dark_color_text_1 }};--}}
     }
 
 </style>

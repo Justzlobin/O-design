@@ -37,9 +37,6 @@ const DOM = {
     faqQuestions: document.querySelectorAll('div.faq__content-item_question'),
     headerMenuOverlay: document.getElementById('_header__menu_overlay'),
     projectImages: document.querySelectorAll('img._project__img'),
-    // fileUploadBtn: document.getElementById('_file_upload_btn'),
-    // fileUploadCleanBtn: document.getElementById('_file_upload_clean_btn'),
-    // fileInput: document.getElementById('_file'),
     contactUsBtn: document.getElementById('_main__banner_contact_us_btn'),
     contactUsModal: document.getElementById('_contact_us_modal'),
     headerMenuContent: document.getElementById('_header__menu_content'),
@@ -54,7 +51,8 @@ const DOM = {
         commercial: document.querySelectorAll('.projects__grid-item.commercial')
     },
     themeSwitch: document.querySelector('.theme-switch input[type="checkbox"]'),
-    planButtons: document.querySelectorAll('.plan__btn')
+    planButtons: document.querySelectorAll('.plan__btn'),
+    planServices: document.querySelectorAll('.plan__service')
 };
 
 // Зберігаємо інстанси Swiper для можливого повторного використання
@@ -227,6 +225,24 @@ function addEventListeners() {
                         }
                     }
                 });
+            });
+        });
+    }
+
+    // FAQ питання
+    if (DOM.planServices.length > 0) {
+        DOM.planServices.forEach(service => {
+            service.addEventListener('hover', () => {
+                console.log('test')
+
+
+                const serviceDescriptions = document.querySelectorAll('div.plan__service--desc');
+
+                serviceDescriptions.forEach(function (desc) {
+                    desc.classList.remove('_show')
+                })
+
+                service.querySelector('.plan__service--desc').classList.add('_show')
             });
         });
     }

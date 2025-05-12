@@ -21,7 +21,7 @@ return [
         'phone_placeholder' => 'Телефон',
         'email_placeholder' => 'Пошта',
         'comment_placeholder' => 'Коментар',
-        'btn' => 'Відправити',
+        'btn' => 'ВІДПРАВИТИ',
         'success_message' => 'Ваше повідомлення успішно відправлено!'
     ],
 ];

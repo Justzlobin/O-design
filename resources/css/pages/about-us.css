@@ -16,8 +16,8 @@ div.separate-line {
 }
 
 div.decorate-line {
-    height: 2px;
-    min-height: 2px;
+    height: 1px;
+    min-height: 1px;
     width: 100%;
     background-color: var(--color-text-1);
     box-shadow: 0 4px 20px var(--color-text-1);
@@ -117,9 +117,9 @@ div.philosophy-section__top div.decorate-line {
 }
 
 p.philosophy-section__bottom-text {
-    font-size: clamp(13px, 4vw, 40px);;
-    font-weight: 600;
-    padding: 5.5% 0;
+    font-size: clamp(13px, 4vw, 35px);;
+    font-weight: 750;
+    padding: 1.5% 0;
 }
 
 div.philosophy-section__bottom div.decorate-line {
@@ -135,6 +135,7 @@ div.philosophy-section__bottom div.decorate-line {
     width: 100%;
     position: relative;
     padding: 35px 0;
+    gap: 10%;
 }
 
 div.rules-section__img {
@@ -148,25 +149,22 @@ div.rules-section__img {
 
 div.rules-section__text {
     /*width: 100%;*/
+    align-self: center;
+    width: 50%;
 }
 
 h2.rules-section__text-title {
     width: 100%;
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    /*padding-bottom: 10%;*/
-    padding-left: 30px;
-
 }
 
 ul.rules-section__text-list {
     align-items: end;
-    font-size: clamp(13px, 2.5vw, 30px);
-    font-weight: 500;
-    line-height: 2;
-    /*padding: 16% 0 0 5%;*/
-    padding-left: 30px;
-
+    font-size: clamp(12px, 2.5vw, 30px);
+    font-weight: 400;
+    line-height: 1.4;
+    padding-left: 6%;
 }
 
 ul.rules-section__text-list li {
@@ -174,22 +172,23 @@ ul.rules-section__text-list li {
 }
 
 div.rules-section__text div.decorate-line {
-    width: 30%;
+    width: 100%;
     right: 0;
     top: 30%;
 }
 
 /*WHY*/
 .why-section {
-    justify-content: start;
+    justify-content: space-between;
     align-items: start;
     width: 100%;
     position: relative;
     padding: 35px 0;
+    gap: 5%;
 }
 
 div.why-section__right {
-    width: 100%;
+    width: 50%;
     align-self: center;
     padding-top: 50%;
     background-size: cover;
@@ -204,30 +203,32 @@ div.why-section__right {
 /*}*/
 
 div.why-section__left {
-    width: 100%;
+    width: 40%;
     justify-content: start;
     align-items: start;
     font-size: clamp(12px, 2.5vw, 30px);
-    font-weight: 500;
-    /*padding: 0 4%;*/
+    font-weight: 400;
+    align-self: center;
 }
 
 h2.why-section__left-title {
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    padding-bottom: 20px;
 }
 
 p.why-section__left-subtitle {
     display: block;
-    font-size: clamp(10px, 3vw, 40px);
+    font-size: clamp(10px, 3vw, 35px);
     font-weight: 750;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
 }
 
 ul.why-section__left-list li {
     list-style: initial;
-    line-height: 2;
+    line-height: 1.4;
+}
+ul.why-section__left-list  {
+    padding-left: 6%;
 }
 
 div.why-section__left div.decorate-line {
@@ -248,17 +249,17 @@ div.why-section__left div.decorate-line {
     gap: 20px;
 }
 
-
 div.how-section__top {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     padding-bottom: 3%;
-    gap: 10px;
+    column-gap: 4%;
+    row-gap: 20px;
 }
 
 .how-section__top-item {
-    width: 90%;
+    width: 100%;
     text-align: left;
     justify-content: start;
 }
@@ -266,17 +267,18 @@ div.how-section__top {
 h2.how-section__top-item-title {
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
+    line-height: .8;
 }
 
 span.how-section__top-item-subtitle {
     font-size: clamp(10px, 3vw, 35px);
     font-weight: 750;
-    padding-bottom: 5%;
+    padding-bottom: 5px;
 }
 
 p.how-section__top-item-text {
-    font-size: clamp(8px, 2vw, 25px);
-    font-weight: 500;
+    font-size: clamp(12px, 2.5vw, 30px);
+    font-weight: 400;
 }
 
 div.how-section__bottom {
@@ -317,16 +319,13 @@ div.how-section__bottom_right_img {
     width: 100%;
     padding: 35px 0;
     position: relative;
-}
-
-div.expertise-section__left {
-    padding-right: 4%;
+    gap: 4%;
 }
 
 h2.expertise-section__left-title {
     font-size: clamp(30px, 8vw, 130px);
     font-weight: 700;
-    padding-bottom: 10%;
+    padding-bottom: 20px;
 }
 
 div.expertise-section__left div.decorate-line {
@@ -340,23 +339,23 @@ div.expertise-section__left-grid {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    column-gap: 5%;
+    row-gap: 30px;
 }
 
 div.expertise-section__left-grid_item {
-    width: 90%;
-    padding-bottom: 20px;
+    width: 100%;
 }
 
 span.expertise-section__left-grid-subtitle {
-    font-size: clamp(10px, 2vw, 30px);
+    font-size: clamp(10px, 3vw, 35px);
     font-weight: 750;
-    padding-bottom: 5%;
+    padding-bottom: 5px;
 }
 
 p.expertise-section__left-grid-text {
-    font-size: clamp(8px, 2vw, 20px);
-    font-weight: 500;
+    font-size: clamp(12px, 2.5vw, 30px);
+    font-weight: 400;
 }
 
 div.expertise-section__right {
@@ -365,7 +364,7 @@ div.expertise-section__right {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    align-self: start;
+    align-self: center;
 }
 
 div.expertise-section__right div.decorate-line {
@@ -375,13 +374,11 @@ div.expertise-section__right div.decorate-line {
 }
 
 @media (max-width: 768px) {
-    #_about_us__content > section.rules-section > div.rules-section__img {
-        display: none;
-    }
+    /*#_about_us__content > section.rules-section > div.rules-section__img {*/
+    /*    display: none;*/
+    /*}*/
 
-    #_about_us__content > section.rules-section > div.rules-section__text > ul {
-        padding: 0 0 0 5%;
-    }
+
 
     #_about_us__content > section.how-section.fx-col > div.how-section__top {
        grid-template-columns: repeat(2, 1fr);
@@ -397,13 +394,37 @@ div.expertise-section__right div.decorate-line {
 }
 
 @media  (max-width: 425px) {
-    #_about_us__content > section.why-section > div.why-section__right {
-        display: none;
-    }
+    /*#_about_us__content > section.why-section > div.why-section__right {*/
+    /*    display: none;*/
+    /*}*/
 
     /*#_about_us__content > section.why-section > div.why-section__left {*/
     /*    align-items: center;*/
     /*}*/
+}
+
+@media  (max-width: 400px) {
+    #_about_us__content > section.why-section.fx-row > div.why-section__right,
+    #_about_us__content > section.rules-section.fx-row > div.rules-section__img {
+        display: none;
+    }
+
+    #_about_us__content > section.why-section.fx-row > div.why-section__left.fx-col,
+    #_about_us__content > section.rules-section.fx-row > div.rules-section__text.fx-col{
+        width: 80%;
+    }
+
+    #_about_us__content > section.why-section.fx-row,
+    #_about_us__content > section.rules-section.fx-row {
+        justify-content: center;
+    }
+
+    #_about_us__content > section.rules-section.fx-row > div.decorate-line,
+    #_about_us__content > section.philosophy-section.fx-col > div.decorate-line,
+    #_about_us__content > section.expertise-section.fx-row > div.decorate-line,
+    #_about_us__content > section.why-section.fx-row > div.decorate-line {
+        width: 100% !important;
+    }
 }
 
 

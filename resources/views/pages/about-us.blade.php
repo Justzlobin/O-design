@@ -36,7 +36,7 @@
                 <p class="philosophy-section__bottom-text">@lang('about-us.philosophy_subtitle')</p>
 {{--                <div class="decorate-line"></div>--}}
             </div>
-            <div class="decorate-line" style="bottom: 0; width: 30%; left: 0"></div>
+            <div class="decorate-line" style="bottom: 0; width: 40%; left: 0"></div>
         </section>
 
 {{--        <div class="separate-line"></div>--}}
@@ -47,13 +47,13 @@
                 <h2 class="rules-section__text-title">@lang('about-us.rules_title')</h2>
 {{--                <div class="decorate-line"></div>--}}
                 <ul class="rules-section__text-list">
-                    <li>@lang('about-us.rules_list_1')</li>
-                    <li>@lang('about-us.rules_list_2')</li>
-                    <li>@lang('about-us.rules_list_3')</li>
-                    <li>@lang('about-us.rules_list_4')</li>
+                    <span><li>@lang('about-us.rules_list_1')</li></span>
+                    <span><li>@lang('about-us.rules_list_2')</li></span>
+                    <span><li>@lang('about-us.rules_list_3')</li></span>
+                    <span><li>@lang('about-us.rules_list_4')</li></span>
                 </ul>
             </div>
-            <div class="decorate-line" style="bottom: 0; width: 30%; right: 0"></div>
+            <div class="decorate-line" style="bottom: 0; width: 50%; right: 0"></div>
         </section>
 
 {{--        <div class="separate-line"></div>--}}
@@ -61,7 +61,7 @@
         <section class="why-section fx-row">
             <div class="why-section__left fx-col">
                 <h2 class="why-section__left-title">@lang('about-us.why_title')</h2>
-                <p class="why-section__left-subtitle">@lang('about-us.why_subtitle')</p>
+{{--                <p class="why-section__left-subtitle">@lang('about-us.why_subtitle')</p>--}}
                 <ul class="why-section__left-list">
                     <li>@lang('about-us.why_list_1')</li>
                     <li>@lang('about-us.why_list_2')</li>
@@ -74,7 +74,7 @@
             <div class="why-section__right" style="background-image: url({{Storage::url('why_1.jpg')}})">
 {{--                <div class="decorate-line"></div>--}}
             </div>
-            <div class="decorate-line" style="bottom: 0; width: 30%; left: 0"></div>
+            <div class="decorate-line" style="bottom: 0; width: 50%; left: 0"></div>
         </section>
 
 {{--        <div class="separate-line"></div>--}}
@@ -82,7 +82,7 @@
         <section class="how-section fx-col">
 {{--            <div class="decorate-line"></div>--}}
             <div class="how-section__top">
-                <div class="how-section__top-item fx-col">
+                <div class="how-section__top-item fx-col _title">
                     <h2 class="how-section__top-item-title">@lang('about-us.how_title')</h2>
                 </div>
                 <div class="how-section__top-item fx-col">
@@ -106,20 +106,20 @@
                     <p class="how-section__top-item-text">@lang('about-us.how_list_text_5')</p>
                 </div>
             </div>
-{{--            <div class="how-section__bottom fx-row">--}}
+            <div class="how-section__bottom fx-row">
 {{--                <div class="decorate-line"></div>--}}
-{{--                <div class="how-section__bottom_left_img"--}}
-{{--                     style="background-image: url({{Storage::url('how_1.jpg')}})"></div>--}}
-{{--                <div class="how-section__bottom_right_img" style="background-image: url({{Storage::url('how_2.jpg')}})"></div>--}}
-{{--            </div>--}}
-            <div class="decorate-line" style="bottom: 0; width: 30%; right: 0"></div>
+                <div class="how-section__bottom_left_img"
+                     style="background-image: url({{Storage::url('how_1.jpg')}})"></div>
+                <div class="how-section__bottom_right_img" style="background-image: url({{Storage::url('how_2.jpg')}})"></div>
+            </div>
+{{--            <div class="decorate-line" style="<span> 0; width: 30%; right: 0"></div>--}}
 
         </section>
 
 {{--        <div class="separate-line"></div>--}}
 
         <section class="expertise-section fx-row">
-            <div class="decorate-line" style="top: 0; width: 30%; left: 0"></div>
+            <div class="decorate-line" style="top: 0; width: 100%; left: 0"></div>
             <div class="expertise-section__left fx-col">
                 <h2 class="expertise-section__left-title">@lang('about-us.expertise_title')</h2>
 {{--                <div class="decorate-line"></div>--}}
@@ -142,10 +142,10 @@
                     </div>
                 </div>
             </div>
-            <div class="expertise-section__right"
-                 style="background-image: url({{Storage::url('expertise_1.jpg')}})">
+{{--            <div class="expertise-section__right"--}}
+{{--                 style="background-image: url({{Storage::url('expertise_1.jpg')}})">--}}
 {{--                <div class="decorate-line"></div>--}}
-            </div>
+{{--            </div>--}}
         </section>
     </div>
 

@@ -251,10 +251,13 @@ body._no_scroll {
     section.projects__content,
     section.project__content,
     div.plans__content,
-    div#_about_us__content,
     div#faq__content
     {
         padding: 35px 10px;
+    }
+
+    div#_about_us__content {
+        padding: 0 20px;
     }
 }
 
