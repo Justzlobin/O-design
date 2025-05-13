@@ -44,7 +44,7 @@
                             @endforeach
                         </div>
                         <div class="plan__price fx-row flex-center">{{$plan->price}} $/h</div>
-                        <button class="plan__btn fx-row flex-center cursor-pointer">Замовити</button>
+                        <button class="plan__btn fx-row flex-center cursor-pointer" data-id="{{$plan->id}}">Замовити</button>
                     </div>
                 </div>
             @endforeach

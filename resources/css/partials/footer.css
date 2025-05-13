@@ -8,7 +8,7 @@
     background: var(--color-1);
     padding: 20px 10px;
     box-shadow: 0 -4px 30px -10px var(--color-text-1);
-    z-index: 1040;
+    z-index: 1050;
     position: relative;
     color: var(--color-text-1);
 }
@@ -74,6 +74,22 @@
 
 .footer__content-contact_us._show  #_contact_us {
     border-radius: 5px;
+}
+
+.footer__content-contact_us._modal_mode {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    opacity: .9;
+    background: var(--color-1);
+    z-index: 1100;
+}
+
+.footer__content-contact_us._modal_mode #_contact_us {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .footer__content-contact_us {

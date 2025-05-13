@@ -21,6 +21,7 @@ return [
         'phone_placeholder' => 'Телефон',
         'email_placeholder' => 'Пошта',
         'comment_placeholder' => 'Коментар',
+        'selected_plan' => 'Обраний тариф: ',
         'btn' => 'ВІДПРАВИТИ',
         'success_message' => 'Ваше повідомлення успішно відправлено!'
     ],

@@ -248,8 +248,8 @@ body._no_scroll {
 
 @media (max-width: 1440px) {
     section.main__content,
-    section.projects__content,
-    section.project__content,
+    div.projects__content,
+    div.project__content,
     div.plans__content,
     div#faq__content
     {

@@ -21,6 +21,7 @@ return [
         'phone_placeholder' => 'Phone',
         'email_placeholder' => 'E-mail',
         'comment_placeholder' => 'Comment',
+        'selected_plan' => 'Selected plan: ',
         'btn' => 'SEND',
         'success_message' => 'Your message has been sent successfully!'
     ],

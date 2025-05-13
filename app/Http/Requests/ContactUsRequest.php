@@ -26,6 +26,7 @@ class ContactUsRequest extends FormRequest
             'phone' => 'required|string|max:17|regex:/^\+380\(\d{2}\)\d{3}-\d{2}-\d{2}$/',
             'e-mail' => 'nullable|email|max:255',
             'comment' => 'nullable|string|max:1000',
+            'plan_id' => 'nullable|numeric'
         ];
     }
 

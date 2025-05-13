@@ -52,7 +52,11 @@ const DOM = {
     },
     themeSwitch: document.querySelector('.theme-switch input[type="checkbox"]'),
     planButtons: document.querySelectorAll('.plan__btn'),
-    planServices: document.querySelectorAll('.plan__service')
+    planServices: document.querySelectorAll('.plan__service'),
+    contactUsPlanId: document.getElementById('_form_plan_id'),
+    contactUsPlanTitle: document.getElementById('_selected_plan_title'),
+    contactUsPlanWrap: document.getElementById('_selected_plan'),
+    contactUsWrap: document.querySelector('.footer__content-contact_us')
 };
 
 // Зберігаємо інстанси Swiper для можливого повторного використання
@@ -233,9 +237,6 @@ function addEventListeners() {
     if (DOM.planServices.length > 0) {
         DOM.planServices.forEach(service => {
             service.addEventListener('hover', () => {
-                console.log('test')
-
-
                 const serviceDescriptions = document.querySelectorAll('div.plan__service--desc');
 
                 serviceDescriptions.forEach(function (desc) {
@@ -256,37 +257,6 @@ function addEventListeners() {
         });
     }
 
-    // Обробка завантаження файлів
-    // if (DOM.fileUploadBtn) {
-    //     DOM.fileUploadBtn.addEventListener('click', (e) => {
-    //         DOM.fileUploadBtn.classList.remove('_invalid');
-    //         e.preventDefault();
-    //         DOM.fileInput.click();
-    //     });
-    // }
-    //
-    // if (DOM.fileUploadCleanBtn) {
-    //     DOM.fileUploadCleanBtn.addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         if (DOM.fileInput) {
-    //             DOM.fileInput.value = '';
-    //             DOM.fileInput.dispatchEvent(new Event('change'));
-    //         }
-    //     });
-    // }
-
-    // if (DOM.fileInput) {
-    //     DOM.fileInput.addEventListener('change', () => {
-    //         if (DOM.fileInput && DOM.fileInput.files.length > 0) {
-    //             DOM.fileUploadCleanBtn.classList.add('_show');
-    //             DOM.fileUploadBtn.textContent = DOM.fileInput.files[0].name;
-    //         } else {
-    //             DOM.fileUploadCleanBtn.classList.remove('_show');
-    //             DOM.fileUploadBtn.textContent = 'Add file';
-    //         }
-    //     });
-    // }
-
     // Контактна форма
     if (DOM.contactUsBtn) {
         DOM.contactUsBtn.addEventListener('click', (e) => {
@@ -296,9 +266,9 @@ function addEventListeners() {
         });
     }
 
-    if (DOM.contactUsModal) {
-        DOM.contactUsModal.addEventListener('click', (e) => {
-            if (e.target.id === DOM.contactUsModal.id) {
+    if (DOM.contactUsWrap) {
+        DOM.contactUsWrap.addEventListener('click', (e) => {
+            if (e.target.classList === DOM.contactUsWrap.classList) {
                 hideContactForm();
             }
         });
@@ -375,29 +345,52 @@ function addEventListeners() {
     if (DOM.planButtons.length > 0) {
         DOM.planButtons.forEach(btn => {
             btn.addEventListener('click', () => {
-                showContactForm();
+                let plan_id = btn.dataset.id;
+                let plan_title = btn.parentElement.querySelector('.plan__header-title').textContent
+
+                showContactForm(plan_id, plan_title);
+                activateInputMast()
             });
         });
     }
 }
 
 // Допоміжні функції
-function showContactForm() {
+function showContactForm(id = null, title = null) {
     if (!DOM.contactUsModal || !DOM.contactUsForm) return;
 
-    if (DOM.contactUsModal.children.length === 0) {
-        DOM.contactUsModal.appendChild(DOM.contactUsForm.cloneNode(true));
-        DOM.contactUsModal.classList.add('_show');
+    // if (DOM.contactUsModal.children.length === 0) {
+    //     DOM.contactUsModal.appendChild(DOM.contactUsForm);
+    //     DOM.contactUsModal.classList.add('_show');
+    // }
+
+    DOM.contactUsWrap.classList.add('_modal_mode')
+
+    if  (id !== null && title !== null) {
+        DOM.contactUsPlanId.value = id
+        DOM.contactUsPlanTitle.textContent = title
+        DOM.contactUsPlanWrap.classList.add('_show');
+    } else {
+        DOM.contactUsPlanId.value = null
+        DOM.contactUsPlanTitle.textContent = '';
+        DOM.contactUsPlanWrap.classList.remove('_show');
     }
 
     DOM.body.classList.add('_no_scroll');
 }
 
 function hideContactForm() {
-    if (!DOM.contactUsModal) return;
+    // if (!DOM.contactUsModal) return;
+    DOM.contactUsWrap.classList.remove('_modal_mode')
+
+    // document.querySelector('.footer__content-contact_us').appendChild(DOM.contactUsForm)
 
     DOM.contactUsModal.classList.remove('_show');
     DOM.body.classList.remove('_no_scroll');
+
+    DOM.contactUsPlanId.value = null;
+    DOM.contactUsPlanTitle.textContent = '';
+    DOM.contactUsPlanWrap.classList.remove('_show');
 
     setTimeout(() => {
         DOM.contactUsModal.replaceChildren();

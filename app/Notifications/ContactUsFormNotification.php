@@ -49,12 +49,11 @@ class ContactUsFormNotification extends Notification
         if (isset($this->data['comment']) && $this->data['comment'] !== null) {
             $message .= "📝 *Коментарій:* {$this->data['comment']} \n";
         }
-//
-//        if ($this->filePath) {
-//            $telegram = TelegramFile::create()->document(Storage::path($this->filePath));
-//        } else {
+
+        if (isset($this->data['plan']) && $this->data['plan'] !== null) {
+            $message .= "📝 *Обраний план:* {$this->data['plan']} \n";
+        }
         $telegram = TelegramMessage::create();
-//        }
 
         $telegram->to(config('services.telegram-bot-api.chat_id'));
         $telegram->content($message);
