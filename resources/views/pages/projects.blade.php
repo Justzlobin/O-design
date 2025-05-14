@@ -14,14 +14,14 @@
     <div class="projects__content fx-col">
 
         <div class="projects__choose  f-s-20">
-            <button class="projects__choose--btn  cursor-pointer _selected" id="all">
-                Усі
+            <button class="projects__choose--btn  cursor-pointer _selected" id="{{ProjectType::All->value}}">
+                @lang('projects.' . ProjectType::All->value)
             </button>
-            <button class="projects__choose--btn  cursor-pointer" id="{{ProjectType::Commercial}}">
-                Комерційні
+            <button class="projects__choose--btn  cursor-pointer" id="{{ProjectType::Commercial->value}}">
+                @lang('projects.' . ProjectType::Commercial->value)
             </button>
-            <button class="projects__choose--btn  cursor-pointer" id="{{ProjectType::Privat}}">
-                Приватні
+            <button class="projects__choose--btn  cursor-pointer" id="{{ProjectType::Privat->value}}">
+                @lang('projects.' . ProjectType::Privat->value)
             </button>
         </div>
         <div class="projects__grid flex-center">

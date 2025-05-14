@@ -6,6 +6,7 @@ enum ProjectType :string
 {
     case Privat = 'privat';
     case Commercial = 'commercial';
+    case All = 'all';
 
     public static function isValid(string $value): bool
     {

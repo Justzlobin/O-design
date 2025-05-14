@@ -1,5 +1,6 @@
 <?php
 return [
-    'commercial' => 'Комерційні',
-    'privat' => 'Приватні'
+    'commercial' => 'КОМЕРЦІЙНІ',
+    'privat' => 'ПРИВАТНІ',
+    'all' => 'УСІ'
 ];

@@ -8,22 +8,24 @@ use App\Http\Controllers\PlansController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::group(['prefix' => LaravelLocalization::setLocale()], static function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+    Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 
-Route::group(['prefix' => 'projects'], static function () {
-    Route::get('/', [ProjectsController::class, 'index'])->name('projects');
-    Route::get('/{project}', [ProjectController::class, 'index'])->name('project');
+    Route::group(['prefix' => 'projects'], static function () {
+        Route::get('/', [ProjectsController::class, 'index'])->name('projects');
+        Route::get('/{project}', [ProjectController::class, 'index'])->name('project');
+    });
+
+    Route::group(['prefix' => 'plans'], static function () {
+        Route::get('/', [PlansController::class, 'index'])->name('plans');
+    });
+
+    Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 });
-
-Route::group(['prefix' => 'plans'], static function () {
-   Route::get('/', [PlansController::class, 'index'])->name('plans');
-//   Route::get('/{plan}', [PlansController::class, 'index'])->name('plans.index');
-});
-
-Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
 Route::post('/contact', [ContactUsController::class, 'index'])->name('contact');
 

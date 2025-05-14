@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="uk">
+@php use Mcamara\LaravelLocalization\Facades\LaravelLocalization; @endphp
+    <!DOCTYPE html>
+<html lang="{{LaravelLocalization::getCurrentLocale()}}">
 <head>
     <meta charset="UTF-8">
 
@@ -9,7 +10,7 @@
     {{-- Dynamic seo head tags end --}}
 
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="uk">
+    <meta property="og:locale" content="{{LaravelLocalization::getCurrentLocale()}}">
     <meta property="og:site_name" content="{{$generalSettings->site_name}}">
     <meta property="og:url" content="{{ strtolower(config('app.url') . $_SERVER['REQUEST_URI']) }}">
 
@@ -72,26 +73,26 @@
 
 {{--TOOLTIP FORM REQUEST STATUS --}}
 @if (session('success'))
-<div id="notification" class="notification" style="display: none;">
-    <div class="notification-content">
-        <i class="fa-solid fa-check-circle"></i>
-        <span>{{ session('success') }}</span>
+    <div id="notification" class="notification" style="display: none;">
+        <div class="notification-content">
+            <i class="fa-solid fa-check-circle"></i>
+            <span>{{ session('success') }}</span>
+        </div>
     </div>
-</div>
 @elseif (session('error'))
-<div id="notification" class="notification" style="display: none;">
-    <div class="notification-content">
-        <i class="fa-solid fa-exclamation-circle"></i>
-        <span>{{ session('error') }}</span>
+    <div id="notification" class="notification" style="display: none;">
+        <div class="notification-content">
+            <i class="fa-solid fa-exclamation-circle"></i>
+            <span>{{ session('error') }}</span>
+        </div>
     </div>
-</div>
 @elseif ($errors->any())
-<div id="notification" class="notification" style="display: none;">
-    <div class="notification-content">
-        <i class="fa-solid fa-exclamation-circle"></i>
-        <span>{{ $errors->first() }}</span>
+    <div id="notification" class="notification" style="display: none;">
+        <div class="notification-content">
+            <i class="fa-solid fa-exclamation-circle"></i>
+            <span>{{ $errors->first() }}</span>
+        </div>
     </div>
-</div>
 @endif
 
 <a href="Tel: {{$generalSettings->tel}}" id="call" class="fx-row flex-center cursor-pointer">

@@ -121,6 +121,10 @@ a.header__socials-item, a#_tel {
     transition: transform .3s ease-in-out;
 }
 
+.local-switch {
+    margin-left: 25px;
+}
+
 #_header__menu_overlay._show {
     height: calc(100svh - var(--header-desktop-height)) !important;
     overflow: auto !important;
