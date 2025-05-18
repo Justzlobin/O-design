@@ -31,7 +31,7 @@
 {{--                <div class="decorate-line"></div>--}}
             </div>
             <div class="philosophy-section__center fx-row"
-                 style="background-image: url({{Storage::url('phil_1.jpg')}})"></div>
+                 style="background-image: url({{Storage::url('phil_1_crop_and_opt.jpg')}});"></div>
             <div class="philosophy-section__bottom fx-row">
                 <p class="philosophy-section__bottom-text">@lang('about-us.philosophy_subtitle')</p>
 {{--                <div class="decorate-line"></div>--}}
@@ -42,7 +42,7 @@
 {{--        <div class="separate-line"></div>--}}
 
         <section class="rules-section fx-row">
-            <div class="rules-section__img" style="background-image: url({{Storage::url('rules_1.jpg')}})"></div>
+            <div class="rules-section__img" style="background-image: url({{Storage::url('rules_1_crop.jpg')}})"></div>
             <div class="rules-section__text fx-col">
                 <h2 class="rules-section__text-title">@lang('about-us.rules_title')</h2>
 {{--                <div class="decorate-line"></div>--}}
@@ -71,7 +71,7 @@
                 </ul>
 {{--                <div class="decorate-line"></div>--}}
             </div>
-            <div class="why-section__right" style="background-image: url({{Storage::url('why_1.jpg')}})">
+            <div class="why-section__right" style="background-image: url({{Storage::url('why_1_crop.jpg')}})">
 {{--                <div class="decorate-line"></div>--}}
             </div>
             <div class="decorate-line" style="bottom: 0; width: 50%; left: 0"></div>
@@ -109,8 +109,8 @@
             <div class="how-section__bottom fx-row">
 {{--                <div class="decorate-line"></div>--}}
                 <div class="how-section__bottom_left_img"
-                     style="background-image: url({{Storage::url('how_1.jpg')}})"></div>
-                <div class="how-section__bottom_right_img" style="background-image: url({{Storage::url('how_2.jpg')}})"></div>
+                     style="background-image: url({{Storage::url('how_1_crop.jpg')}})"></div>
+                <div class="how-section__bottom_right_img" style="background-image: url({{Storage::url('how_2_crop_and_opt.jpg')}})"></div>
             </div>
 {{--            <div class="decorate-line" style="<span> 0; width: 30%; right: 0"></div>--}}
 

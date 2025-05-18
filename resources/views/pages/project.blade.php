@@ -2,8 +2,8 @@
 
 @section('seo')
     {!! seo()->for($project) !!}
-    <meta property="og:image" content="{{ $project->getFirstMediaUrl('project-images', 'gallery_small') }}">
-{{--    <meta name="keywords" content="">--}}
+    <meta property="og:image" content="{{ $project->getFirstMediaUrl('project-images', 'thumb_big_jpg') }}">
+    {{--    <meta name="keywords" content="">--}}
 @endsection
 
 @section('content')
@@ -14,8 +14,11 @@
                     <div class="swiper-wrapper">
                         @foreach($project->getMedia('project-images') as $image)
                             <div class="swiper-slide">
-                                <img class="_project__img" src="{{$image->getUrl()}}"
-                                     alt="{{$image->title}}" data-fancybox="gallery">
+                                <picture>
+                                    <source srcset="{{$image->getUrl('original_webp')}}" type="image/webp">
+                                    <img class="_project__img" src="{{$image->getUrl('original_jpg')}}"
+                                         alt="{{$image->title}}" data-fancybox="gallery" loading="lazy">
+                                </picture>
                             </div>
                         @endforeach
 
@@ -29,8 +32,10 @@
                     <div class="swiper-wrapper">
                         @foreach($project->getMedia('project-images') as $image)
                             <div class="swiper-slide">
-                                <img src="{{$image->getUrl('thumb')}}"
-                                     alt="{{$image->title}}">
+                                <picture>
+                                    <source srcset="{{$image->getUrl('thumb_webp')}}" type="image/webp">
+                                    <img src="{{$image->getUrl('thumb_jpg')}}" alt="{{$image->title}}">
+                                </picture>
                             </div>
                         @endforeach
                     </div>
@@ -54,8 +59,13 @@
                     @foreach($sameProjects as $sameProject)
                         <div class="swiper-slide project__others-item">
                             <a href="{{route('project', $sameProject)}}">
-                                <img src="{{ $sameProject->getFirstMediaUrl('project-images', 'gallery_small')}}"
-                                     alt="{{$sameProject->title}}">
+                                <picture>
+                                    <source
+                                        srcset="{{ $sameProject->getFirstMediaUrl('project-images', 'thumb_big_webp') }}"
+                                        type="image/webp">
+                                    <img src="{{ $sameProject->getFirstMediaUrl('project-images', 'thumb_big_jpg')}}"
+                                         alt="{{$sameProject->title}}">
+                                </picture>
                                 <div class="project__others-item_title">{{$sameProject->title}}</div>
                             </a>
                         </div>

@@ -22,18 +22,18 @@
             >
                 @foreach($banners as $banner)
                     <swiper-slide>
-                        <img class="_main__banner_img" src="{{ $banner->getFirstMediaUrl()}}"
-                             alt="{{$banner->title}}">
+                        <picture>
+                            <source srcset="{{ $banner->getMedia()[0]->getUrl('main_webp') }}" type="image/webp">
+                            <img src="{{ $banner->getMedia()[0]->getUrl('main_jpg') }}" alt="{{ $banner->title }}" loading="lazy">
+                        </picture>
                     </swiper-slide>
                 @endforeach
             </swiper-container>
 
             <div class="main__banner-buttons fx-row">
-{{--                <a id="_main__banner_projects_btn" class="f-500 f-s-20" href="{{route('projects')}}">Проєкти</a>--}}
                 <button id="_main__banner_contact_us_btn" class="f-600 f-s-30">@lang('home.banner_btn')</button>
             </div>
         </div>
-{{--        <div class="main__banner-underline"></div>--}}
     </section>
 
     <section class="main__content fx-col flex-center">
@@ -48,7 +48,7 @@
                 @elseif ($menu->background_type === 'image')
                     <a href="{{$menu->link}}">
                         <div class="main__content-item border-rds"
-                             style="background-image: url({{$menu->getFirstMediaUrl()}});">
+                             style="background-image: url({{$menu->getMedia()[0]->getUrl('menu_jpg')}});">
                             <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
                         </div>
                     </a>

@@ -27,7 +27,7 @@
         <div class="projects__grid flex-center">
             @foreach($projects as $project)
                     <a href="{{route('project', $project)}}" class="projects__grid-item fx-col flex-center {{$project->type}}"
-                         style="background-image: url({{$project->getFirstMediaUrl('project-images', 'gallery_big')}})">
+                         style="background-image: url({{$project->getFirstMediaUrl('project-images', 'list_webp')}})">
                         <span class="projects__grid-item_title">{{$project->title}}</span>
                     </a>
             @endforeach

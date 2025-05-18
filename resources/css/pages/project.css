@@ -32,8 +32,7 @@ div.project__details-text {
     justify-content: start;
 }
 
-h1.project__details-text_title {
-    height: 15%;
+.project__details-text_title {
     width: 100%;
     font-size: 26px;
     font-weight: 600;
@@ -41,14 +40,16 @@ h1.project__details-text_title {
     color: var(--color-text-1);
 }
 
-div.project__details-text_desc  {
+.project__details-text_desc  {
     font-size: 16px;
     font-weight: 500;
     line-height: 25px;
     color: var(--color-text-1);
-    width: 80%;
     display: block;
     overflow-y: scroll;
+    scrollbar-width: auto;
+    width: 100%;
+    padding: 0 30px;
 }
 
 .project__others {
@@ -56,6 +57,29 @@ div.project__details-text_desc  {
     max-height: 250px;
     width: 100%;
     gap: 10px;
+}
+
+/* Загальна ширина скролбару */
+::-webkit-scrollbar {
+    width: 6px;              /* вертикальний */
+    height: 12px;             /* горизонтальний */
+}
+
+/* Трек (фонова частина) */
+::-webkit-scrollbar-track {
+    background: var(--color-1);
+    border-radius: 4px;
+}
+
+/* Повзунок (рухома частина) */
+::-webkit-scrollbar-thumb {
+    background: var(--color-2);
+    border-radius: 10px;
+}
+
+/* Ховер по повзунку */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 div.project__others-title {
@@ -117,12 +141,26 @@ div.project__others-item:hover img {
 
 @media (max-width: 1000px) {
     section.project__details  {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    div.project__details-text {
+        display: contents;
+    }
+
+    h1.project__details-text_title {
+        order: 1;
     }
 
     div.project__details-image   {
         width: 100%;
+        order: 2;
+    }
+
+    div.project__details-text_desc {
+        order: 3;
+        height: 500px;
     }
 }
-
 

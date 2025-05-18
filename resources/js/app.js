@@ -50,7 +50,8 @@ const DOM = {
         privat: document.querySelectorAll('.projects__grid-item.privat'),
         commercial: document.querySelectorAll('.projects__grid-item.commercial')
     },
-    themeSwitch: document.querySelector('.theme-switch input[type="checkbox"]'),
+    themeSwitch: document.querySelectorAll('.theme-switch input[type="checkbox"]'),
+    // themeSwitch: document.querySelectorAll('.theme-switch-wrapper'),
     planButtons: document.querySelectorAll('.plan__btn'),
     planServices: document.querySelectorAll('.plan__service'),
     contactUsPlanId: document.getElementById('_form_plan_id'),
@@ -76,6 +77,7 @@ function initSwiper() {
         swiperInstances.thumbs = thumbSwiper;
 
         const mainSwiper = new Swiper("#_project_main_swiper", {
+            lazy: true,
             modules: [FreeMode, Navigation, Pagination],
             slidesPerView: "auto",
             freeMode: true,
@@ -139,7 +141,7 @@ function addEventListeners() {
         activateInputMast()
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const notification = document.getElementById('notification');
         const loader = document.getElementById('loading-screen');
 
@@ -147,19 +149,19 @@ function addEventListeners() {
             // Check if loader exists and wait for it to be hidden
             if (loader) {
                 // Create a MutationObserver to watch for changes to the loader's classList
-                const observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
+                const observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (mutation) {
                         if (mutation.attributeName === 'class' && !loader.classList.contains('_show')) {
                             // Loader has been hidden, show the notification
                             notification.style.display = 'block';
 
                             // Make notification fade out after 5 seconds
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 notification.classList.add('fade-out');
                             }, 5000);
 
                             // Remove notification from DOM after fade out animation completes
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 notification.remove();
                             }, 5500);
 
@@ -170,18 +172,18 @@ function addEventListeners() {
                 });
 
                 // Start observing the loader element
-                observer.observe(loader, { attributes: true });
+                observer.observe(loader, {attributes: true});
             } else {
                 // If there's no loader, just show the notification directly
                 notification.style.display = 'block';
 
                 // Make notification fade out after 5 seconds
-                setTimeout(function() {
+                setTimeout(function () {
                     notification.classList.add('fade-out');
                 }, 5000);
 
                 // Remove notification from DOM after fade out animation completes
-                setTimeout(function() {
+                setTimeout(function () {
                     notification.remove();
                 }, 5500);
             }
@@ -330,15 +332,28 @@ function addEventListeners() {
             }
         }
 
-        DOM.themeSwitch.addEventListener('change', (e) => {
-            const theme = e.target.checked ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
+        DOM.themeSwitch.forEach(switcher => {
+            switcher.addEventListener('change', (e) => {
+                const theme = e.target.checked ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
 
-            // Додаємо хешування для ідентифікації теми
-            const themeHash = generateHash(`theme-${theme}-${Date.now()}`);
-            document.documentElement.dataset.themeId = themeHash;
-        });
+                // Додаємо хешування для ідентифікації теми
+                const themeHash = generateHash(`theme-${theme}-${Date.now()}`);
+                document.documentElement.dataset.themeId = themeHash;
+            });
+        })
+
+        // DOM.themeSwitch.forEach(function (switcher) {
+        //     switcher.addEventListener('click', () => {
+        //         console.log('test')
+        //         const theme = e.target.checked ? 'dark' : 'light';
+        //         document.documentElement.setAttribute('data-theme', theme);
+        //         localStorage.setItem('theme', theme);
+        //
+        //         document.documentElement.dataset.themeId = generateHash(`theme-${theme}-${Date.now()}`);
+        //     })
+        // })
     }
 
     // Кнопки плану
@@ -366,7 +381,7 @@ function showContactForm(id = null, title = null) {
 
     DOM.contactUsWrap.classList.add('_modal_mode')
 
-    if  (id !== null && title !== null) {
+    if (id !== null && title !== null) {
         DOM.contactUsPlanId.value = id
         DOM.contactUsPlanTitle.textContent = title
         DOM.contactUsPlanWrap.classList.add('_show');
@@ -401,7 +416,7 @@ function hideContactForm() {
 addEventListeners();
 
 // Експорт для можливого використання в інших модулях
-export { swiperInstances, generateHash };
+export {swiperInstances, generateHash};
 
 function activateInputMast() {
     Inputmask({
@@ -416,6 +431,3 @@ function activateInputMast() {
         clearIncomplete: true
     }).mask('._contact_us_input._tel');
 }
-
-
-

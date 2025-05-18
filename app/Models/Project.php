@@ -36,7 +36,7 @@ class  Project extends Model implements HasMedia
     public function registerMediaConversions(?Media $media = null): void
     {
         $this
-            ->addMediaConversion('thumb')
+            ->addMediaConversion('thumb_jpg')
             ->width(225)
             ->height(150)
             ->sharpen(10)
@@ -44,24 +44,51 @@ class  Project extends Model implements HasMedia
             ->nonQueued();
 
         $this
-            ->addMediaConversion('gallery_big')
-            ->format('png')
-            ->fit(Fit::Max, 9999, 800)
-            ->keepOriginalImageFormat()
-            ->nonOptimized()
-            ->quality(100)
+            ->addMediaConversion('thumb_webp')
+            ->format('webp')
+            ->width(225)
+            ->height(150)
+            ->sharpen(10)
+            ->fit(Fit::Contain)
             ->nonQueued();
 
         $this
-            ->addMediaConversion('gallery_small')
+            ->addMediaConversion('original_jpg')
+            ->format('jpg')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('original_webp')
+            ->format('webp')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('thumb_big_jpg')
             ->height(200)
             ->fit(Fit::Contain)
             ->nonQueued();
+
         $this
-            ->addMediaConversion('gallery_small_webp')
+            ->addMediaConversion('thumb_big_webp')
             ->format('webp')
+            ->height(200)
+            ->fit(Fit::Contain)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('list_jpg')
+            ->format('jpg')
+            ->width(720)
+            ->height(410)
             ->quality(90)
-            ->fit(Fit::Crop, 390, 310)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('list_webp')
+            ->format('webp')
+            ->width(720)
+            ->height(410)
+            ->quality(90)
             ->nonQueued();
     }
 }
