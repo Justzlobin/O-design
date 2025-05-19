@@ -2,11 +2,21 @@
 
 @section('seo')
     <title>{{$seo->meta_title}}</title>
+    <meta name="robots" content="noindex, nofollow">
+
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{$seo->meta_title}}">
     <meta property="og:description" content="{{$seo->meta_description}}">
-    <meta property="og:image">
+    <meta property="og:image" content="{{$seo->getFirstMediaUrl()}}">
+
+    <meta name="twitter:title" content="{{$seo->meta_title}}">
+    <meta name="twitter:description" content="{{$seo->meta_description}}">
+    <meta name="twitter:image" content="{{$seo->getFirstMediaUrl()}}">]
+    <meta name="twitter:card" content="summary_large_image">
 @endsection
 
 @section('content')

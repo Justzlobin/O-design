@@ -36,11 +36,11 @@ div.title-section__content {
     justify-content: start;
     align-items: center;
     width: 100%;
-    padding-bottom: 15%;
+    /*padding-bottom: 15%;*/
 }
 
 h1.title-section__content-title {
-    width: 70%;
+    width: 100%;
     font-size: clamp(50px, 15vw, 190px);
     font-weight: 750;
     line-height: 0.9;
@@ -49,10 +49,9 @@ h1.title-section__content-title {
 
 h2._title__body_center-subtitle {
     display: block;
-    width: 70%;
+    width: 100%;
     font-size: clamp(10px, 3vw, 40px);
     font-weight: 750;
-    padding-left: 20px;
 }
 
 div.decorate-line._right {
@@ -72,7 +71,7 @@ div.decorate-line._left {
 div.title-section__photo {
     position: absolute;
     bottom: 0;
-    right: 20%;
+    right: 0;
     width: 35%;
     padding-top: 45%;
     background-repeat: no-repeat;

@@ -2,8 +2,6 @@
 
 @section('seo')
     {!! seo()->for($project) !!}
-    <meta property="og:image" content="{{ $project->getFirstMediaUrl('project-images', 'thumb_big_jpg') }}">
-    {{--    <meta name="keywords" content="">--}}
 @endsection
 
 @section('content')
@@ -45,7 +43,7 @@
                 <h1 class="project__details-text_title fx-row flex-center">
                     {{$project->title}}
                 </h1>
-                <div class="project__details-text_desc fx-row">
+                <div class="project__details-text_desc">
                     {!! str($project->description)->sanitizeHtml() !!}
                 </div>
             </div>

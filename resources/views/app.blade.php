@@ -1,35 +1,32 @@
-@php use Mcamara\LaravelLocalization\Facades\LaravelLocalization; @endphp
+{{--@php use Mcamara\LaravelLocalization\Facades\LaravelLocalization; @endphp--}}
     <!DOCTYPE html>
-<html lang="{{LaravelLocalization::getCurrentLocale()}}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
 
-    <meta name="robots" content="noindex, nofollow">
     {{-- Dynamic seo head tags start --}}
     @yield('seo')
     {{-- Dynamic seo head tags end --}}
 
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="{{LaravelLocalization::getCurrentLocale()}}">
+    {{--    OPEN GRAPHS --}}
     <meta property="og:site_name" content="{{$generalSettings->site_name}}">
-    <meta property="og:url" content="{{ strtolower(config('app.url') . $_SERVER['REQUEST_URI']) }}">
 
-    <meta name="msapplication-TileColor" content="#da532c">
+
+    {{--    <meta name="msapplication-TileColor" content="#da532c">--}}
     <meta name="theme-color" content="#333">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v1" color="#5bbad5">
+    {{--    <link rel="mask-icon" href="/safari-pinned-tab.svg?v1" color="#5bbad5">--}}
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
-{{--    <link rel="preconnect" href="https://fonts.googleapis.com">--}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
 
@@ -40,7 +37,10 @@
         --color-3: {{ $generalSettings->color_3 }};
         --color-5: {{ $generalSettings->color_5 }};
         --color-text-1: {{ $generalSettings->color_text_1 }};
-        {{----color-text-1: {{ $generalSettings->color_text_1 }};--}}
+    {{----color-text-1: {{ $generalSettings->color_text_1 }};--}}
+
+
+
     }
 
     [data-theme="dark"] {
@@ -49,7 +49,10 @@
         --color-3: {{ $generalSettings->dark_color_3 }};
         --color-5: {{ $generalSettings->dark_color_5 }};
         --color-text-1: {{ $generalSettings->dark_color_text_1 }};
-        {{----color-text-1: {{ $generalSettings->dark_color_text_1 }};--}}
+    {{----color-text-1: {{ $generalSettings->dark_color_text_1 }};--}}
+
+
+
     }
 
 </style>
@@ -58,7 +61,7 @@
 @include('partials.header')
 
 <main ID="_main_container">
-        @yield('content')
+    @yield('content')
 </main>
 
 @include('partials.footer')

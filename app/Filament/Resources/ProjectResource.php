@@ -81,7 +81,6 @@ class ProjectResource extends Resource
                     Section::make()
                         ->schema([
                             SEO::make()
-
                         ])
                         ->columns(1)
                         ->columnSpan(1)

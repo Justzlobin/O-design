@@ -22,17 +22,17 @@
                     <i class="{{$social->icon}}"></i>
                 </a>
             @endforeach
-            @php
-                $locales  = array_keys(LaravelLocalization::getSupportedLocales());
-                $currentLocale = LaravelLocalization::getCurrentLocale();
-                $altLocale = $locales[0] === $currentLocale ? $locales[1] : $locales[0]
-            @endphp
+{{--            @php--}}
+{{--                $locales  = array_keys(LaravelLocalization::getSupportedLocales());--}}
+{{--                $currentLocale = LaravelLocalization::getCurrentLocale();--}}
+{{--                $altLocale = $locales[0] === $currentLocale ? $locales[1] : $locales[0]--}}
+{{--            @endphp--}}
 
-            <a class="local-switch cursor-pointer f-400 f-s-30"
-               hreflang="{{$altLocale}}"
-               href="{{LaravelLocalization::getLocalizedUrl($altLocale)}}">
-                {{Str::upper(LaravelLocalization::getCurrentLocale())}}
-            </a>
+{{--            <a class="local-switch cursor-pointer f-400 f-s-30"--}}
+{{--               hreflang="{{$altLocale}}"--}}
+{{--               href="{{LaravelLocalization::getLocalizedUrl($altLocale)}}">--}}
+{{--                {{Str::upper(LaravelLocalization::getCurrentLocale())}}--}}
+{{--            </a>--}}
 
             <div class="theme-switch-wrapper">
                 <label class="theme-switch" for="checkbox">

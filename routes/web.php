@@ -10,7 +10,7 @@ use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], static function () {
+//Route::group(['prefix' => LaravelLocalization::setLocale()], static function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('/faq', [FaqController::class, 'index'])->name('faq');
@@ -25,7 +25,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], static function () 
     });
 
     Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
-});
+//});
 
 Route::post('/contact', [ContactUsController::class, 'index'])->name('contact');
 

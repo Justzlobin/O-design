@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -22,6 +23,13 @@ class  Project extends Model implements HasMedia
         'type',
         'slug'
     ];
+
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            image: $this->getFirstMediaUrl('project-images'),
+        );
+    }
 
     public function getRouteKeyName(): string
     {

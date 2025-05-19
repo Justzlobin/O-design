@@ -3,11 +3,21 @@
 
 @section('seo')
     <title>{{$seo->meta_title}}</title>
+    <meta name="robots" content="noindex, nofollow">
+
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{$seo->meta_title}}">
     <meta property="og:description" content="{{$seo->meta_description}}">
-    <meta property="og:image">
+    <meta property="og:image" content="{{$seo->getFirstMediaUrl()}}">
+
+    <meta name="twitter:title" content="{{$seo->meta_title}}">
+    <meta name="twitter:description" content="{{$seo->meta_description}}">
+    <meta name="twitter:image" content="{{$seo->getFirstMediaUrl()}}">
+    <meta name="twitter:card" content="summary_large_image">
 @endsection
 
 @section('content')
@@ -15,10 +25,10 @@
     <div id="_about_us__content" class="fx-col">
         <section class="title-section fx-col">
             <div class="title-section__content fx-col">
-                <div class="decorate-line _left"></div>
+{{--                <div class="decorate-line _left"></div>--}}
                 <h1 class="title-section__content-title">ODESIGN<br>INTERIOR</h1>
                 <h2 class="_title__body_center-subtitle">DESIGN YOUR FUTURE</h2>
-                <div class="decorate-line _right"></div>
+{{--                <div class="decorate-line _right"></div>--}}
             </div>
             <div class="title-section__photo" style="background-image: url({{Storage::url('oleg.png')}})"></div>
         </section>
