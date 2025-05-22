@@ -20,7 +20,7 @@
                    placeholder="@lang('contact-us.form.phone_placeholder')" required>
         </div>
 
-        <div class="_contact_us_input_wrap  @error('e-mail') _invalid @enderror">
+        <div class="_contact_us_input_wrap">
             <input class="_contact_us_input f-s-16 f-400" data-phonemask-iso="ua" type="text" name="e-mail"
                    id="_form_mail" value="{{ old('e-mail') }}"
                    placeholder="@lang('contact-us.form.email_placeholder')">

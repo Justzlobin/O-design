@@ -211,7 +211,7 @@ function addEventListeners() {
             question.addEventListener('click', () => {
                 const answers = document.querySelectorAll('div.faq__content-item_answer');
                 const faqId = question.closest('.faq__content-item').dataset.faq_id;
-                const targetAnswer = question.nextElementSibling;
+                const targetAnswer = question.previousElementSibling;
                 const targetAnswerHeight = targetAnswer.scrollHeight;
 
                 answers.forEach(answer => {
@@ -227,7 +227,6 @@ function addEventListeners() {
                         } else {
                             answer.classList.add('_show');
                             answer.style.maxHeight = targetAnswerHeight + 'px';
-                            answer.style.marginTop = '20px';
                         }
                     }
                 });

@@ -13,6 +13,7 @@
     <meta property="og:title" content="{{$seo->meta_title}}">
     <meta property="og:description" content="{{$seo->meta_description}}">
     <meta property="og:image" content="{{$seo->getFirstMediaUrl()}}">
+    <meta property="og:type" content="website"/>
 
     <meta name="twitter:title" content="{{$seo->meta_title}}">
     <meta name="twitter:description" content="{{$seo->meta_description}}">

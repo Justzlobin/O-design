@@ -15,7 +15,7 @@
 
     <meta name="twitter:title" content="{{$seo->meta_title}}">
     <meta name="twitter:description" content="{{$seo->meta_description}}">
-    <meta name="twitter:image" content="{{$seo->getFirstMediaUrl()}}">]
+    <meta name="twitter:image" content="{{$seo->getFirstMediaUrl()}}">
     <meta name="twitter:card" content="summary_large_image">
 @endsection
 
@@ -24,8 +24,8 @@
         <div class="faq__content-grid">
             @foreach($faq_s as $faq)
                 <div class="faq__content-item fx-col" data-faq_id="{{$faq->id}}">
+                    <div class="faq__content-item_answer">{{$faq->answer}}</div>
                     <div class="faq__content-item_question">{{$faq->question}}</div>
-                    <div class="faq__content-item_answer fx-row">{{$faq->answer}}</div>
                 </div>
             @endforeach
         </div>

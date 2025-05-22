@@ -1,5 +1,5 @@
 {{--@php use Mcamara\LaravelLocalization\Facades\LaravelLocalization; @endphp--}}
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,6 @@
 
     {{--    OPEN GRAPHS --}}
     <meta property="og:site_name" content="{{$generalSettings->site_name}}">
-
 
     {{--    <meta name="msapplication-TileColor" content="#da532c">--}}
     <meta name="theme-color" content="#333">
@@ -49,10 +48,6 @@
         --color-3: {{ $generalSettings->dark_color_3 }};
         --color-5: {{ $generalSettings->dark_color_5 }};
         --color-text-1: {{ $generalSettings->dark_color_text_1 }};
-    {{----color-text-1: {{ $generalSettings->dark_color_text_1 }};--}}
-
-
-
     }
 
 </style>

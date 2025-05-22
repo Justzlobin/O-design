@@ -2,14 +2,16 @@
 
 @section('seo')
     <title>{{$generalSettings->site_name}}</title>
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, nofollow">
 
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
 
-    <meta property="og:title" content="{{$generalSettings->site_name}}">
+    <meta property="og:title" content="{{$seo->meta_title}}">
     <meta property="og:description" content="{{$seo->meta_description}}">
     <meta property="og:image" content="{{$seo->getFirstMediaUrl()}}">
+    <meta property="og:url" content="{{url()->current()}}" />
+    <meta property="og:type" content="website"/>
 
     <meta name="twitter:title" content="{{$seo->meta_title}}">
     <meta name="twitter:description" content="{{$seo->meta_description}}">
