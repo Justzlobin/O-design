@@ -26,8 +26,8 @@
                               space-between="5"
                               loop="true"
                               free-mode
-                              speed="4000"
-                              autoplay='{"delay": 300, "disableOnInteraction": false, "pauseOnMouseEnter": true}'
+                              speed="2000"
+                              autoplay='{"delay": 400, "disableOnInteraction": false, "pauseOnMouseEnter": true}'
                               centered-slides="true"
             >
                 @foreach($banners as $banner)

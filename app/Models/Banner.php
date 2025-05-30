@@ -22,14 +22,14 @@ class Banner extends Model implements HasMedia
         $this
             ->addMediaConversion('main_jpg')
             ->format('jpg')
-            ->width(2150)
+            ->fit(Fit::Fill)
             ->height(1245)
             ->nonQueued();
 
         $this
             ->addMediaConversion('main_webp')
             ->format('webp')
-            ->width(2150)
+            ->fit(Fit::Fill)
             ->height(1245)
             ->nonQueued();
 
