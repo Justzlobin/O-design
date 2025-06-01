@@ -82,7 +82,7 @@ button#_form_btn_submit {
 }
 
 button#_form_btn_submit {
-    border-radius: 5px;
+    border-radius: 4px;
     height: 50px;
     width: 100%;
 }
@@ -93,6 +93,6 @@ button#_file_upload_clean_btn:hover, button#_file_upload_btn:hover, button#_form
 
 @media  (max-width: 700px) {
     #_contact_us {
-        padding: 0;
+        padding: 0 15px;
     }
 }

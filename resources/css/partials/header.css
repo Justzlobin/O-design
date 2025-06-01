@@ -200,60 +200,6 @@ div#_contact_us_modal._show {
     opacity: .9;
 }
 
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 25px;
-}
-
-.theme-switch {
-    position: relative;
-    width: 70px;
-    height: 34px;
-}
-
-.theme-switch input {
-    display: none;
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--color-text-1);
-    border-radius: 34px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.slider:before {
-    content: "";
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    left: 4px;
-    bottom: 4px;
-    background: var(--color-1);
-    border-radius: 50%;
-    transition: all 0.4s ease;
-}
-
-input:checked + .slider {
-    background: var(--color-text-1)
-}
-
-input:checked + .slider:before {
-    transform: translateX(36px);
-}
-
-.slider, .slider:before, .slider:after {
-    transition: all 0.4s ease;
-}
-
 @media (max-width: 1450px) {
     #header > div.header__content.fx-row {
         padding: 0 10px;

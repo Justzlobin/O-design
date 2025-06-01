@@ -25,7 +25,6 @@
             <swiper-container slides-per-view="auto"
                               space-between="5"
                               loop="true"
-                              free-mode
                               speed="2000"
                               autoplay='{"delay": 400, "disableOnInteraction": false, "pauseOnMouseEnter": true}'
                               centered-slides="true"
@@ -51,13 +50,13 @@
             @foreach($menus as $menu)
                 @if ($menu->background_type === 'gradient')
                     <a href="{{$menu->link}}">
-                        <div class="main__content-item border-rds" style="background: var(--home-item-graient)">
+                        <div class="main__content-item" style="background: var(--home-item-graient)">
                             <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
                         </div>
                     </a>
                 @elseif ($menu->background_type === 'image')
                     <a href="{{$menu->link}}">
-                        <div class="main__content-item border-rds"
+                        <div class="main__content-item"
                              style="background-image: url({{$menu->getMedia()[0]->getUrl('menu_jpg')}});">
                             <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
                         </div>

@@ -50,7 +50,7 @@ const DOM = {
         privat: document.querySelectorAll('.projects__grid-item.privat'),
         commercial: document.querySelectorAll('.projects__grid-item.commercial')
     },
-    themeSwitch: document.querySelectorAll('.theme-switch input[type="checkbox"]'),
+    themeSwitch: document.querySelectorAll('.theme input[type="checkbox"]'),
     // themeSwitch: document.querySelectorAll('.theme-switch-wrapper'),
     planButtons: document.querySelectorAll('.plan__btn'),
     planServices: document.querySelectorAll('.plan__service'),
@@ -322,18 +322,29 @@ function addEventListeners() {
 
     // Перемикач теми
     if (DOM.themeSwitch) {
-        const currentTheme = localStorage.getItem('theme');
 
+        const currentTheme = localStorage.getItem('theme');
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
             if (currentTheme === 'dark') {
-                DOM.themeSwitch.checked = true;
+                DOM.themeSwitch.forEach(switcher => {
+                    switcher.checked = true;
+                })
+            } else if (currentTheme === 'light') {
+                DOM.themeSwitch.forEach(switcher => {
+                    switcher.checked = false;
+                })
             }
         }
 
         DOM.themeSwitch.forEach(switcher => {
             switcher.addEventListener('change', (e) => {
-                const theme = e.target.checked ? 'dark' : 'light';
+                let targetSwitcherChecked = e.target.checked
+                DOM.themeSwitch.forEach( switcher => {
+                    switcher.checked = targetSwitcherChecked;
+                })
+
+                const theme = targetSwitcherChecked ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', theme);
                 localStorage.setItem('theme', theme);
 
@@ -342,17 +353,6 @@ function addEventListeners() {
                 document.documentElement.dataset.themeId = themeHash;
             });
         })
-
-        // DOM.themeSwitch.forEach(function (switcher) {
-        //     switcher.addEventListener('click', () => {
-        //         console.log('test')
-        //         const theme = e.target.checked ? 'dark' : 'light';
-        //         document.documentElement.setAttribute('data-theme', theme);
-        //         localStorage.setItem('theme', theme);
-        //
-        //         document.documentElement.dataset.themeId = generateHash(`theme-${theme}-${Date.now()}`);
-        //     })
-        // })
     }
 
     // Кнопки плану

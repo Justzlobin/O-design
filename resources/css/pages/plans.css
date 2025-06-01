@@ -4,7 +4,7 @@
     height: auto;
     min-height: calc(100svh - var(--header-desktop-height));
     margin-top: var(--header-desktop-height);
-    padding: 50px 20px;
+    padding: 50px 0;
     gap: 60px;
 }
 
@@ -19,16 +19,23 @@
 
 .plans__item--wrap {
     height: 100%;
-    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     transform-style: preserve-3d;
 }
 
+html[data-theme="dark"] .plans__item--wrap {
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+}
+
 .plans__item--wrap:hover {
-    transform: translateY(-10px);
+    transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="dark"] .plans__item--wrap:hover {
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.21);
 }
 
 .plans__item--title {
@@ -46,7 +53,6 @@
     padding: 30px 0;
     color: var(--color-text-1);
     background: var(--color-3);
-    border-radius: 10px;
     gap: 20px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -56,7 +62,7 @@
 
 .plans__item--wrap .plans__content-item {
     height: 100%;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 div.plan__header {
@@ -84,8 +90,8 @@ div.plan__header-title::after {
     transform: translateX(-50%);
     width: 40px;
     height: 3px;
-    background-color: var(--color-1);
-    border-radius: 3px;
+    background-color: var(--color-text-1);
+    border-radius: 4px;
 }
 
 div.plan__header-desc {
@@ -107,9 +113,14 @@ div.plan__list_services {
     justify-content: flex-start;
     align-items: flex-start;
     margin: 15px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+html[data-theme="dark"] .plan__list_services  {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 15px 0;
 }
 
 div.plan__service {
@@ -124,11 +135,11 @@ div.plan__service {
 }
 
 div.plan__service:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-.plan__service:nth-child(2n) {
-    background: var(--color-2);
+html[data-theme="dark"] .plan__service:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .plan__service svg {
@@ -138,10 +149,6 @@ div.plan__service:hover {
     transition: transform 0.3s ease;
 }
 
-.plan__service:hover svg {
-    transform: scale(1.2);
-}
-
 div.plan__price {
     height: 60px;
     min-height: 60px;
@@ -149,7 +156,7 @@ div.plan__price {
     text-align: center;
     font-size: 28px;
     font-weight: 700;
-    color: var(--color-1);
+    color: var(--color-text-1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,32 +166,40 @@ div.plan__price {
 .plan__btn {
     width: 70%;
     text-align: center;
-    border-radius: 30px;
+    border-radius: 4px;
     background: var(--color-1);
     height: 60px;
+    min-height: 60px;
     font-weight: 700;
     font-size: 18px;
     align-self: center;
     color: var(--color-text-1);
     transition: all 0.3s ease-in-out;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-top: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+html[data-theme="dark"] .plan__btn {
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
 .plan__btn:hover {
     border-color: var(--color-text-1);
-    transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="dark"] .plan__btn:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.21);
 }
 
 .plans__services {
     width: 100%;
     color: var(--color-text-1);
     margin-top: 50px;
-    border-radius: 12px;
+    border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
 }
@@ -227,18 +242,6 @@ div.plan__price {
     justify-content: flex-start;
     position: relative;
 }
-
-/*.plans__services--header .plans__services--title::after {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    bottom: -5px;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*    width: 30px;*/
-/*    height: 3px;*/
-/*    background-color: var(--color-text-1);*/
-/*    border-radius: 3px;*/
-/*}*/
 
 .plans__services--desc {
     width: 40%;
@@ -295,45 +298,21 @@ div.plan__price {
     transform: scale(1.2);
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1250px) {
     div.plans__content-list {
         grid-template-columns: repeat(2, minmax(280px, 1fr));
     }
+}
 
+@media (max-width: 1150px) {
     .plans__content {
         padding: 40px 15px;
     }
 }
 
 @media (max-width: 1024px) {
-    div.plans__services--header,
-    div.plans__services--plans {
+    div.plans__services {
         display: none !important;
-    }
-
-    div.plans__services--row {
-        flex-direction: column;
-        padding: 25px 15px;
-        gap: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    div.plans__services--row > div {
-        width: 100%;
-    }
-
-    div.plans__services--title {
-        font-size: 18px;
-        justify-content: flex-start;
-        margin-bottom: 10px;
-    }
-
-    div.plans__services--desc {
-        padding: 0;
-    }
-
-    .plans__services {
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
 }
 

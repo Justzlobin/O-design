@@ -2,6 +2,7 @@
 @import "partials/contact-us-popup.css";
 @import "partials/header.css";
 @import "partials/footer.css";
+@import "partials/theme-switcher.css";
 
 @import "pages/home.css";
 @import "pages/plans.css";
