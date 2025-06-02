@@ -9,7 +9,7 @@
 
     <meta property="og:title" content="{{$seo->meta_title}}">
     <meta property="og:description" content="{{$seo->meta_description}}">
-    <meta property="og:image" content="{{$seo->getFirstMediaUrl()}}">
+    <meta property="og:image" content="{{$seo->getFirstMediaUrl()}}">  q
     <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:type" content="website"/>
 
@@ -32,8 +32,8 @@
                 @foreach($banners as $banner)
                     <swiper-slide>
                         <picture>
-                            <source srcset="{{ $banner->getMedia()[0]->getUrl('main_webp') }}" type="image/webp">
-                            <img src="{{ $banner->getMedia()[0]->getUrl('main_jpg') }}" alt="{{ $banner->title }}" loading="lazy">
+                            <source srcset="{{ $banner->media[0]->getUrl('main_webp') }}" type="image/webp">
+                            <img src="{{ $banner->media[0]->getUrl('main_jpg') }}" alt="{{ $banner->title }}">
                         </picture>
                     </swiper-slide>
                 @endforeach
@@ -48,20 +48,11 @@
     <section class="main__content fx-col flex-center">
         <div class="main__content-grid">
             @foreach($menus as $menu)
-                @if ($menu->background_type === 'gradient')
-                    <a href="{{$menu->link}}">
-                        <div class="main__content-item" style="background: var(--home-item-graient)">
-                            <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
-                        </div>
-                    </a>
-                @elseif ($menu->background_type === 'image')
-                    <a href="{{$menu->link}}">
-                        <div class="main__content-item"
-                             style="background-image: url({{$menu->getMedia()[0]->getUrl('menu_jpg')}});">
-                            <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
-                        </div>
-                    </a>
-                @endif
+                <a href="{{$menu->link}}">
+                    <div class="main__content-item" style="background-image: url({{$menu->media[0]->getUrl('menu_jpg')}});">
+                        <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
+                    </div>
+                </a>
             @endforeach
         </div>
     </section>

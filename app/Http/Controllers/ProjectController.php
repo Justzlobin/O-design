@@ -8,7 +8,7 @@ class ProjectController
 {
     public function index(Project $project)
     {
-        $sameProjects = Project::where('type', $project->type)->where('id', '!=', $project->id)->get();
+        $sameProjects = Project::where('type', $project->type)->where('id', '!=', $project->id)->with('media')->get();
 
         return view('pages.project', compact('project', 'sameProjects'));
     }

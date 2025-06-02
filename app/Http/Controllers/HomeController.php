@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $banners = Banner::where('is_active', 1)->get();
+        $banners = Banner::where('is_active', 1)->with('media')->get();
         $seo = SeoPage::where('page_slug', Page::HOME)->first();
 
         return view('pages.home', compact('banners', 'seo'));

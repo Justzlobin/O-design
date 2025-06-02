@@ -11,7 +11,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class  Project extends Model implements HasMedia
+class Project extends Model implements HasMedia
 {
     use InteractsWithMedia;
     use HasFactory;
