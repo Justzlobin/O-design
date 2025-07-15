@@ -51,8 +51,6 @@ div.faq__content-item_question::after {
     justify-content: center;
     text-align: center;
     color: var(--color-text-1);
-    /*border-radius: 50%;*/
-    /*background-color: var(--color-text-1);*/
     transition: transform 0.3s ease-in-out;
 }
 

@@ -97,14 +97,14 @@ div.plan__header-title::after {
 div.plan__header-desc {
     height: auto;
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-weight: 500;
     font-size: 16px;
-    min-height: 70px;
     align-content: center;
     line-height: 1.5;
     opacity: 0.9;
     padding: 0 25px;
+    min-height: 100px;
 }
 
 div.plan__list_services {
@@ -145,7 +145,7 @@ html[data-theme="dark"] .plan__service:hover {
 .plan__service svg {
     width: 22px;
     height: 22px;
-    fill: var(--color-1);
+    fill: var(--color-text-1);
     transition: transform 0.3s ease;
 }
 

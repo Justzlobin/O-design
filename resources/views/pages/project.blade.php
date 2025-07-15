@@ -15,7 +15,7 @@
                                 <picture>
                                     <source srcset="{{$image->getUrl('original_webp')}}" type="image/webp">
                                     <img class="_project__img" src="{{$image->getUrl('original_jpg')}}"
-                                         alt="{{$image->title}}" data-fancybox="gallery" loading="lazy">
+                                         alt="{{$image->name}}" data-fancybox="gallery" loading="lazy">
                                 </picture>
                             </div>
                         @endforeach
@@ -32,7 +32,7 @@
                             <div class="swiper-slide">
                                 <picture>
                                     <source srcset="{{$image->getUrl('thumb_webp')}}" type="image/webp">
-                                    <img src="{{$image->getUrl('thumb_jpg')}}" alt="{{$image->title}}">
+                                    <img src="{{$image->getUrl('thumb_jpg')}}" alt="{{$image->name}}">
                                 </picture>
                             </div>
                         @endforeach

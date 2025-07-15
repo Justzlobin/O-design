@@ -9,7 +9,7 @@
 
     <meta property="og:title" content="{{$seo->meta_title}}">
     <meta property="og:description" content="{{$seo->meta_description}}">
-    <meta property="og:image" content="{{$seo->getFirstMediaUrl()}}">  q
+    <meta property="og:image" content="{{$seo->getFirstMediaUrl()}}">
     <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:type" content="website"/>
 

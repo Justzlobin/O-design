@@ -72,6 +72,7 @@ class ProjectResource extends Resource
                         ->schema([
                             SpatieMediaLibraryFileUpload::make('image')
                                 ->collection('project-images')
+                                ->preserveFilenames()
                                 ->reorderable()
                                 ->multiple()
                                 ->required()
