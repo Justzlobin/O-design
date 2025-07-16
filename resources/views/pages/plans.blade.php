@@ -31,7 +31,7 @@
                         </div>
                         <div class="plan__list_services fx-col">
                             @foreach($plan->services as $service)
-                                <div class="plan__service fx-row">
+                                <div class="plan__service fx-row" data-desc="{{$service->desc}}">
                                     <span>{{$service->title}}</span>
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64">

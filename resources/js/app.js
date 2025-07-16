@@ -411,6 +411,9 @@ function hideContactForm() {
     }, 500);
 }
 
+// Import tooltip functionality
+import './components/tooltip.js';
+
 // Ініціалізація всіх обробників подій
 addEventListeners();
 

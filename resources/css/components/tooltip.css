@@ -1,0 +1,41 @@
+.tooltip {
+    position: absolute;
+    background-color: white;
+    color: var(--color-text-1);
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    max-width: 250px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    line-height: 1.5;
+    text-align: left;
+}
+
+html[data-theme="dark"] .tooltip {
+    background-color: #2a2a2a;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Стиль для активного елемента з тултіпом */
+.plan__service.tooltip-active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .plan__service.tooltip-active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Додаємо курсор pointer для елементів з тултіпом */
+.plan__service {
+    cursor: pointer;
+}
