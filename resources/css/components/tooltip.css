@@ -35,7 +35,31 @@ html[data-theme="dark"] .plan__service.tooltip-active {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Стиль для активної назви тарифу */
+.plan__header-title.tooltip-active {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+html[data-theme="dark"] .plan__header-title.tooltip-active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Ховер-ефект для назви тарифу */
+.plan__header-title:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+html[data-theme="dark"] .plan__header-title:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
 /* Додаємо курсор pointer для елементів з тултіпом */
-.plan__service {
+.plan__service,
+.plan__header-title {
     cursor: pointer;
 }
+
+

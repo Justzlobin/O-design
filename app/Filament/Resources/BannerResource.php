@@ -64,7 +64,8 @@ class BannerResource extends Resource
             ])
             ->bulkActions([
                 //
-            ]);
+            ])
+            ->reorderable('sort');
     }
 
     public static function getRelations(): array

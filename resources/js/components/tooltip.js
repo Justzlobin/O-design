@@ -8,30 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentTooltipElement = null;
 
     // Function to update tooltip position and content
-    function showTooltip(element) {
-        const serviceDesc = element.dataset.desc;
-        
+    function showTooltip(element, content) {
         // Set tooltip content
-        tooltip.textContent = serviceDesc;
+        tooltip.textContent = content;
         
         // Position tooltip
         const rect = element.getBoundingClientRect();
-        const tooltipHeight = tooltip.offsetHeight;
         
-        // Position tooltip above the element on desktop and below on mobile
-        if (window.innerWidth <= 768) {
-            tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
-            tooltip.style.top = (rect.bottom + 10) + window.scrollY + 'px';
-        } else {
-            tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
-            tooltip.style.top = (rect.top - tooltipHeight - 10) + window.scrollY + 'px';
-        }
+        // Position tooltip below the element always
+        tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
+        tooltip.style.top = (rect.bottom + 10) + window.scrollY + 'px';
         
         // Make tooltip visible
         tooltip.classList.add('visible');
         currentTooltipElement = element;
         
-        // Add active class to the service element
+        // Add active class to the element
         element.classList.add('tooltip-active');
     }
 
@@ -46,14 +38,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Get all service elements
+    // Add tooltips to service elements
     const serviceElements = document.querySelectorAll('.plan__service');
-
-    // Add click event listeners to each service element
     serviceElements.forEach(service => {
         service.addEventListener('click', function(e) {
-            // If this element already has an active tooltip, hide it
-            if (currentTooltipElement === service) {
+            // Get description from data attribute
+            const serviceDesc = service.dataset.desc;
+            
+            // If no description or this element already has an active tooltip, hide it
+            if (!serviceDesc || currentTooltipElement === service) {
                 hideTooltip();
                 return;
             }
@@ -62,7 +55,35 @@ document.addEventListener('DOMContentLoaded', function() {
             hideTooltip();
             
             // Show tooltip for this element
-            showTooltip(service);
+            showTooltip(service, serviceDesc);
+            
+            // Prevent event from bubbling up to document
+            e.stopPropagation();
+        });
+    });
+    
+    // Add tooltips to plan title elements that show plan description
+    const planTitles = document.querySelectorAll('.plan__header-title');
+    planTitles.forEach(title => {
+        title.addEventListener('click', function(e) {
+            // Find the description element (sibling of the title)
+            const descElement = title.parentElement.querySelector('.plan__header-desc');
+            
+            if (!descElement) return;
+            
+            const planDesc = descElement.textContent;
+            
+            // If this element already has an active tooltip, hide it
+            if (currentTooltipElement === title) {
+                hideTooltip();
+                return;
+            }
+            
+            // Hide any existing tooltip
+            hideTooltip();
+            
+            // Show tooltip for this element with plan description
+            showTooltip(title, planDesc);
             
             // Prevent event from bubbling up to document
             e.stopPropagation();
@@ -76,8 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update tooltip position on window resize if it's visible
     window.addEventListener('resize', function() {
-        if (currentTooltipElement) {
-            showTooltip(currentTooltipElement);
+        if (currentTooltipElement && tooltip.textContent) {
+            showTooltip(currentTooltipElement, tooltip.textContent);
         }
     });
 });

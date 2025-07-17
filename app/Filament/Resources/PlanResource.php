@@ -33,6 +33,7 @@ class PlanResource extends Resource
                                     ->label('Назва')
                                     ->required()
                                     ->maxLength(60),
+
                                 Forms\Components\Textarea::make('desc')
                                     ->reactive()
                                     ->hint(fn ($state) => mb_strlen($state) . '/255')
@@ -40,11 +41,15 @@ class PlanResource extends Resource
                                     ->maxLength(255)
                                     ->required()
                                     ->columnSpanFull(),
+
                                 Forms\Components\TextInput::make('price')
-                                    ->hint('$/h')
                                     ->label('Ціна')
                                     ->numeric()
                                     ->inputMode('decimal'),
+
+                                Forms\Components\TextInput::make('type_price')
+                                    ->default('$/m&sup2;'),
+
                                 Forms\Components\Toggle::make('is_active')
                                     ->label('Активний')
                                     ->required(),
@@ -94,7 +99,8 @@ class PlanResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->reorderable('sort');
     }
 
     public static function getRelations(): array

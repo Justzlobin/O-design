@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         Config::set('settings.site_name', $generalSettings->site_name);
 
         View::share('socials', Social::where('is_active', 1)->get());
-        View::share('menus', Menu::where('is_active', 1)->with('media')->orderBy('position', 'ASC')->get());
+        View::share('menus', Menu::where('is_active', 1)->ordered()->with('media')->get());
         View::share('generalSettings', $generalSettings);
         Gate::define('use-translation-manager', static function (?User $user) {
             return $user !== null && $user->hasRole('super_admin');

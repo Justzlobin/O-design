@@ -50,7 +50,7 @@ html[data-theme="dark"] .plans__item--wrap:hover {
 }
 
 .plans__content-item {
-    padding: 30px 0;
+    padding: 10px 0 30px 0;
     color: var(--color-text-1);
     background: var(--color-3);
     gap: 20px;
@@ -67,13 +67,11 @@ html[data-theme="dark"] .plans__item--wrap:hover {
 
 div.plan__header {
     width: 100%;
-    gap: 20px;
     padding: 0 25px;
 }
 
 div.plan__header-title {
-    height: 50px;
-    min-height: 50px;
+    min-height: 70px;
     width: 100%;
     text-align: center;
     font-weight: 700;
@@ -95,16 +93,7 @@ div.plan__header-title::after {
 }
 
 div.plan__header-desc {
-    height: auto;
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
-    font-size: 16px;
-    align-content: center;
-    line-height: 1.5;
-    opacity: 0.9;
-    padding: 0 25px;
-    min-height: 100px;
+    display: none; /* Приховуємо опис тарифу */
 }
 
 div.plan__list_services {
@@ -150,8 +139,6 @@ html[data-theme="dark"] .plan__service:hover {
 }
 
 div.plan__price {
-    height: 60px;
-    min-height: 60px;
     width: 100%;
     text-align: center;
     font-size: 28px;
@@ -160,7 +147,6 @@ div.plan__price {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
 }
 
 .plan__btn {
@@ -168,8 +154,7 @@ div.plan__price {
     text-align: center;
     border-radius: 4px;
     background: var(--color-1);
-    height: 60px;
-    min-height: 60px;
+    min-height: 50px;
     font-weight: 700;
     font-size: 18px;
     align-self: center;
@@ -178,7 +163,6 @@ div.plan__price {
     border: 1px solid transparent;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-top: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 

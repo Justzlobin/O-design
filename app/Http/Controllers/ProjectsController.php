@@ -12,7 +12,7 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        $projects = Project::select(['title', 'description', 'id', 'slug', 'type'])->with('media')->get();
+        $projects = Project::select(['title', 'description', 'id', 'slug', 'type'])->with('media')->ordered()->get();
         $seo = SeoPage::where('page_slug', Page::PROJECTS)->first();
 
         return view('pages.projects', compact('projects', 'seo'));

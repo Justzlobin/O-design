@@ -18,14 +18,15 @@ class PlansController extends Controller
 
     public function index()
     {
-        $seo = SeoPage::where('page_slug', $this->page)->first();
+        $seo = SeoPage::where('page_slug', $this->page)
+            ->first();
         $plans = Plan::where('is_active', 1)
+            ->ordered()
             ->with(['services' => function ($query) {
-                $query  ->isActive()->ordered();
+                $query->isActive()->ordered();
             }])->get();
 
-        $services = Service::isActive()->ordered()->with('plans')->get();
 
-        return view('pages.plans', compact('seo', 'services', 'plans'));
+        return view('pages.plans', compact('seo', 'plans'));
     }
 }

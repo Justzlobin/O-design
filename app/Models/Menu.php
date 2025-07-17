@@ -3,21 +3,23 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Menu extends Model implements HasMedia
+class Menu extends Model implements HasMedia, Sortable
 {
     use InteractsWithMedia;
+    use SortableTrait;
 
     protected $fillable = [
         'title',
         'link',
         'background_type',
         'is_active',
-        'position'
     ];
 
     public function registerMediaConversions(?Media $media = null): void
