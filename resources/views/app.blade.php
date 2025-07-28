@@ -37,9 +37,6 @@
         --color-5: {{ $generalSettings->color_5 }};
         --color-text-1: {{ $generalSettings->color_text_1 }};
     {{----color-text-1: {{ $generalSettings->color_text_1 }};--}}
-
-
-
     }
 
     [data-theme="dark"] {

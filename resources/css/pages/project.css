@@ -41,9 +41,9 @@ div.project__details-text {
 }
 
 .project__details-text_desc {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 25px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
     color: var(--color-text-1);
     display: block;
     overflow-y: scroll;

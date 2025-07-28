@@ -14,8 +14,6 @@
 
 div._contact_us__title {
     color: var(--color-text-1);
-    font-size: 25px;
-    font-weight: 500;
     text-transform: uppercase;
     width: 100%;
 }
@@ -37,6 +35,7 @@ form#_contact_us_form {
 
 ._contact_us_input_wrap.comment {
     height: 50px;
+    position: relative;
 }
 
 ._contact_us_input {
@@ -89,6 +88,20 @@ button#_form_btn_submit {
 
 button#_file_upload_clean_btn:hover, button#_file_upload_btn:hover, button#_form_btn_submit:hover {
     transition: all .2s ease-in-out;
+}
+
+.custom-placeholder {
+    position: absolute;
+    bottom: 10px;
+    color: var(--color-text-1);
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+/* Сховати placeholder, коли щось введено */
+textarea:focus + .custom-placeholder,
+textarea:not(:placeholder-shown) + .custom-placeholder {
+    opacity: 0;
 }
 
 @media  (max-width: 700px) {

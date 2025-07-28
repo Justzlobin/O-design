@@ -40,7 +40,7 @@
             </swiper-container>
 
             <div class="main__banner-buttons fx-row">
-                <button id="_main__banner_contact_us_btn" class="f-600 f-s-30">@lang('home.banner_btn')</button>
+                <button id="_main__banner_contact_us_btn" class="f-300 f-s-16">@lang('home.banner_btn')</button>
             </div>
         </div>
     </section>

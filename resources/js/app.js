@@ -378,7 +378,8 @@ function showContactForm(id = null, title = null) {
     //     DOM.contactUsModal.classList.add('_show');
     // }
 
-    DOM.contactUsWrap.classList.add('_modal_mode')
+    DOM.contactUsWrap.classList.add('_modal_mode');
+    document.getElementById('footer').style.zIndex = '1052';
 
     if (id !== null && title !== null) {
         DOM.contactUsPlanId.value = id
@@ -396,6 +397,7 @@ function showContactForm(id = null, title = null) {
 function hideContactForm() {
     // if (!DOM.contactUsModal) return;
     DOM.contactUsWrap.classList.remove('_modal_mode')
+    document.getElementById('footer').style.zIndex = '1050';
 
     // document.querySelector('.footer__content-contact_us').appendChild(DOM.contactUsForm)
 

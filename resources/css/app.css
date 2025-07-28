@@ -17,7 +17,7 @@
     --color-white: #ffffff;
 
     --header-slogan-height: 0px;
-    --header-navigation-height: 60px;
+    --header-navigation-height: 80px;
     --header-desktop-height: calc(var(--header-slogan-height) + var(--header-navigation-height));
 
     --footer-desktop-height: 500px;

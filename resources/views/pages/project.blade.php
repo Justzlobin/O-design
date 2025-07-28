@@ -44,7 +44,7 @@
                     {{$project->title}}
                 </h1>
                 <div class="project__details-text_desc">
-                    {!! str($project->description)->sanitizeHtml() !!}
+                    {!! $project->description !!}
                 </div>
             </div>
         </section>

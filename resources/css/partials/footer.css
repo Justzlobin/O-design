@@ -6,7 +6,7 @@
     min-height: var(--footer-desktop-height);
     background: var(--color-1);
     padding: 20px 10px;
-    box-shadow: 0 -4px 30px -10px var(--color-text-1);
+    box-shadow: 0px 3px 30px -10px var(--color-text-1);;
     z-index: 1050;
     position: relative;
     color: var(--color-text-1);
@@ -30,10 +30,6 @@
     gap: 20px;
 }
 
-.footer__info--logo {
-    font-size: 30px;
-    font-weight: 500;
-}
 
 .footer__info--contacts {
     gap: 20px;
@@ -57,9 +53,8 @@
 
 ._footer__menu_item {
     min-height: 40px;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .footer__content-contact_us._show {
