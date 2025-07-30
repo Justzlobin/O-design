@@ -26,21 +26,21 @@
                 <div class="plans__item--wrap @if ($plan->title === 'Базовий') _promotional @endif">
                     <div class="plans__content-item fx-col">
                         <div class="plan__header fx-col flex-center">
-                            <div class="plan__header-title fx-row flex-center">{{$plan->title}}</div>
+                            <div class="plan__header-title fx-row flex-center f-s-22 f-500">{{$plan->title}}</div>
                             <div class="plan__header-desc">{{$plan->desc}}</div>
                         </div>
                         <div class="plan__list_services fx-col">
                             @foreach($plan->services as $service)
                                 <div class="plan__service fx-row" data-desc="{{$service->desc}}">
-                                    <span>{{$service->title}}</span>
-                                    <span class="f-s-24">+</span>
+                                    <span class="f-s-14 f-300 l-n-24">{{$service->title}}</span>
+                                    <span class="f-s-24 f-100 ">+</span>
                                 </div>
                             @endforeach
                         </div>
                         <div class="plan__price fx-row flex-center">
-                            <span>{{$plan->price}} {!! $plan->type_price !!}</span>
+                            <span class="f-500 f-s-22 l-n-24">{{$plan->price}} {!! $plan->type_price !!}</span>
                         </div>
-                        <button class="plan__btn fx-row flex-center cursor-pointer" data-id="{{$plan->id}}">
+                        <button class="plan__btn fx-row flex-center cursor-pointer f-s-22 f-500 l-n-24" data-id="{{$plan->id}}">
                             Замовити
                         </button>
                     </div>

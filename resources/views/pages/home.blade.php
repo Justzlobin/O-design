@@ -50,7 +50,7 @@
             @foreach($menus as $menu)
                 <a href="{{$menu->link}}">
                     <div class="main__content-item" style="background-image: url({{$menu->media[0]->getUrl('menu_jpg')}});">
-                        <span class="main__content-item_title f-s-30 f-600">@lang('home.menu.' . $menu->title )</span>
+                        <span class="main__content-item_title f-s-30 f-500">@lang('home.menu.' . $menu->title )</span>
                     </div>
                 </a>
             @endforeach

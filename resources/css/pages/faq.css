@@ -41,7 +41,7 @@ div.faq__content-item_question::after {
     content: '+';
     position: absolute;
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 100;
     top: 50%;
     transform: translateY(-50%);
     right: 25px;
@@ -78,13 +78,10 @@ div.faq__content-item_question {
 
 div.faq__content-item_answer {
     width: 100%;
-    font-size: 16px;
-    font-weight: 400;
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     padding: 0 30px;
-    line-height: 1.6;
     opacity: 0;
 }
 

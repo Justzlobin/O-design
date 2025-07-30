@@ -47,6 +47,10 @@
     font-size: 20px;
 }
 
+.f-s-22 {
+    font-size: 22px;
+}
+
 .f-s-24 {
     font-size: 24px;
 }
@@ -54,8 +58,17 @@
 .f-s-30 {
     font-size: 30px;
 }
+
 .f-s-32 {
     font-size: 32px;
+}
+
+.f-100 {
+    font-weight: 100;
+}
+
+.f-200 {
+    font-weight: 200;
 }
 
 .f-300 {
@@ -76,6 +89,10 @@
 
 .f-700 {
     font-weight: 700;
+}
+
+.l-n-24 {
+    line-height: 24px;
 }
 
 .fx-row {

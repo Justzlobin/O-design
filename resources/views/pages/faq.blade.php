@@ -24,8 +24,8 @@
         <div class="faq__content-grid">
             @foreach($faq_s as $faq)
                 <div class="faq__content-item fx-col" data-faq_id="{{$faq->id}}">
-                    <div class="faq__content-item_answer">{{$faq->answer}}</div>
-                    <div class="faq__content-item_question">{{$faq->question}}</div>
+                    <div class="faq__content-item_answer f-300 f-s-14 l-n-24">{{$faq->answer}}</div>
+                    <div class="faq__content-item_question f-700 f-s-22 l-n-24">{{$faq->question}}</div>
                 </div>
             @endforeach
         </div>

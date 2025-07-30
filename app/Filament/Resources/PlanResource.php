@@ -100,7 +100,8 @@ class PlanResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ])
-            ->reorderable('sort');
+            ->reorderable('sort')
+            ->defaultSort('sort');
     }
 
     public static function getRelations(): array

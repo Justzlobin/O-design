@@ -85,11 +85,11 @@ div.mobile__menu span.bar {
 }
 
 div.mobile__menu span.bar:nth-of-type(2) {
-    top: calc(50% - 8px);
+    top: calc(50% - 6px);
 }
 
 div.mobile__menu span.bar:nth-of-type(3) {
-    top: calc(50% + 8px);
+    top: calc(50% + 6px);
 }
 
 div.header__content-logo {
@@ -118,10 +118,10 @@ a.header__socials-item, a#_tel {
     /*color: var(--color-black);*/
 }
 
-.header__socials-item:hover, a#_tel:hover {
-    transform: scale(1.08);
-    transition: transform .3s ease-in-out;
-}
+/*.header__socials-item:hover, a#_tel:hover {*/
+/*    transform: scale(1.08);*/
+/*    transition: transform .3s ease-in-out;*/
+/*}*/
 
 .local-switch {
     margin-left: 25px;

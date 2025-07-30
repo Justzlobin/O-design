@@ -74,8 +74,6 @@ div.plan__header-title {
     min-height: 70px;
     width: 100%;
     text-align: center;
-    font-weight: 700;
-    font-size: 28px;
     letter-spacing: 0.5px;
     position: relative;
 }
@@ -141,8 +139,6 @@ html[data-theme="dark"] .plan__service:hover {
 div.plan__price {
     width: 100%;
     text-align: center;
-    font-size: 28px;
-    font-weight: 700;
     color: var(--color-text-1);
     display: flex;
     justify-content: center;
@@ -155,31 +151,22 @@ div.plan__price {
     border-radius: 4px;
     background: var(--color-1);
     min-height: 50px;
-    font-weight: 700;
-    font-size: 18px;
     align-self: center;
     color: var(--color-text-1);
     transition: all 0.3s ease-in-out;
-    /*border: 1px solid transparent;*/
     letter-spacing: 0.5px;
-    text-transform: uppercase;
-    /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);*/
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 html[data-theme="dark"] .plan__btn {
-    /*box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);*/
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .plan__btn:hover {
-    /*border-color: var(--color-text-1);*/
-    /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);*/
     border: 1px solid rgba(0, 0, 0, 0.5)
 }
 
 html[data-theme="dark"] .plan__btn:hover {
-    /*box-shadow: 0 10px 20px rgba(255, 255, 255, 0.21);*/
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
