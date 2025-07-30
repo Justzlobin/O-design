@@ -7,6 +7,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     font-size: 14px;
     max-width: 250px;
+    width: max-content;
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -15,6 +16,8 @@
     line-height: 1.5;
     text-align: left;
     bottom: 0;
+    max-height: 300px;
+    height: max-content;
 }
 
 html[data-theme="dark"] .tooltip {
