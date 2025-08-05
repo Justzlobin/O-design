@@ -52,7 +52,7 @@
 {{--        <div class="separate-line"></div>--}}
 
         <section class="rules-section fx-row">
-            <div class="rules-section__img" style="background-image: url({{Storage::url('rules_1_crop.jpg')}})"></div>
+            <div class="rules-section__img" style="background-image: url({{Storage::url('Cabinet_1_Post.jpg')}})"></div>
             <div class="rules-section__text fx-col">
                 <h2 class="rules-section__text-title">@lang('about-us.rules_title')</h2>
 {{--                <div class="decorate-line"></div>--}}

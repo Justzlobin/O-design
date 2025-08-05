@@ -13,7 +13,7 @@
                 <span class="bar"></span>
             </div>
             <a href="{{route('home')}}">
-                <div class="header__content-logo f-s-20 f-400">{{$generalSettings->site_name}}</div>
+                <div class="header__content-logo f-s-20 f-800">{{$generalSettings->site_name}}</div>
             </a>
         </div>
         <div class="header__socials fx-row f-s-20">
@@ -36,13 +36,13 @@
         <div id="_header__menu_content">
             <div class="header__menu--modal fx-col flex-center">
                 <ul class="header__menu fx-col flex-center">
-                    <li class="_header__menu_item f-s-20 f-500">
+                    <li class="_header__menu_item f-s-16 f-300 l-n-24">
                         <a href="{{route('home')}}" title="home">
                             @lang('home.menu.home')
                         </a>
                     </li>
                     @foreach($menus as $menu)
-                        <li class="_header__menu_item f-s-20 f-500">
+                        <li class="_header__menu_item f-s-16 f-300 l-n-24">
                             <a href="{{route($menu->title)}}" title="{{$menu->title}}">
                                 @lang('home.menu.' . $menu->title)
                             </a>

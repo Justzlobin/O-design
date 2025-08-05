@@ -89,7 +89,7 @@
     </div>
 @endif
 
-<a href="Tel: {{$generalSettings->tel}}" id="call" class="fx-row flex-center cursor-pointer">
+<a href="Tel: {{$generalSettings->tel}}" data-tooltip-text="{{$generalSettings->tel}}" id="call" class="fx-row flex-center cursor-pointer">
     <i class="fa-solid fa-phone fa-xl"></i>
 </a>
 
