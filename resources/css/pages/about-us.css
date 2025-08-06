@@ -50,7 +50,7 @@ h1.title-section__content-title {
 h2._title__body_center-subtitle {
     display: block;
     width: 100%;
-    font-size: 30px;
+    font-size: clamp(10px, 3vw, 30px);
     font-weight: 500;
 }
 
@@ -117,7 +117,7 @@ div.philosophy-section__top div.decorate-line {
 }
 
 p.philosophy-section__bottom-text {
-    font-size: 30px;
+    font-size: clamp(10px, 3vw, 30px);
     font-weight: 500;
     padding: 1.5% 0;
 }
@@ -168,7 +168,7 @@ ul.rules-section__text-list {
 ul.rules-section__text-list li {
     list-style: initial;
     font-weight: 500;
-    font-size: 30px;
+    font-size: clamp(12px, 2.5vw, 30px);
 }
 
 div.rules-section__text div.decorate-line {
@@ -220,7 +220,7 @@ p.why-section__left-subtitle {
 ul.why-section__left-list li {
     list-style: initial;
     line-height: 1.4;
-    font-size: 30px;
+    font-size: clamp(12px, 2.5vw, 30px);
     font-weight: 500;
 }
 
@@ -267,15 +267,14 @@ h2.how-section__top-item-title {
 }
 
 span.how-section__top-item-subtitle {
-    font-size: 30px;
+    font-size: clamp(10px, 3vw, 30px);;
     font-weight: 500;
     padding-bottom: 5px;
 }
 
 p.how-section__top-item-text {
-    font-size: 16px;
+    font-size: clamp(12px, 2.5vw, 16px);
     font-weight: 300;
-    line-height: 24px;
 }
 
 div.how-section__bottom {
@@ -345,15 +344,14 @@ div.expertise-section__left-grid_item {
 }
 
 span.expertise-section__left-grid-subtitle {
-    font-size: 30px;
+    font-size: clamp(10px, 3vw, 30px);
     font-weight: 500;
     padding-bottom: 5px;
 }
 
 p.expertise-section__left-grid-text {
-    font-size:  16px;
+    font-size: clamp(12px, 2.5vw, 16px);
     font-weight: 300;
-    line-height: 24px;
 }
 
 div.expertise-section__right {
