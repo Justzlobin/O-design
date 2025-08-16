@@ -31,6 +31,14 @@
     --home-item-graient: linear-gradient(13deg, rgba(1, 1, 1, 1) 0%, rgba(999, 999, 999, 1) 100%)
 }
 
+.g-5 {
+    gap: 5px;
+}
+
+.g-10 {
+    gap: 10px;
+}
+
 .f-s-14 {
     font-size: 14px;
 }

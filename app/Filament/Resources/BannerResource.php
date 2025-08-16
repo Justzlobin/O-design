@@ -24,15 +24,32 @@ class BannerResource extends Resource
                 Forms\Components\Grid::make()->schema([
                     Forms\Components\Section::make()->schema([
 
-                        Forms\Components\TextInput::make('title')
-                            ->label('Назва')
-                            ->required(),
-                        Forms\Components\Toggle::make('is_active')
-                            ->label('Активний')
-                            ->default(true)
+                            Forms\Components\Toggle::make('is_active')
+                                ->label('Активний')
+                                ->default(true),
+
+                            Forms\Components\TextInput::make('title')
+                                ->label('Назва')
+                                ->required(),
+
+                            Forms\Components\RichEditor::make('description')
+                                ->label('Опис')
+                                ->required(),
+
+                            Forms\Components\Fieldset::make()->schema([
+                                Forms\Components\TextInput::make('location')
+                                    ->label('Місто'),
+                                Forms\Components\DatePicker::make('date')
+                                    ->label('Дата'),
+                                Forms\Components\TextInput::make('area')
+                                    ->label('Площа')
+                                    ->numeric()
+                            ])->columns(3)
+
                     ])
                         ->columns(1)
                         ->columnSpan(1),
+
                     Forms\Components\Section::make()->schema([
                         Forms\Components\SpatieMediaLibraryFileUpload::make('image')
                             ->label('Зображення')

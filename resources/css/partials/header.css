@@ -227,8 +227,13 @@ div#_contact_us_modal._show {
         display: flex;
     }
 
-    .header__socials:not(._mobile) {
+    .header__socials:not(._mobile) .header__socials-item {
         display: none;
+    }
+
+    .theme-switch-wrapper {
+        position: absolute;
+        right: 5px;
     }
 
     div.header__content-logo_burger {

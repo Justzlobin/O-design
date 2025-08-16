@@ -17,7 +17,15 @@ class Banner extends Model implements HasMedia, Sortable
 
     protected $fillable = [
         'title',
-        'is_active'
+        'is_active',
+        'description',
+        'location',
+        'date',
+        'area'
+    ];
+
+    protected $casts = [
+        'date' => 'datetime'
     ];
 
     public function registerMediaConversions(?Media $media = null): void

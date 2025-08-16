@@ -38,6 +38,7 @@ const DOM = {
     headerMenuOverlay: document.getElementById('_header__menu_overlay'),
     projectImages: document.querySelectorAll('img._project__img'),
     contactUsBtn: document.getElementById('_main__banner_contact_us_btn'),
+    contactUsBtns: document.querySelectorAll('._main__banner_contact_us_btn'),
     contactUsModal: document.getElementById('_contact_us_modal'),
     headerMenuContent: document.getElementById('_header__menu_content'),
     projectFilters: {
@@ -265,6 +266,19 @@ function addEventListeners() {
             showContactForm();
             activateInputMast()
         });
+    }
+
+    // Контактна форма
+    if (DOM.contactUsBtns) {
+        DOM.contactUsBtns.forEach(
+            (btn) => {
+                btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        showContactForm();
+                        activateInputMast()
+                    }
+                )
+            });
     }
 
     if (DOM.contactUsWrap) {
