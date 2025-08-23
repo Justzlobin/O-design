@@ -3,6 +3,7 @@
 @section('seo')
     <title>{{$generalSettings->site_name}}</title>
     <meta name="robots" content="noindex, nofollow">
+{{--    <meta name="robots" content="index, follow">--}}
 
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
@@ -34,42 +35,42 @@
                     <swiper-slide class="banner-slide-wrapper" style="position: relative;">
                         <picture>
                             <source srcset="{{ $banner->media[0]->getUrl('main_webp') }}" type="image/webp">
-                            <img src="{{ $banner->media[0]->getUrl('main_jpg') }}" alt="{{ $banner->title }}">
+                            <img src="{{ $banner->media[0]->getUrl('main_jpg') }}" alt="{{ $banner->title }}" wi>
                         </picture>
-                        <div class="banner-desc-block fx-col" >
-                            <div class="f-s-32 f-800" style="text-align: left; width: 100%;">{{$banner->title}}</div>
-                            <div class="f-s-16 f-300">{!! $banner->description !!}</div>
-                            <div class="fx-row" style="justify-content: space-around; align-items: center; width: 100%;">
-                                <div class="fx-row g-5">
-                                    <x-heroicon-o-map-pin style="width: 20px; height: 20px;"/>
-                                    <span>{{ $banner->location }}</span>
-                                </div>
-                                <div class="fx-row g-5">
-                                    <x-heroicon-o-calendar style="width: 20px; height: 20px;"/>
-                                    <span>{{ $banner->date?->format('Y') }}</span>
-                                </div>
-                                <div class="fx-row g-5">
-                                    <x-heroicon-o-cube-transparent style="width: 20px; height: 20px;"/>
-                                    <span>{{ $banner->area }}</span>
-                                    <span>m²</span>
+                        <div class="banner-desc-block fx-col">
+                            <div class="block-blur banner-desc-block--main border-rds g-30">
+                                <div class="f-s-24 f-800" style="text-align: left; width: 100%;">{{$banner->title}}</div>
+                                <div class="f-s-13 f-300 l-n-24">{!! $banner->description !!}</div>
+                                <div class="fx-row f-s-13" style="justify-content: space-around; align-items: center; width: 100%;">
+                                    <div class="fx-row g-5 flex-center">
+                                        <x-heroicon-o-map-pin style="width: 20px; height: 20px;"/>
+                                        <span>{{ $banner->location }}</span>
+                                    </div>
+                                    <div class="fx-row g-5 flex-center">
+                                        <x-heroicon-o-calendar style="width: 20px; height: 20px;"/>
+                                        <span>{{ $banner->date?->format('Y') }}</span>
+                                    </div>
+                                    <div class="fx-row g-5 flex-center">
+                                        <x-heroicon-o-cube-transparent style="width: 20px; height: 20px;"/>
+                                        <span>{{ $banner->area }}</span>
+                                        <span>m²</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="main__banner-buttons fx-row">
-                                <button  class="_main__banner_contact_us_btn f-300 f-s-16">@lang('home.banner_btn')</button>
+                                <button  class="_main__banner_contact_us_btn f-300 f-s-13">@lang('home.banner_btn')</button>
                             </div>
-                            <div class="fx-row" style="justify-content: space-around; align-items: center; width: 100%;">
-                                <div class="fx-row g-5">
+                            <div class="fx-row block-blur border-rds" style="justify-content: space-around; align-items: center; width: 100%;">
+                                <div class="fx-row g-5 flex-center">
                                     <x-heroicon-o-phone style="width: 20px; height: 20px;"/>
-                                    <a target="_blank" href="Tel: {{$generalSettings->tel}}">{{$generalSettings->tel}}</a>
+                                    <a class="f-s-13" target="_blank" href="Tel: {{$generalSettings->tel}}">{{$generalSettings->tel}}</a>
                                 </div>
-                                <div class="fx-row g-5">
+                                <div class="fx-row g-5 flex-center">
                                     <x-heroicon-o-chat-bubble-oval-left-ellipsis style="width: 20px; height: 20px;"/>
-                                    <a target="_blank" href="{{$telegramSocial?->url ?? ''}}">{{ basename($telegramSocial?->url ?? '')}}</a>
+                                    <a class="f-s-13" target="_blank" href="{{$telegramSocial?->url ?? ''}}">{{ basename($telegramSocial?->url ?? '')}}</a>
                                 </div>
                             </div>
                         </div>
-
-
                     </swiper-slide>
                 @endforeach
             </swiper-container>

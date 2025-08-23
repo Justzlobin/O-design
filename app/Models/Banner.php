@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
@@ -10,6 +11,9 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
+/**
+ *@method static Builder|static active(bool $value = true)
+ */
 class Banner extends Model implements HasMedia, Sortable
 {
     use InteractsWithMedia;
@@ -25,8 +29,14 @@ class Banner extends Model implements HasMedia, Sortable
     ];
 
     protected $casts = [
-        'date' => 'datetime'
+        'date' => 'datetime',
+        'is_active' => 'boolean'
     ];
+
+    public function scopeActive(Builder $query, bool $value = true): Builder
+    {
+        return $query->where('is_active', $value);
+    }
 
     public function registerMediaConversions(?Media $media = null): void
     {

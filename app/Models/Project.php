@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
@@ -13,6 +14,9 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
+/**
+ *@method static Builder|static active(bool $value = true)
+ */
 class Project extends Model implements HasMedia, Sortable
 {
     use InteractsWithMedia;
@@ -24,8 +28,17 @@ class Project extends Model implements HasMedia, Sortable
         'title',
         'description',
         'type',
-        'slug'
+        'slug',
+        'is_active'
     ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
+    public function scopeActive(Builder $query, bool $value = true): Builder
+    {
+        return $query->where('is_active', $value);
+    }
 
     public function getDynamicSEOData(): SEOData
     {

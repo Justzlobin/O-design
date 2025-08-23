@@ -3,12 +3,10 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProjectResource\Pages;
-use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Models\Project;
 use Filament\Forms;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -43,6 +41,7 @@ class ProjectResource extends Resource
                                 ->afterStateUpdated(function ($state, callable $set) {
                                     $set('slug', Str::slug($state));
                                 }),
+
                             Forms\Components\TextInput::make('slug')
                                 ->readOnly()
                                 ->disabled(fn ($record) => $record !== null)
@@ -54,17 +53,26 @@ class ProjectResource extends Resource
                                         ? Rule::unique('projects', 'slug')->ignore($record->id)
                                         : 'unique:projects,slug'
                                 ]),
+
+                            Forms\Components\Fieldset::make()->schema([
+                                Forms\Components\Select::make('type')
+                                    ->label('Тип')
+                                    ->options([
+                                        'privat' => 'Приватний',
+                                        'commercial' => 'Комерційний'
+                                    ])
+                                    ->native(false)
+                                    ->required(),
+
+                                Forms\Components\Toggle::make('is_active')
+                                    ->label('Активний')
+                                    ->default(true),
+                            ]),
+
                             Forms\Components\RichEditor::make('description')
                                 ->label('Опис')
                                 ->required(),
-                            Forms\Components\Select::make('type')
-                                ->label('Тип')
-                                ->options([
-                                    'privat' => 'Приватний',
-                                    'commercial' => 'Комерційний'
-                                ])
-                                ->native(false)
-                                ->required()
+
                         ])
                         ->columns(1)
                         ->columnSpan(1),

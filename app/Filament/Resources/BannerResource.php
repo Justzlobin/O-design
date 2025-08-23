@@ -54,6 +54,7 @@ class BannerResource extends Resource
                         Forms\Components\SpatieMediaLibraryFileUpload::make('image')
                             ->label('Зображення')
                             ->hint('(тільки одне)')
+                            ->preserveFilenames()
                             ->required()
                     ])
                         ->columns(1)

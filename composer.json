@@ -21,6 +21,7 @@
         "spatie/eloquent-sortable": "^4.5",
         "spatie/laravel-medialibrary": "^11.12",
         "spatie/laravel-settings": "^3.4",
+        "spatie/laravel-sitemap": "^7.3",
         "tomatophp/filament-users": "^2.0"
     },
     "require-dev": {

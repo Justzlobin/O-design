@@ -12,6 +12,41 @@
 @import "pages/project.css";
 @import "pages/about-us.css";
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
 :root {
     --color-black: #000000;
     --color-white: #ffffff;
@@ -37,6 +72,18 @@
 
 .g-10 {
     gap: 10px;
+}
+
+.g-20 {
+    gap: 20px;
+}
+
+.g-30 {
+    gap: 30px;
+}
+
+.f-s-13 {
+    font-size: 13px;
 }
 
 .f-s-14 {
@@ -69,14 +116,6 @@
 
 .f-s-32 {
     font-size: 32px;
-}
-
-.f-100 {
-    font-weight: 100;
-}
-
-.f-200 {
-    font-weight: 200;
 }
 
 .f-300 {

@@ -27,14 +27,16 @@ class Menu extends Model implements HasMedia, Sortable
         $this
             ->addMediaConversion('menu_jpg')
             ->format('jpg')
-            ->fit(Fit::Crop, 720, 410)
+            ->width(720)
+            ->height(410)
             ->quality(90)
             ->nonQueued();
 
         $this
             ->addMediaConversion('menu_webp')
             ->format('webp')
-            ->fit(Fit::Crop, 720, 410)
+            ->width(720)
+            ->height(410)
             ->quality(90)
             ->nonQueued();
     }

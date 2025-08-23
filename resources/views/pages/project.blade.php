@@ -32,7 +32,7 @@
                             <div class="swiper-slide">
                                 <picture>
                                     <source srcset="{{$image->getUrl('thumb_webp')}}" type="image/webp">
-                                    <img src="{{$image->getUrl('thumb_jpg')}}" alt="{{$image->name}}">
+                                    <img src="{{$image->getUrl('thumb_jpg')}}" alt="{{$image->name}}" loading="lazy">
                                 </picture>
                             </div>
                         @endforeach
@@ -62,7 +62,7 @@
                                         srcset="{{ $sameProject->getFirstMediaUrl('project-images', 'thumb_big_webp') }}"
                                         type="image/webp">
                                     <img src="{{ $sameProject->getFirstMediaUrl('project-images', 'thumb_big_jpg')}}"
-                                         alt="{{$sameProject->title}}">
+                                         alt="{{$sameProject->title}}" loading="lazy">
                                 </picture>
                                 <div class="project__others-item_title">{{$sameProject->title}}</div>
                             </a>
