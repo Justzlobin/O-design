@@ -8,10 +8,10 @@
     <div class="project__content fx-col">
         <section class="project__details fx-row">
             <div class="project__details-image fx-col flex-center">
-                <div class="swiper" id="_project_main_swiper">
-                    <div class="swiper-wrapper">
+                <div class="project-swiper swiper" id="_project_main_swiper">
+                    <div class="project-swiper swiper-wrapper">
                         @foreach($project->getMedia('project-images') as $image)
-                            <div class="swiper-slide">
+                            <div class="project-swiper swiper-slide">
                                 <picture>
                                     <source srcset="{{$image->getUrl('original_webp')}}" type="image/webp">
                                     <img class="_project__img" src="{{$image->getUrl('original_jpg')}}"
@@ -19,17 +19,16 @@
                                 </picture>
                             </div>
                         @endforeach
-
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="project-swiper swiper-pagination"></div>
+                    <div class="project-swiper swiper-button-prev"></div>
+                    <div class="project-swiper swiper-button-next"></div>
                 </div>
 
-                <div thumbsSlider class="swiper" id="_project_thumb_swiper">
-                    <div class="swiper-wrapper">
+                <div class="project-swiper swiper" id="_project_thumb_swiper">
+                    <div class="project-swiper swiper-wrapper">
                         @foreach($project->getMedia('project-images') as $image)
-                            <div class="swiper-slide">
+                            <div class="project-swiper swiper-slide">
                                 <picture>
                                     <source srcset="{{$image->getUrl('thumb_webp')}}" type="image/webp">
                                     <img src="{{$image->getUrl('thumb_jpg')}}" alt="{{$image->name}}" loading="lazy">
@@ -52,10 +51,10 @@
             <h2>Інші проєкти</h2>
         </div>
         <section class="project__others fx-col">
-            <div class="swiper" id="_project__others_swiper">
-                <div class="swiper-wrapper">
+            <div class="project-swiper swiper" id="_project__others_swiper">
+                <div class="project-swiper swiper-wrapper">
                     @foreach($sameProjects as $sameProject)
-                        <div class="swiper-slide project__others-item">
+                        <div class="project-swiper swiper-slide project__others-item">
                             <a href="{{route('project', $sameProject)}}">
                                 <picture>
                                     <source

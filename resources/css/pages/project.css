@@ -25,7 +25,7 @@
 }
 
 div.project__details-text {
-    width: 100%;
+    width: 35%;
     height: min(100vh, 1000px);
     max-height: 1000px;
     gap: 20px;

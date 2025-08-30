@@ -22,60 +22,55 @@
 
 @section('content')
     <section class="main__banner fx-col">
-        <div class="main__banner-content">
-            <swiper-container slides-per-view="auto"
-                              space-between="5"
-                              loop="true"
-                              speed="500"
-                              autoplay='{"delay": 10000, "disableOnInteraction": false, "pauseOnMouseEnter": true}'
-                              lazy="true"
-                              centered-slides="true"
-            >
+        <div class="banner swiper" id="_banner_swiper">
+            <div class="banner swiper-wrapper">
                 @foreach($banners as $banner)
-                    <swiper-slide class="banner-slide-wrapper" style="position: relative;">
-                        <picture>
-                            <source srcset="{{ $banner->media[0]->getUrl('main_webp') }}" type="image/webp">
-                            <img src="{{ $banner->media[0]->getUrl('main_jpg') }}" alt="{{ $banner->title }}" wi>
-                        </picture>
-                        <div class="banner-desc-block fx-col">
-                            <div class="block-blur banner-desc-block--main border-rds g-30">
-                                <div class="f-s-24 f-800" style="text-align: left; width: 100%;">{{$banner->title}}</div>
-                                <div class="f-s-13 f-300 l-n-24">{!! $banner->description !!}</div>
-                                <div class="fx-row f-s-13" style="justify-content: space-around; align-items: center; width: 100%;">
-                                    <div class="fx-row g-5 flex-center">
-                                        <x-heroicon-o-map-pin style="width: 20px; height: 20px;"/>
-                                        <span>{{ $banner->location }}</span>
-                                    </div>
-                                    <div class="fx-row g-5 flex-center">
-                                        <x-heroicon-o-calendar style="width: 20px; height: 20px;"/>
-                                        <span>{{ $banner->date?->format('Y') }}</span>
-                                    </div>
-                                    <div class="fx-row g-5 flex-center">
-                                        <x-heroicon-o-cube-transparent style="width: 20px; height: 20px;"/>
-                                        <span>{{ $banner->area }}</span>
-                                        <span>m²</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main__banner-buttons fx-row">
-                                <button  class="_main__banner_contact_us_btn f-300 f-s-13">@lang('home.banner_btn')</button>
-                            </div>
-                            <div class="fx-row block-blur border-rds" style="justify-content: space-around; align-items: center; width: 100%;">
+                <div class="banner swiper-slide" >
+                    <picture>
+                            <source srcset="{{ $banner->media[0]->getUrl('original_webp') }}" type="image/webp">
+                        <img src="{{ $banner->media[0]->getUrl('original_jpg') }}" alt="{{ $banner->title }}" loading="lazy">
+                    </picture>
+                    <div class="banner-desc-block fx-col">
+                        <div class="block-blur banner-desc-block--main border-rds g-30" >
+                            <div class="f-s-24 f-800" style="text-align: left; width: 100%;">{{$banner->title}}</div>
+                            <div class="f-s-13 f-300 l-n-24">{!! $banner->description !!}</div>
+                            <div class="fx-row f-s-13" style="justify-content: space-around; align-items: center; width: 100%;">
                                 <div class="fx-row g-5 flex-center">
-                                    <x-heroicon-o-phone style="width: 20px; height: 20px;"/>
-                                    <a class="f-s-13" target="_blank" href="Tel: {{$generalSettings->tel}}">{{$generalSettings->tel}}</a>
+                                    <x-heroicon-o-map-pin style="width: 20px; height: 20px;"/>
+                                    <span>{{ $banner->location }}</span>
                                 </div>
                                 <div class="fx-row g-5 flex-center">
-                                    <x-heroicon-o-chat-bubble-oval-left-ellipsis style="width: 20px; height: 20px;"/>
-                                    <a class="f-s-13" target="_blank" href="{{$telegramSocial?->url ?? ''}}">{{ basename($telegramSocial?->url ?? '')}}</a>
+                                    <x-heroicon-o-calendar style="width: 20px; height: 20px;"/>
+                                    <span>{{ $banner->date?->format('Y') }}</span>
+                                </div>
+                                <div class="fx-row g-5 flex-center">
+                                    <x-heroicon-o-cube-transparent style="width: 20px; height: 20px;"/>
+                                    <span>{{ $banner->area }}</span>
+                                    <span>m²</span>
                                 </div>
                             </div>
                         </div>
-                    </swiper-slide>
+                        <div class="main__banner-buttons fx-row">
+                            <button  class="_main__banner_contact_us_btn f-300 f-s-13">@lang('home.banner_btn')</button>
+                        </div>
+                        <div class="fx-row block-blur border-rds" style="justify-content: space-around; align-items: center; width: 100%;">
+                            <div class="fx-row g-5 flex-center">
+                                <x-heroicon-o-phone style="width: 20px; height: 20px;"/>
+                                <a class="f-s-13" target="_blank" href="Tel: {{$generalSettings->tel}}">{{$generalSettings->tel}}</a>
+                            </div>
+                            <div class="fx-row g-5 flex-center">
+                                <x-heroicon-o-chat-bubble-oval-left-ellipsis style="width: 20px; height: 20px;"/>
+                                <a class="f-s-13" target="_blank" href="{{$telegramSocial?->url ?? ''}}">{{ basename($telegramSocial?->url ?? '')}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </swiper-container>
-
-
+            </div>
+            <div class="autoplay-progress">
+                <div class="progress-bar"></div>
+                <span></span>
+            </div>
         </div>
     </section>
 

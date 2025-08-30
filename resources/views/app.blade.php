@@ -57,7 +57,7 @@
 <div id="_contact_us_modal"></div>
 
 <div id="loading-screen" class="_show">
-    <div class="spinner"></div>
+{{--    <div class="spinner"></div>--}}
 </div>
 
 

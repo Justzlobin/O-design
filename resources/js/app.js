@@ -110,6 +110,28 @@ function initSwiper() {
     }
 }
 
+function initBannerSwiper() {
+    const progressBar = document.querySelector(".autoplay-progress .progress-bar");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    const container = document.getElementById('_banner_swiper')
+
+    if (container === null) {return;}
+
+    new Swiper(container, {
+        centeredSlides: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        speed: 2000,
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressBar.style.width = `${(1 - progress) * 100}%`;
+                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+            }
+        }
+    });
+}
 
 // Функція для додавання обробників подій
 function addEventListeners() {
@@ -126,6 +148,8 @@ function addEventListeners() {
         if (window.location.href.includes("projects/")) {
             console.log('Ініціалізація Swiper');
             initSwiper();
+        } else {
+            initBannerSwiper()
         }
 
         // Хешування ідентифікаторів для елементів FAQ

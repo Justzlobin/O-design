@@ -3,6 +3,7 @@
 @import "partials/header.css";
 @import "partials/footer.css";
 @import "partials/theme-switcher.css";
+@import "partials/banner-swiper.css";
 @import "components/tooltip.css";
 
 @import "pages/home.css";
@@ -181,7 +182,10 @@ h1, h2, h3 {
 #loading-screen {
     position: fixed;
     width: 100%;
-    background: #000;
+
+    /*background: #000;*/
+    backdrop-filter: blur(50px);
+
     top: 0;
     left: 0;
     display: flex;
@@ -192,7 +196,9 @@ h1, h2, h3 {
     overflow: hidden;
     height: 100%;
     opacity: 0;
-    transition: all 0.3s ease-in-out;
+
+    /*transition: all 0.3s ease-in-out;*/
+    transition: all 0.5s ease-in-out;
 }
 
 #loading-screen._show {
