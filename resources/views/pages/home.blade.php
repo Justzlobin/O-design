@@ -34,7 +34,7 @@
                         <div class="block-blur banner-desc-block--main border-rds g-30" >
                             <div class="f-s-24 f-800" style="text-align: left; width: 100%;">{{$banner->title}}</div>
                             <div class="f-s-13 f-300 l-n-24">{!! $banner->description !!}</div>
-                            <div class="fx-row f-s-13" style="justify-content: space-around; align-items: center; width: 100%;">
+                            <div class="fx-row f-s-13" style="justify-content: space-between; align-items: center; width: 100%;">
                                 <div class="fx-row g-5 flex-center">
                                     <x-heroicon-o-map-pin style="width: 20px; height: 20px;"/>
                                     <span>{{ $banner->location }}</span>
@@ -53,7 +53,7 @@
                         <div class="main__banner-buttons fx-row">
                             <button  class="_main__banner_contact_us_btn f-300 f-s-13">@lang('home.banner_btn')</button>
                         </div>
-                        <div class="fx-row block-blur border-rds" style="justify-content: space-around; align-items: center; width: 100%;">
+                        <div class="fx-row block-blur border-rds" style="justify-content: space-between; align-items: center; width: 100%;">
                             <div class="fx-row g-5 flex-center">
                                 <x-heroicon-o-phone style="width: 20px; height: 20px;"/>
                                 <a class="f-s-13" target="_blank" href="Tel: {{$generalSettings->tel}}">{{$generalSettings->tel}}</a>

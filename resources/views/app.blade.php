@@ -1,4 +1,3 @@
-{{--@php use Mcamara\LaravelLocalization\Facades\LaravelLocalization; @endphp--}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
