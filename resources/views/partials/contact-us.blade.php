@@ -26,10 +26,8 @@
                    placeholder="@lang('contact-us.form.email_placeholder')">
         </div>
 
-
         <div class="_contact_us_input_wrap comment">
-            <textarea class="_contact_us_input f-s-16 f-300" type="text" name="comment" placeholder=""></textarea>
-            <label for="comment" class="custom-placeholder f-s-16 f-300">@lang('contact-us.form.comment_placeholder')</label>
+            <textarea class="_contact_us_input f-s-16 f-300" type="text" name="comment" placeholder="@lang('contact-us.form.comment_placeholder')"></textarea>
         </div>
 
         <input id="_form_plan_id" type="hidden" name="plan_id" readonly>

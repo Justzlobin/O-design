@@ -33,8 +33,20 @@ class BannerResource extends Resource
                                 ->required(),
 
                             Forms\Components\RichEditor::make('description')
-                                ->label('Опис')
-                                ->required(),
+                                ->label('Опис'),
+
+
+                        Forms\Components\TextInput::make('btn_text')
+                            ->default('Menu подобається')
+                            ->nullable()
+                            ->label('Текст кнопки'),
+
+                        Forms\Components\TextInput::make('btn_href')
+                            ->label('Посилання')
+                            ->url()
+                            ->nullable()
+                            ->maxLength(2048)
+                            ->helperText('Введіть повний URL, наприклад https://example.com'),
 
                             Forms\Components\Fieldset::make()->schema([
                                 Forms\Components\TextInput::make('location')

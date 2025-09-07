@@ -25,7 +25,9 @@ class Banner extends Model implements HasMedia, Sortable
         'description',
         'location',
         'date',
-        'area'
+        'area',
+        'btn_text',
+        'btn_href'
     ];
 
     protected $casts = [
@@ -57,13 +59,11 @@ class Banner extends Model implements HasMedia, Sortable
         $this
             ->addMediaConversion('original_jpg')
             ->format('jpg')
-            ->quality(90)
             ->nonQueued();
 
         $this
             ->addMediaConversion('original_webp')
             ->format('webp')
-            ->quality(90)
             ->nonQueued();
     }
 }

@@ -4,6 +4,7 @@ namespace App\Filament\Pages;
 
 use App\Settings\GeneralSettings as GeneralSettingsModel;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
 
@@ -17,24 +18,48 @@ class GeneralSettings extends SettingsPage
     {
         return $form
             ->schema([
-                Forms\Components\Section::make()->schema([
-                    Forms\Components\TextInput::make('site_name')
-                        ->label('Імя Сайту')
-                        ->required(),
-                    Forms\Components\TextInput::make('tel')
-                        ->label('Телефон')
-                        ->tel()
-                        ->required(),
-                    Forms\Components\TextInput::make('slogan')
-                        ->label('Девіз')
-                        ->maxLength(55)
-                        ->required(),
-                    Forms\Components\TextInput::make('email')
-                        ->label('Пошта')
-                        ->dehydrateStateUsing(fn($state) => str_replace('@', '<wbr>@', $state))
-                        ->formatStateUsing(fn($state) => str_replace('<wbr>@', '@', $state))
-                        ->email()
-                        ->required(),
+                Section::make()->schema([
+
+                    Forms\Components\Grid::make()->schema([
+                        Section::make()->schema([
+                            Forms\Components\TextInput::make('site_name')
+                                ->label('Імя Сайту')
+                                ->required(),
+                            Forms\Components\TextInput::make('tel')
+                                ->label('Телефон')
+                                ->tel()
+                                ->required(),
+                            Forms\Components\TextInput::make('slogan')
+                                ->label('Девіз')
+                                ->maxLength(55)
+                                ->required(),
+                            Forms\Components\TextInput::make('email')
+                                ->label('Пошта')
+                                ->dehydrateStateUsing(fn($state) => str_replace('@', '<wbr>@', $state))
+                                ->formatStateUsing(fn($state) => str_replace('<wbr>@', '@', $state))
+                                ->email()
+                                ->required(),
+                        ])
+                            ->columns(1)
+                            ->columnSpan(1)
+                            ->description('Основні Налаштування'),
+
+                        Section::make()->schema([
+                            Forms\Components\ColorPicker::make('banner_btn_text_color')
+                                ->label('Колір Тексту')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('banner_btn_color_hover')
+                                ->label('Колір Наведення')
+                                ->required(),
+                            Forms\Components\ColorPicker::make('banner_btn_color')
+                                ->label('Колір Тексту При Наведенні')
+                                ->rgba()
+                                ->required(),
+                        ])
+                            ->columns(1)
+                            ->columnSpan(1)
+                            ->description('Вигляд кнопки банеру')
+                    ]),
 
                     Forms\Components\Grid::make()->schema([
                         Forms\Components\Section::make()->schema([
@@ -87,9 +112,12 @@ class GeneralSettings extends SettingsPage
                         ])
                             ->columns(1)
                             ->columnSpan(1)
-                            ->description('Темна сторона')
+                            ->description('Темна сторона'),
+
                     ])
                 ])
             ]);
     }
 }
+
+

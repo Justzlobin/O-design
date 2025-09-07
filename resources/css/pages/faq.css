@@ -55,7 +55,7 @@ div.faq__content-item_question::after {
     transition: transform 0.3s ease-in-out;
 }
 
-div.faq__content-item_answer._show + div.faq__content-item_question::after {
+div.faq__content-item_question:has(+ .faq__content-item_answer._show)::after {
     content: '−';
     transform: translateY(-50%) rotate(180deg);
 }
@@ -89,7 +89,7 @@ div.faq__content-item_answer._show {
     height: auto !important;
     max-height: 1000px !important;
     overflow: auto !important;
-    padding: 30px 30px 0 30px;
+    padding: 0 30px 30px 30px;
     opacity: 1;
 }
 

@@ -104,7 +104,6 @@ class Project extends Model implements HasMedia, Sortable
             ->format('jpg')
             ->width(720)
             ->height(410)
-            ->quality(90)
             ->nonQueued();
 
         $this
@@ -112,7 +111,6 @@ class Project extends Model implements HasMedia, Sortable
             ->format('webp')
             ->width(720)
             ->height(410)
-            ->quality(90)
             ->nonQueued();
     }
 }

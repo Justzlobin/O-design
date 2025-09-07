@@ -133,11 +133,27 @@ function initBannerSwiper() {
     });
 }
 
+function isSameSite(href) {
+    try {
+        const linkUrl = new URL(href, window.location.origin);
+        return linkUrl.hostname === window.location.hostname;
+    } catch (e) {
+        return false; // якщо href некоректний
+    }
+}
+
 // Функція для додавання обробників подій
 function addEventListeners() {
     // DOMContentLoaded (заміна jQuery ready)
     document.addEventListener('DOMContentLoaded', () => {
         console.log("DOM повністю завантажено!");
+
+        document.querySelectorAll('.text-with-links a').forEach(link => {
+            if (!isSameSite(link.href)) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
 
         // Видалення екрану завантаження
         setTimeout(() => {
@@ -236,7 +252,7 @@ function addEventListeners() {
             question.addEventListener('click', () => {
                 const answers = document.querySelectorAll('div.faq__content-item_answer');
                 const faqId = question.closest('.faq__content-item').dataset.faq_id;
-                const targetAnswer = question.previousElementSibling;
+                const targetAnswer = question.nextElementSibling;
                 const targetAnswerHeight = targetAnswer.scrollHeight;
 
                 answers.forEach(answer => {
@@ -293,17 +309,17 @@ function addEventListeners() {
     }
 
     // Контактна форма
-    if (DOM.contactUsBtns) {
-        DOM.contactUsBtns.forEach(
-            (btn) => {
-                btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        showContactForm();
-                        activateInputMast()
-                    }
-                )
-            });
-    }
+    // if (DOM.contactUsBtns) {
+    //     DOM.contactUsBtns.forEach(
+    //         (btn) => {
+    //             btn.addEventListener('click', (e) => {
+    //                     e.preventDefault();
+    //                     showContactForm();
+    //                     activateInputMast()
+    //                 }
+    //             )
+    //         });
+    // }
 
     if (DOM.contactUsWrap) {
         DOM.contactUsWrap.addEventListener('click', (e) => {

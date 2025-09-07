@@ -32,6 +32,9 @@
         --color-5: {{ $generalSettings->color_5 }};
         --color-text-1: {{ $generalSettings->color_text_1 }};
     {{----color-text-1: {{ $generalSettings->color_text_1 }};--}}
+
+        --banner-btn-color-hover: {{ $generalSettings->banner_btn_color_hover }};
+        --banner-btn-text-color-hover: {{ $generalSettings->banner_btn_color }};
     }
 
     [data-theme="dark"] {

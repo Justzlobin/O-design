@@ -25,6 +25,10 @@ class GeneralSettings extends Settings
     public string $dark_color_5 = '#8689AC';
     public string $dark_color_text_1 = '#000';
 
+    public string $banner_btn_color = '#fff';
+    public string $banner_btn_color_hover = '#fafafa';
+    public string $banner_btn_text_color = '#000';
+
     public static function group(): string
     {
         return 'general';

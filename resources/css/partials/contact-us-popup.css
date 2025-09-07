@@ -34,11 +34,12 @@ form#_contact_us_form {
 }
 
 ._contact_us_input_wrap.comment {
-    height: 50px;
+    height: 70px;
     position: relative;
 }
 
 ._contact_us_input {
+    height: 100%;
     width: 100%;
     transition: background-color 5000s;
     background: transparent !important;

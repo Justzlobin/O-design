@@ -42,7 +42,7 @@
                 <h1 class="project__details-text_title fx-row flex-center">
                     {{$project->title}}
                 </h1>
-                <div class="project__details-text_desc">
+                <div class="project__details-text_desc text-with-links">
                     {!! $project->description !!}
                 </div>
             </div>

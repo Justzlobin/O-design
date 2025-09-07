@@ -225,7 +225,7 @@ h1, h2, h3 {
     height: 60px;
     border-radius: 50%;
     background: var(--color-1);
-    animation: blink-shadow 2s infinite alternate;
+    animation: blink-shadow 5s infinite alternate;
 }
 
 #call i {
@@ -233,13 +233,10 @@ h1, h2, h3 {
 }
 
 @keyframes blink-shadow {
-    0% {
-        box-shadow: 0 0 25px var(--color-1);
-    }
     50% {
         box-shadow: 0 0 25px var(--color-text-1);
     }
-    100% {
+    0%, 100% {
         box-shadow: 0 0 25px var(--color-1);
     }
 }
