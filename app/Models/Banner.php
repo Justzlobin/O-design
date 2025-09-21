@@ -65,5 +65,41 @@ class Banner extends Model implements HasMedia, Sortable
             ->addMediaConversion('original_webp')
             ->format('webp')
             ->nonQueued();
+
+        $this
+            ->addMediaConversion('desktop_jpg')
+            ->width(1920)
+            ->format('jpg')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('desktop_webp')
+            ->width(1920)
+            ->format('webp')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('tablet_jpg')
+            ->format('jpg')
+            ->width(1024)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('tablet_webp')
+            ->format('webp')
+            ->width(1024)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('mobile_jpg')
+            ->format('jpg')
+            ->width(425)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('mobile_webp')
+            ->format('webp')
+            ->width(425)
+            ->nonQueued();
     }
 }

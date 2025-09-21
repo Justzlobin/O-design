@@ -2,8 +2,8 @@
 
 @section('seo')
     <title>{{$generalSettings->site_name}}</title>
-    <meta name="robots" content="noindex, nofollow">
-    {{--    <meta name="robots" content="index, follow">--}}
+{{--    <meta name="robots" content="noindex, nofollow">--}}
+    <meta name="robots" content="index, follow">
 
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
@@ -27,9 +27,10 @@
                 @foreach($banners as $banner)
                     <div class="banner swiper-slide">
                         <picture>
-                            <source srcset="{{ $banner->media[0]->getUrl('original_webp') }}" type="image/webp">
-                            <img src="{{ $banner->media[0]->getUrl('original_jpg') }}" alt="{{ $banner->title }}"
-                                 loading="lazy">
+                            <source srcset="{{ $banner->media[0]->getUrl('tablet_webp') }}" type="image/webp" media="(max-width: 1024px)">
+                            <source srcset="{{ $banner->media[0]->getUrl('desktop_webp') }}" type="image/webp" media="(min-width: 1025px)">
+                            <img src="{{ $banner->media[0]->getUrl('desktop_jpg') }}" alt="{{ $banner->title }}"
+                                 @if ($loop->first) fetchpriority="high" @else loading="lazy" @endif>
                         </picture>
                         <div class="banner-desc-block fx-col">
                             <div class="block-blur banner-desc-block--main border-rds g-30" style="width: 100%;">
@@ -66,7 +67,7 @@
                             </div>
 
                             @if ($banner->btn_text && $banner->btn_href)
-                                <div class="main__banner-buttons fx-row text-with-links ">
+                                <div class="main__banner-buttons fx-row text-with-links">
                                     <a href="{!!  $banner->btn_href !!}"
                                         class="_main__banner_contact_us_btn f-500 f-s-16">
                                         {{$banner->btn_text}}

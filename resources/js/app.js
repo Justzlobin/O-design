@@ -118,6 +118,7 @@ function initBannerSwiper() {
     if (container === null) {return;}
 
     new Swiper(container, {
+        lazy: true,
         centeredSlides: true,
         autoplay: {
             delay: 5000,
