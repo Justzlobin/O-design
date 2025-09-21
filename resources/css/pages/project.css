@@ -96,7 +96,7 @@ div.project__others-title {
     border-top: 1px solid var(--color-text-1);
 }
 
-div.project__others-title h2 {
+div.project__others-title span {
     color: var(--color-text-1);
     font-size: 16px;
     font-weight: 300;
@@ -155,7 +155,7 @@ div.project__others-item:hover img {
         display: contents;
     }
 
-    h1.project__details-text_title {
+    span.project__details-text_title {
         order: 1;
     }
 

@@ -2,7 +2,7 @@
 
 @section('seo')
     <title>{{$seo->meta_title}}</title>
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
 
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
@@ -21,6 +21,9 @@
 
 @section('content')
     <div id="faq__content">
+        <div class="_page_heading">
+            <h1>{{$seo->heading}}</h1>
+        </div>
         <div class="faq__content-grid">
             @foreach($faq_s as $faq)
                 <div class="faq__content-item fx-col" data-faq_id="{{$faq->id}}">

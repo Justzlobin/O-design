@@ -3,7 +3,7 @@
 
 @section('seo')
     <title>{{$seo->meta_title}}</title>
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
 
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
@@ -23,7 +23,6 @@
 
 @section('content')
     <div class="projects__content fx-col">
-
         <div class="projects__choose  f-s-20">
             <button class="projects__choose--btn  cursor-pointer _selected" id="{{ProjectType::All->value}}">
                 @lang('projects.' . ProjectType::All->value)

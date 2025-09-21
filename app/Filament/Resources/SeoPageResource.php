@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\Page;
 use App\Filament\Resources\SeoPageResource\Pages;
 use App\Filament\Resources\SeoPageResource\RelationManagers;
 use App\Models\SeoPage;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
@@ -43,16 +45,31 @@ class SeoPageResource extends Resource
                                 ])
                                 ->hint('Ідентифікатор сторінки (не редагується)')
                                 ->required(),
+
                             TextInput::make('meta_title')
                                 ->label('Назва')
                                 ->reactive()
                                 ->hint(fn($state) => mb_strlen($state) . '/60')
                                 ->maxLength(60),
+
+                            TextInput::make('heading')
+                                ->label('H1')
+                                ->reactive()
+                                ->hint(fn($state) => mb_strlen($state) . '/255')
+                                ->hidden(fn ($get) => $get('page_slug') === Page::PROJECTS->value)
+                                ->maxLength(255),
+
+                            Placeholder::make('heading_info')
+                                ->label('H1')
+                                ->content('Недоступний для сторінки Проєктів')
+                                ->visible(fn ($get) => $get('page_slug') === Page::PROJECTS->value),
+
                             TextInput::make('meta_description')
                                 ->label('Опис')
                                 ->reactive()
                                 ->hint(fn($state) => mb_strlen($state) . '/255')
                                 ->maxLength(255),
+
                             TextInput::make('meta_keywords')
                                 ->label('Ключові слова')
                                 ->reactive()

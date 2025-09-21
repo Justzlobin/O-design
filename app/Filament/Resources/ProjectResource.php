@@ -70,7 +70,25 @@ class ProjectResource extends Resource
                             ]),
 
                             Forms\Components\RichEditor::make('description')
+                                ->toolbarButtons([
+                                    'attachFiles',
+                                    'blockquote',
+                                    'bold',
+                                    'bulletList',
+                                    'codeBlock',
+                                    'h1',
+                                    'h2',
+                                    'h3',
+                                    'italic',
+                                    'link',
+                                    'orderedList',
+                                    'redo',
+                                    'strike',
+                                    'underline',
+                                    'undo',
+                                ])
                                 ->label('Опис')
+
                                 ->required(),
 
                         ])
@@ -83,7 +101,7 @@ class ProjectResource extends Resource
                                 ->preserveFilenames()
                                 ->reorderable()
                                 ->multiple()
-                                ->required()
+                                ->required(),
                         ])
                         ->columns(1)
                         ->columnSpan(1),

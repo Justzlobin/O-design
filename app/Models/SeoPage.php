@@ -11,6 +11,7 @@ class SeoPage extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
+        'heading',
         'page_slug',
         'meta_title',
         'meta_description',

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BannerResource\Pages;
-use App\Filament\Resources\BannerResource\RelationManagers;
 use App\Models\Banner;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -24,39 +23,48 @@ class BannerResource extends Resource
                 Forms\Components\Grid::make()->schema([
                     Forms\Components\Section::make()->schema([
 
+                        Forms\Components\Fieldset::make()->schema([
                             Forms\Components\Toggle::make('is_active')
                                 ->label('Активний')
                                 ->default(true),
 
+                            Forms\Components\Placeholder::make('title_info')
+                                ->label('Назва')
+                                ->visible(fn ($get) => $get('sort') === 1)
+                                ->content("Замінюється на <H1> для першого банеру"),
+
                             Forms\Components\TextInput::make('title')
                                 ->label('Назва')
+                                ->hidden(fn ($get) => $get('sort') === 1)
                                 ->required(),
+                        ])->columns(1),
 
-                            Forms\Components\RichEditor::make('description')
-                                ->label('Опис'),
+                        Forms\Components\RichEditor::make('description')
+                            ->label('Опис'),
 
+                        Forms\Components\Fieldset::make()->schema([
+                            Forms\Components\TextInput::make('btn_text')
+                                ->default('Menu подобається')
+                                ->nullable()
+                                ->label('Текст кнопки'),
 
-                        Forms\Components\TextInput::make('btn_text')
-                            ->default('Menu подобається')
-                            ->nullable()
-                            ->label('Текст кнопки'),
+                            Forms\Components\TextInput::make('btn_href')
+                                ->label('Посилання')
+                                ->url()
+                                ->nullable()
+                                ->maxLength(2048)
+                                ->helperText('Введіть повний URL, наприклад https://example.com'),
+                        ])->columns(1),
 
-                        Forms\Components\TextInput::make('btn_href')
-                            ->label('Посилання')
-                            ->url()
-                            ->nullable()
-                            ->maxLength(2048)
-                            ->helperText('Введіть повний URL, наприклад https://example.com'),
-
-                            Forms\Components\Fieldset::make()->schema([
-                                Forms\Components\TextInput::make('location')
-                                    ->label('Місто'),
-                                Forms\Components\DatePicker::make('date')
-                                    ->label('Дата'),
-                                Forms\Components\TextInput::make('area')
-                                    ->label('Площа')
-                                    ->numeric()
-                            ])->columns(3)
+                        Forms\Components\Fieldset::make()->schema([
+                            Forms\Components\TextInput::make('location')
+                                ->label('Місто'),
+                            Forms\Components\DatePicker::make('date')
+                                ->label('Дата'),
+                            Forms\Components\TextInput::make('area')
+                                ->label('Площа')
+                                ->numeric()
+                        ])->columns(3)
 
                     ])
                         ->columns(1)

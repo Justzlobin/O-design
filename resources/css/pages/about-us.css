@@ -39,7 +39,7 @@ div.title-section__content {
     /*padding-bottom: 15%;*/
 }
 
-h1.title-section__content-title {
+.title-section__content-title {
     width: 100%;
     font-size: clamp(50px, 15vw, 190px);
     font-weight: 750;
@@ -47,7 +47,7 @@ h1.title-section__content-title {
     text-align: left;
 }
 
-h2._title__body_center-subtitle {
+._title__body_center-subtitle {
     display: block;
     width: 100%;
     font-size: clamp(10px, 3vw, 30px);

@@ -2,7 +2,6 @@
 
 @section('seo')
     <title>{{$generalSettings->site_name}}</title>
-{{--    <meta name="robots" content="noindex, nofollow">--}}
     <meta name="robots" content="index, follow">
 
     <meta name="description" content="{{$seo->meta_description}}">
@@ -35,11 +34,18 @@
                         <div class="banner-desc-block fx-col">
                             <div class="block-blur banner-desc-block--main border-rds g-30" style="width: 100%;">
                                 <div class="f-s-24 f-500"
-                                     style="text-align: left; width: 100%;">{{$banner->title}}</div>
+                                     style="text-align: left; width: 100%;">
+                                    @if ($loop->first)
+                                        <h1>{!! $seo->heading !!}</h1>
+                                    @else
+                                        {{$banner->title}}
+                                    @endif
+                                </div>
 
                                 @if ($banner->description)
                                     <div class="f-s-13 f-300 l-n-24 text-with-links" >{!! $banner->description !!}</div>
                                 @endif
+
                                 @if ($banner->location || $banner->date || $banner->area)
                                     <div class="fx-row f-s-13"
                                          style="justify-content: space-between; align-items: center; width: 100%;">

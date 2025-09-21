@@ -3,7 +3,7 @@
 
 @section('seo')
     <title>{{$seo->meta_title}}</title>
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
 
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
@@ -25,8 +25,8 @@
     <div id="_about_us__content" class="fx-col">
         <section class="title-section fx-col">
             <div class="title-section__content fx-col">
-                <h1 class="title-section__content-title">ODESIGN<br>INTERIOR</h1>
-                <h2 class="_title__body_center-subtitle">DESIGN YOUR FUTURE</h2>
+                <span class="title-section__content-title">ODESIGN<br>INTERIOR</span>
+                <h1 class="_title__body_center-subtitle">{{$seo->heading}}</h1>
             </div>
             <div class="title-section__photo" style="background-image: url({{Storage::url('oleg.png')}})"></div>
         </section>

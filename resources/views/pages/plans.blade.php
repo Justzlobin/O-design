@@ -2,7 +2,7 @@
 
 @section('seo')
     <title>{{$seo->meta_title}}</title>
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
 
     <meta name="description" content="{{$seo->meta_description}}">
     <meta name="keywords" content="{{$seo->meta_keywords}}">
@@ -21,6 +21,9 @@
 
 @section('content')
     <div class="plans__content fx-col">
+        <div class="_page_heading">
+            <h1>{{$seo->heading}}</h1>
+        </div>
         <div class="plans__content-list">
             @foreach($plans as $plan)
                 <div class="plans__item--wrap @if ($plan->title === 'Базовий') _promotional @endif">

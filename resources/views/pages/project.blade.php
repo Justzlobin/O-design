@@ -39,16 +39,16 @@
                 </div>
             </div>
             <div class="project__details-text fx-col flex-center">
-                <h1 class="project__details-text_title fx-row flex-center">
+                <span class="project__details-text_title fx-row flex-center">
                     {{$project->title}}
-                </h1>
+                </span>
                 <div class="project__details-text_desc text-with-links">
                     {!! $project->description !!}
                 </div>
             </div>
         </section>
         <div class="project__others-title fx-row flex-center">
-            <h2>Інші проєкти</h2>
+            <span>Інші проєкти</span>
         </div>
         <section class="project__others fx-col">
             <div class="project-swiper swiper" id="_project__others_swiper">

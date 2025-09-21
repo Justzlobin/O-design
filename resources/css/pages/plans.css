@@ -5,7 +5,6 @@
     min-height: calc(100svh - var(--header-desktop-height));
     margin-top: var(--header-desktop-height);
     padding: 50px 0;
-    gap: 60px;
 }
 
 .plans__content-list {
