@@ -56,13 +56,7 @@ class SeoPageResource extends Resource
                                 ->label('H1')
                                 ->reactive()
                                 ->hint(fn($state) => mb_strlen($state) . '/255')
-                                ->hidden(fn ($get) => $get('page_slug') === Page::PROJECTS->value)
                                 ->maxLength(255),
-
-                            Placeholder::make('heading_info')
-                                ->label('H1')
-                                ->content('Недоступний для сторінки Проєктів')
-                                ->visible(fn ($get) => $get('page_slug') === Page::PROJECTS->value),
 
                             TextInput::make('meta_description')
                                 ->label('Опис')
