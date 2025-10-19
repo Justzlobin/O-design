@@ -5,6 +5,7 @@
     min-height: calc(100svh - var(--header-desktop-height));
     margin-top: var(--header-desktop-height);
     padding: 50px 0;
+    gap: 30px;
 }
 
 .plans__content-list {
@@ -22,6 +23,7 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     transform-style: preserve-3d;
+    border-radius: 4px;
 }
 
 html[data-theme="dark"] .plans__item--wrap {

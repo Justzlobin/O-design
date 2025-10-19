@@ -29,19 +29,20 @@ div.decorate-line {
     align-items: center;
     width: 100%;
     position: relative;
-    padding: 35px 0;
+    padding: 35px 0 10px 0;
+    aspect-ratio: 1 / .36;
 }
 
 div.title-section__content {
     justify-content: start;
-    align-items: center;
+    align-items: start;
     width: 100%;
-    /*padding-bottom: 15%;*/
+    gap: 10px;
 }
 
 .title-section__content-title {
     width: 100%;
-    font-size: clamp(50px, 15vw, 190px);
+    font-size: clamp(50px, 12vw, 190px);
     font-weight: 750;
     line-height: 0.9;
     text-align: left;
@@ -49,9 +50,9 @@ div.title-section__content {
 
 ._title__body_center-subtitle {
     display: block;
-    width: 100%;
     font-size: clamp(10px, 3vw, 30px);
     font-weight: 500;
+    width: 70%;
 }
 
 div.decorate-line._right {
@@ -76,6 +77,7 @@ div.title-section__photo {
     padding-top: 45%;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position-x: right;
 }
 
 /*ФІЛОСОФІЯ*/
@@ -369,11 +371,11 @@ div.expertise-section__right div.decorate-line {
     width: 15%;
 }
 
-@media (min-width: 1300px) {
-    #_about_us__content > section.title-section {
-        margin-top: 40px;
-    }
-}
+/*@media (min-width: 1300px) {*/
+/*    #_about_us__content > section.title-section {*/
+/*        margin-top: 40px;*/
+/*    }*/
+/*}*/
 
 @media (max-width: 768px) {
     #_about_us__content > section.how-section.fx-col > div.how-section__top {

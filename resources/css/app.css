@@ -174,10 +174,6 @@
     border-radius: 2px;
 }
 
-h1, h2, h3 {
-    all: unset;
-}
-
 /*PAGE LOADER*/
 #loading-screen {
     position: fixed;
@@ -327,6 +323,25 @@ body._no_scroll {
     color: var(--color-text-1);
     margin-bottom: 20px;
     justify-content: start;
+}
+
+.h1-block {
+    justify-content: center;
+    height: auto;
+    min-height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    color: var(--color-text-1);
+    background: var(--color-3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease-in-out;
+}
+
+html[data-theme='dark'] .h1-block {
+    box-shadow:  unset;
+    border: 1px solid rgba(255, 255, 255, .1);
 }
 
 @media (max-width: 1440px) {

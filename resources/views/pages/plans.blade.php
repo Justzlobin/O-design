@@ -21,8 +21,8 @@
 
 @section('content')
     <div class="plans__content fx-col">
-        <div class="_page_heading">
-            <h1>{{$seo->heading}}</h1>
+        <div class="h1-block h1-block-plans" style="padding: 10px 25px; text-align: center">
+            <h1 class="f-s-22 f-500">{{$seo->heading}}</h1>
         </div>
         <div class="plans__content-list">
             @foreach($plans as $plan)

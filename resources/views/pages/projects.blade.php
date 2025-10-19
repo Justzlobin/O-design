@@ -23,12 +23,12 @@
 
 @section('content')
     <div class="projects__content fx-col">
-        <div class="projects__choose  f-s-20">
-            <button class="projects__choose--btn  cursor-pointer _selected" id="{{ProjectType::All->value}}">
-                @lang('projects.' . ProjectType::All->value)
-            </button>
+        <div class="projects__choose f-s-20">
             <button class="projects__choose--btn  cursor-pointer" id="{{ProjectType::Commercial->value}}">
                 @lang('projects.' . ProjectType::Commercial->value)
+            </button>
+            <button class="projects__choose--btn  cursor-pointer _selected" id="{{ProjectType::All->value}}">
+                @lang('projects.' . ProjectType::All->value)
             </button>
             <button class="projects__choose--btn  cursor-pointer" id="{{ProjectType::Privat->value}}">
                 @lang('projects.' . ProjectType::Privat->value)
@@ -37,10 +37,16 @@
         <div class="projects__grid flex-center">
             @foreach($projects as $project)
                     <a href="{{route('project', $project)}}" class="projects__grid-item fx-col flex-center {{$project->type}}"
-                         style="background-image: url({{$project->getFirstMediaUrl('project-images', 'list_webp')}})">
+                         style="background-image: url({{$project->getFirstMediaUrl('project-images', 'list_webp')}})"
+                       title="{{$project->title}}"
+                    >
                         <span class="projects__grid-item_title">{{$project->title}}</span>
                     </a>
             @endforeach
+        </div>
+
+        <div class="h1-block h1-block-plans" style="padding: 10px 25px; text-align: center">
+            <h1 class="f-s-22 f-500">{{$seo->heading}}</h1>
         </div>
     </div>
 @endsection
