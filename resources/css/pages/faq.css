@@ -77,7 +77,7 @@ div.faq__content-item_question {
     letter-spacing: 0.3px;
 }
 
-.h1-block-faq {
+.h1-block.h1-block-faq {
     padding: 25px 70px 25px 30px;
     justify-content: start;
 }
@@ -109,7 +109,7 @@ div.faq__content-item_answer._show {
     }
 
     div.faq__content-item_question,
-    .h1-block-faq {
+    .h1-block.h1-block-faq {
         font-size: 17px;
         padding: 20px 60px 20px 20px;
         min-height: 70px;
@@ -132,7 +132,7 @@ div.faq__content-item_answer._show {
 
 @media (max-width: 550px) {
     div.faq__content-item_question,
-    .h1-block-faq {
+    .h1-block.h1-block-faq {
         font-size: 16px;
         padding: 18px 50px 18px 15px;
     }

@@ -21,7 +21,7 @@
 
 @section('content')
     <div id="faq__content">
-        <div class="h1-block h1-block-faq" style="justify-content: start; padding: 10px 35px;">
+        <div class="h1-block h1-block-faq">
             <h1 class="f-600 f-s-18 l-n-24">{{$seo->heading}}</h1>
         </div>
         <div class="faq__content-grid">
